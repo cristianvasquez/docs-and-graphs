@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`normalizeText    Trim this   1`] = `"Trim this"`;
+
+exports[`normalizeText ## Header 1`] = `"Header"`;
+
+exports[`normalizeText #nowplaying Pointer Sisters - Dare Me | #80s #disco #funk #radio 1`] = `"Pointer Sisters - Dare Me |"`;
+
+exports[`normalizeText - A list item 1`] = `"A list item"`;
+
+exports[`normalizeText An #autumn scene showing a beautiful #horse coming to visit me. 1`] = `"An  scene showing a beautiful  coming to visit me."`;

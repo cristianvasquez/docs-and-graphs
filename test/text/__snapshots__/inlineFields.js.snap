@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`extractInlineFields **Rating**:: 6 1`] = `
+Array [
+  Object {
+    "property": "**Rating**",
+    "raw": "**Rating**:: 6",
+    "value": " 6",
+  },
+]
+`;
+
+exports[`extractInlineFields **Thoughts**:: It was decent. 1`] = `
+Array [
+  Object {
+    "property": "**Thoughts**",
+    "raw": "**Thoughts**:: It was decent.",
+    "value": " It was decent.",
+  },
+]
+`;
+
+exports[`extractInlineFields [mood:: okay] | [length:: 2 hours] 1`] = `
+Array [
+  Object {
+    "property": "mood",
+    "raw": "[mood:: okay]",
+    "value": " okay",
+  },
+  Object {
+    "property": "length",
+    "raw": "[length:: 2 hours]",
+    "value": " 2 hours",
+  },
+]
+`;
+
+exports[`extractInlineFields No inline fields 1`] = `Array []`;
+
+exports[`extractInlineFields inline :: field 1`] = `
+Array [
+  Object {
+    "property": "inline ",
+    "raw": "inline :: field",
+    "value": " field",
+  },
+]
+`;
+
+exports[`extractInlineFields nested ( inline :: field ) 1`] = `
+Array [
+  Object {
+    "property": " inline ",
+    "raw": "( inline :: field )",
+    "value": " field ",
+  },
+]
+`;
+
+exports[`removeInlineFields **Rating**:: 6 1`] = `""`;
+
+exports[`removeInlineFields **Thoughts**:: It was decent. 1`] = `""`;
+
+exports[`removeInlineFields [mood:: okay] | [length:: 2 hours] 1`] = `" | "`;
+
+exports[`removeInlineFields No inline fields 1`] = `"No inline fields"`;
+
+exports[`removeInlineFields inline :: field 1`] = `""`;
+
+exports[`removeInlineFields nested ( inline :: field ) 1`] = `"nested "`;

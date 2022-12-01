@@ -1,0 +1,40 @@
+{
+  "name": "documents-and-graphs",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "dependencies": {
+    "rdf-ext": "^2.1.0",
+    "remark-frontmatter": "^4.0.1",
+    "remark-gfm": "^3.0.1",
+    "remark-parse": "^10.0.1",
+    "remark-wiki-link": "^1.0.4",
+    "unified": "^10.1.2"
+  },
+  "devDependencies": {
+    "@rdfjs-elements/formats-pretty": "^0.5.1",
+    "expect": "^29.3.1",
+    "expect-mocha-snapshot": "^2.1.5",
+    "get-stream": "^6.0.1",
+    "mocha": "^10.1.0",
+    "n3": "^1.16.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristianvasquez/documents-and-graphs.git"
+  },
+  "keywords": [
+    "markdown",
+    "rdf"
+  ],
+  "author": "Cristian Vasquez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cristianvasquez/documents-and-graphs/issues"
+  },
+  "homepage": "https://github.com/cristianvasquez/documents-and-graphs#readme"
+}

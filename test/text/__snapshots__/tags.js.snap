@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`extractTags #nowplaying Pointer Sisters - Dare Me | #80s #disco #funk #radio 1`] = `
+Array [
+  "#nowplaying",
+  "#disco",
+  "#funk",
+  "#radio",
+]
+`;
+
+exports[`extractTags An #autumn scene showing a beautiful #horse coming to visit me. 1`] = `
+Array [
+  "#autumn",
+  "#horse",
+]
+`;
+
+exports[`extractTags My new favourite eatery in #liverpool and I mean superb! #TheBrunchClub #breakfast #food 1`] = `
+Array [
+  "#liverpool",
+  "#TheBrunchClub",
+  "#breakfast",
+  "#food",
+]
+`;
+
+exports[`removeTags #nowplaying Pointer Sisters - Dare Me | #80s #disco #funk #radio 1`] = `" Pointer Sisters - Dare Me | #80s   "`;
+
+exports[`removeTags An #autumn scene showing a beautiful #horse coming to visit me. 1`] = `"An  scene showing a beautiful  coming to visit me."`;
+
+exports[`removeTags My new favourite eatery in #liverpool and I mean superb! #TheBrunchClub #breakfast #food 1`] = `"My new favourite eatery in  and I mean superb!   "`;
