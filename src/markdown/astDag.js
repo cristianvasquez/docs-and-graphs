@@ -24,7 +24,7 @@ async function getAstDag ({ astNode, fullText }) {
       const currentIri = rdf.blankNode()
       const ancesters = headersStack.filter(x => x.depth < astNode.depth)
       if (ancesters.length) {
-        headersStack = headersStack.filter(x => x.depth < astNode.depth)
+        headersStack = ancesters
       }
 
       const parentIri = ancesters.length

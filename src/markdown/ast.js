@@ -16,5 +16,4 @@ function getText ({ astNode, fullText }) {
   return fullText.substring(startOffset, endOffset)
 }
 
-
 export { getText, getList }
