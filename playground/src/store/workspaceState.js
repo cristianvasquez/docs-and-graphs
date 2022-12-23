@@ -1,4 +1,3 @@
-import { Parser } from 'n3'
 import { defineStore } from 'pinia'
 import { ref, watch } from 'vue'
 import { parseMarkdown } from '../../../index.js'

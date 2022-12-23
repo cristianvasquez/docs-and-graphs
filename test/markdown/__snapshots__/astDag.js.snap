@@ -1,106 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`astDag can use a taxonomy (recursive patterns) 1`] = `
-"@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix schema: <http://schema.org/> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix purl: <http://purl.org/dc/terms/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix ex: <http://example.org/> .
-@prefix dot: <http://dottriples.org/> .
-@prefix mark: <http://markdown.org/> .
-
-_:b21 a mark:Root ;
-	mark:contains [
-		mark:contains [
-			mark:contains [
-				mark:contains [
-					mark:header \\"#### Tomato\\" ;
-					mark:item \\"A tomato most of the time is red in Europe\\" ;
-				] ;
-				mark:header \\"### Red\\" ;
-			], [
-				mark:header \\"### Green\\" ;
-				mark:listItem \\"- Lettuce\\" ;
-			] ;
-			mark:header \\"## Food\\" ;
-		], [
-			mark:contains [
-				mark:header \\"### Metal\\" ;
-				mark:listItem \\"* Screwdriver\\", \\"* Hammer\\" ;
-			], [
-				mark:header \\"### Wood\\" ;
-				mark:listItem \\"- 1\\", \\"- 2\\", \\"- 3\\" ;
-			] ;
-			mark:header \\"## Tools\\" ;
-		] ;
-		mark:header \\"# Things\\" ;
-	] .
-
-"
-`;
-
-exports[`astDag produces quads using embedded tag 1`] = `
-"@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix schema: <http://schema.org/> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix purl: <http://purl.org/dc/terms/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix ex: <http://example.org/> .
-@prefix dot: <http://dottriples.org/> .
-@prefix mark: <http://markdown.org/> .
-
-_:b1 a mark:Root ;
-	mark:contains [
-		mark:contains [
-			mark:contains [
-				mark:header \\"### Who\\" ;
-				mark:listItem \\"- Bob (action::prepare)\\", \\"- Alice (action::cook)\\" ;
-			], [
-				mark:header \\"### Purpose\\" ;
-				mark:item \\"To make the best Pancakes in the world\\" ;
-			], [
-				mark:contains [
-					mark:header \\"#### Embedded\\" ;
-				] ;
-				mark:header \\"### Song\\" ;
-				mark:item \\"Pancakes, Pancakes !\\" ;
-			], [
-				mark:header \\"### Tasks\\" ;
-				mark:item \\"And a paragraph, explaining even more things\\" ;
-				mark:listItem \\"- Mix ingredients\\", \\"- Heat the pan\\", \\"- Prepare the Pancakes\\" ;
-			] ;
-			mark:header \\"## Pancake maker #role\\" ;
-			mark:item \\"Some text for the Pancake maker\\" ;
-			mark:tag \\"#role\\" ;
-		], [
-			mark:contains [
-				mark:header \\"### Who\\" ;
-				mark:listItem \\"- Charlie\\" ;
-			], [
-				mark:header \\"### Purpose\\" ;
-				mark:item \\"Sell the Pancakes to the customers\\" ;
-			], [
-				mark:header \\"### Tasks\\" ;
-				mark:listItem \\"- Coordination of Pancake economic activities\\", \\"- Advertise the Pancakes\\" ;
-			] ;
-			mark:header \\"## Pancake seller #role\\" ;
-			mark:tag \\"#role\\" ;
-		] ;
-		mark:header \\"# Roles\\" ;
-		mark:item \\"The roles are the following: \\" ;
-	], [
-		mark:header \\"# Some other topic\\" ;
-		mark:item \\"With a description\\" ;
-	] .
-
-"
-`;
-
 exports[`astDag produces quads using lists 1`] = `
 "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema: <http://schema.org/> .
@@ -113,26 +12,100 @@ exports[`astDag produces quads using lists 1`] = `
 @prefix dot: <http://dottriples.org/> .
 @prefix mark: <http://markdown.org/> .
 
-_:b14 a mark:Root ;
-	mark:contains [
-		mark:contains [
-			mark:header \\"## Properties\\" ;
-			mark:item \\"age :: 22\\" ;
-		] ;
-		mark:header \\"# Alice\\" ;
-	], [
-		mark:contains [
-			mark:header \\"## Interests\\" ;
-			mark:listItem \\"- Eating\\" ;
-		] ;
-		mark:header \\"# Bob (age :: 42)\\" ;
-	], [
-		mark:contains [
-			mark:header \\"## Description\\" ;
-			mark:item \\"Charlie is a good guy. (age :: 56)\\" ;
-		] ;
-		mark:header \\"# Charlie\\" ;
-	] .
+_:b1 a mark:DocumentRoot ;
+	mark:nodes (
+		[
+			rdf:type mark:Header ;
+			mark:value \\"# Alice\\" ;
+			mark:nodes (
+				[
+					rdf:type mark:Header ;
+					mark:value \\"## A heading outside\\" ;
+					mark:nodes (
+						[
+							rdf:type mark:Paragraph ;
+							mark:value \\"number :: 42\\" ;
+							mark:inline [
+								rdf:type mark:Inline ;
+								mark:inlineProperty \\"number \\" ;
+								mark:inlineValue \\" 42\\" ;
+							] ;
+						]
+					) ;
+				]
+			) ;
+		]
+		[
+			rdf:type mark:Header ;
+			mark:value \\"# Bob (age :: 42)\\" ;
+			mark:nodes (
+				[
+					rdf:type mark:Header ;
+					mark:value \\"## Interests\\" ;
+					mark:nodes (
+						[
+							rdf:type mark:List ;
+							mark:nodes (
+								[
+									rdf:type mark:ListItem ;
+									mark:value \\"- Eating\\" ;
+								]
+								[
+									rdf:type mark:ListItem ;
+									mark:value \\"- Dancing\\" ;
+								]
+							) ;
+						]
+					) ;
+				]
+			) ;
+			mark:inline [
+				rdf:type mark:Inline ;
+				mark:inlineProperty \\"age \\" ;
+				mark:inlineValue \\" 42\\" ;
+			] ;
+		]
+		[
+			rdf:type mark:Header ;
+			mark:value \\"# Charlie\\" ;
+			mark:nodes (
+				[
+					rdf:type mark:Header ;
+					mark:value \\"## Todo list\\" ;
+					mark:nodes (
+						[
+							rdf:type mark:List ;
+							mark:nodes (
+								[
+									rdf:type mark:ListItem ;
+									mark:value \\"1. Waking up\\" ;
+								]
+								[
+									rdf:type mark:ListItem ;
+									mark:value \\"2. Drinking tea\\" ;
+								]
+							) ;
+						]
+					) ;
+				]
+				[
+					rdf:type mark:Header ;
+					mark:value \\"## Description\\" ;
+					mark:nodes (
+						[
+							rdf:type mark:Paragraph ;
+							mark:value \\"Charlie is a good guy. (age :: 56)\\" ;
+							mark:inline [
+								rdf:type mark:Inline ;
+								mark:inlineProperty \\"age \\" ;
+								mark:inlineValue \\" 56\\" ;
+							] ;
+						]
+					) ;
+				]
+			) ;
+		]
+	) .
 
 "
 `;

@@ -1,17 +1,23 @@
 export default {
   title: 'produces quads using lists', markdown: `# Alice
 
-## Properties
+## A heading outside
 
-age :: 22
+number :: 42
 
 # Bob (age :: 42)
 
 ## Interests
 
 - Eating
+- Dancing
 
 # Charlie
+
+## Todo list
+
+1. Waking up
+2. Drinking tea
 
 ## Description
 
