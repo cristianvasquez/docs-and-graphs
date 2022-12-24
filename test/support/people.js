@@ -1,5 +1,5 @@
 export default {
-  title: 'produces quads using lists', markdown: `# Alice
+  title: 'People', markdown: `# Alice
 
 ## A heading outside
 

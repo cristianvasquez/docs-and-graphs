@@ -8,4 +8,9 @@ const TURTLE = {
   componentType: './components/Turtle.vue',
 }
 
-export { MARKDOWN, TURTLE }
+const JSON = {
+  title: 'Json',
+  componentType: './components/Json.vue',
+}
+
+export { MARKDOWN, TURTLE, JSON }

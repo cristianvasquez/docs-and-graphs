@@ -1,5 +1,9 @@
+import { getText } from './markdownAst.js'
+
 const ofInterest = (root) => (root.type === 'link' || root.type ===
   'wikiLink' || root.type === 'image')
+
+// @TODO handle embedded [[embedded.png]] -> {embedded:true}
 
 function collectChilds (parent, data = []) {
   if (parent.children) {
@@ -18,18 +22,22 @@ function collectChilds (parent, data = []) {
 function findLinks ({ astNode, fullText }) {
   return collectChilds(astNode).map(node => {
 
-    // sometimes the parser doesn't report a position. Weird.
-    // @TODO report bug. example:'mailto:asset+block@lectureslides_chap3NOphantom.pdf'
-    const linkText = node.position ? fullText.substring(
-      node.position.start.offset, node.position.end.offset) : node.url
-    const result = {
-      ...node, text: linkText,
-    }
-    delete result.children
-    delete result.position
-    return result
-  })
+    const text = getText({ astNode: node, fullText })
 
+    if (node.type === 'wikiLink') {
+      return {
+        type: 'wikiLink', alias: text, // @TODO go from [[hello|world]] -> world
+        value: node.value,
+      }
+    } else if (node.type === 'link') {
+      return {
+        type: 'link', alias: text, // @TODO go from [alias](url) -> alias
+        value: node.url,
+      }
+    }
+
+    return node
+  })
 }
 
 export { findLinks }

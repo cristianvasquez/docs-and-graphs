@@ -1,10 +1,16 @@
-import { getAstDag } from './src/markdown/astDag.js'
+import { simpleAst } from './src/markdown/simpleAst.js'
+import { ast2RDF } from './src/rdf/ast2RDF.js'
 import { createMarkdownParser } from './src/markdown/markdownParser.js'
 
-async function parseMarkdown (fullText) {
+function toJson (fullText) {
   const parser = createMarkdownParser()
-  const astNode = await parser.parse(fullText)
-  return await getAstDag({ astNode, fullText })
+  const astNode = parser.parse(fullText)
+  return simpleAst({ astNode, fullText })
 }
 
-export { parseMarkdown }
+function toRdf (fullText) {
+  const simpleAst = toJson(fullText)
+  return ast2RDF({ simpleAst })
+}
+
+export { toRdf, toJson }

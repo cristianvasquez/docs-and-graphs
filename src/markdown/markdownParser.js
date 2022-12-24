@@ -11,7 +11,7 @@ function createMarkdownParser () {
     use(remarkGfm).
     use(wikiLinkPlugin)
   return {
-    parse: async (string) => {
+    parse: (string) => {
       return parser.parse(string)
     },
   }

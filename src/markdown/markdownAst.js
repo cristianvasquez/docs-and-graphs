@@ -1,4 +1,4 @@
-function getList ({ astNode, fullText }) {
+function getListText ({ astNode, fullText }) {
   const {
     type, children,
   } = astNode
@@ -16,4 +16,4 @@ function getText ({ astNode, fullText }) {
   return fullText.substring(startOffset, endOffset)
 }
 
-export { getText, getList }
+export { getText, getListText }
