@@ -14,6 +14,14 @@ function keyValue ({ content, parenthesis }) {
       raw: `${parenthesis.left}${content}${parenthesis.right}`,
     }
   }
+  if (chunks.length === 3) {
+    return {
+      subject: chunks[0],
+      property: chunks[1],
+      value: chunks[2],
+      raw: `${parenthesis.left}${content}${parenthesis.right}`,
+    }
+  }
   return undefined
 }
 
