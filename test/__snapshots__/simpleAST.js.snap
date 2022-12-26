@@ -14,12 +14,12 @@ Object {
           ],
           "depth": 2,
           "type": "block",
-          "value": "## H2",
+          "value": "H2",
         },
       ],
       "depth": 1,
       "type": "block",
-      "value": "# H1",
+      "value": "H1",
     },
   ],
   "depth": 0,
@@ -188,6 +188,296 @@ Object {
 `;
 
 exports[`astDag People 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "inlineFields": Object {
+                "number ": " 42",
+              },
+              "type": "text",
+              "value": "",
+            },
+          ],
+          "depth": 2,
+          "type": "block",
+          "value": "A heading outside",
+        },
+      ],
+      "depth": 1,
+      "type": "block",
+      "value": "Alice",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "children": Array [
+                Object {
+                  "type": "outline",
+                  "value": "Eating",
+                },
+                Object {
+                  "type": "outline",
+                  "value": "Dancing",
+                },
+              ],
+              "ordered": false,
+              "type": "outline",
+            },
+          ],
+          "depth": 2,
+          "type": "block",
+          "value": "Interests",
+        },
+      ],
+      "depth": 1,
+      "inlineFields": Object {
+        "age ": " 42",
+      },
+      "type": "block",
+      "value": "Bob",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "children": Array [
+                Object {
+                  "type": "outline",
+                  "value": "Waking up",
+                },
+                Object {
+                  "type": "outline",
+                  "value": "Drinking tea",
+                },
+              ],
+              "ordered": true,
+              "type": "outline",
+            },
+          ],
+          "depth": 2,
+          "type": "block",
+          "value": "Todo list",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "inlineFields": Object {
+                "age ": " 56",
+              },
+              "type": "text",
+              "value": "Charlie is a good guy.",
+            },
+          ],
+          "depth": 2,
+          "type": "block",
+          "value": "Description",
+        },
+      ],
+      "depth": 1,
+      "type": "block",
+      "value": "Charlie",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`astDag normalize:false Headings 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "type": "text",
+              "value": "Some text",
+            },
+          ],
+          "depth": 2,
+          "type": "block",
+          "value": "## H2",
+        },
+      ],
+      "depth": 1,
+      "type": "block",
+      "value": "# H1",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`astDag normalize:false Links 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "wikiLink",
+          "value": "link 1",
+        },
+      ],
+      "type": "text",
+      "value": "[[link 1]]",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "wikiLink",
+          "value": "/full/path/link 1",
+        },
+      ],
+      "type": "text",
+      "value": "[[/full/path/link 1]]",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "wikiLink",
+          "value": "/full/path/link 1.md",
+        },
+      ],
+      "type": "text",
+      "value": "[[/full/path/link 1.md]]",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": "Alias 2",
+          "type": "link",
+          "value": "http://example.com",
+        },
+      ],
+      "type": "text",
+      "value": "[Alias 2](http://example.com)",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": "Alias 1",
+          "type": "wikiLink",
+          "value": "link 1 ",
+        },
+      ],
+      "type": "text",
+      "value": "[[link 1 |Alias 1]]",
+    },
+    Object {
+      "type": "text",
+      "value": "![[link 1]]",
+    },
+    Object {
+      "type": "text",
+      "value": "![[image.png]]",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "link",
+          "value": "http://example.com",
+        },
+      ],
+      "type": "text",
+      "value": "The website is http://example.com see you!",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": "here",
+          "type": "link",
+          "value": "http://example.com",
+        },
+      ],
+      "type": "text",
+      "value": "The website is [here](http://example.com) see you!",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "type": "link",
+          "value": "protocol",
+        },
+      ],
+      "type": "text",
+      "value": "The website is [here](protocol) see you!",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`astDag normalize:false Outline 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "type": "outline",
+          "value": "Task",
+        },
+        Object {
+          "checked": true,
+          "type": "outline",
+          "value": "Task",
+        },
+        Object {
+          "type": "outline",
+          "value": "Item 0",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "type": "outline",
+              "value": "Item 1",
+            },
+            Object {
+              "type": "outline",
+              "value": "Item 2",
+            },
+            Object {
+              "children": Array [
+                Object {
+                  "type": "outline",
+                  "value": "Item 3",
+                },
+              ],
+              "ordered": false,
+              "type": "outline",
+            },
+          ],
+          "ordered": false,
+          "type": "outline",
+        },
+        Object {
+          "type": "outline",
+          "value": "Item 4",
+        },
+      ],
+      "ordered": false,
+      "type": "outline",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`astDag normalize:false People 1`] = `
 Object {
   "children": Array [
     Object {

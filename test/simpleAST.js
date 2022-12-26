@@ -19,3 +19,17 @@ describe('astDag', async function () {
     })
   }
 })
+
+describe('astDag normalize:false', async function () {
+  for (const current of tests) {
+    it(current.title, async function () {
+      const fullText = current.markdown
+      const parser = createMarkdownParser()
+      const astNode = parser.parse(fullText)
+
+      const result = simpleAst({ astNode, fullText }, { normalize: false })
+
+      expect(result).toMatchSnapshot(this)
+    })
+  }
+})

@@ -1,9 +1,16 @@
 import { extractInlineFields } from './text/inlineFields.js'
 import { getText } from './markdown/markdownAst.js'
+import { normalizeText } from './text/normalize.js'
 import { extractTags } from './text/tags.js'
 import { findLinks } from './markdown/findLinks.js'
 
-function simpleAst ({ astNode, fullText }) {
+const DEFAULT_OPTIONS = {
+  normalize: true,
+}
+
+function simpleAst ({ astNode, fullText }, options = {}) {
+
+  const _options = { ...DEFAULT_OPTIONS, ...options }
 
   const root = {
     type: 'root', depth: 0,
@@ -20,17 +27,18 @@ function simpleAst ({ astNode, fullText }) {
         ? ancesters[ancesters.length - 1]
         : current
 
-      const block = createBlock({ astNode, fullText, type: 'block' })
+      const block = createBlock({ astNode, fullText, type: 'block' }, _options)
       block.depth = astNode.depth
       push(parent, block)
       headersStack.push(block)
       return block
     } else if (astNode.type === 'list') {
 
-      const outline = getOutline({ astNode, fullText, outlineDepth: 0 })
+      const outline = getOutline({ astNode, fullText, outlineDepth: 0 },
+        _options)
       push(current, outline)
     } else if (astNode.type === 'paragraph') {
-      const block = createBlock({ astNode, fullText, type: 'text' })
+      const block = createBlock({ astNode, fullText, type: 'text' }, _options)
       push(current, block)
     } else {
       console.log(`I don't know how to handle`, astNode.type)
@@ -40,7 +48,7 @@ function simpleAst ({ astNode, fullText }) {
   return root
 }
 
-function getOutline ({ astNode, fullText, outlineDepth, depth }) {
+function getOutline ({ astNode, fullText, outlineDepth, depth }, options) {
   const children = []
   for (const c of astNode.children) {
     // listItems
@@ -48,7 +56,8 @@ function getOutline ({ astNode, fullText, outlineDepth, depth }) {
     for (const child of c.children) {
 
       if (child.type === 'paragraph') {
-        const block = createBlock({ astNode: child, fullText, type: 'outline' })
+        const block = createBlock({ astNode: child, fullText, type: 'outline' },
+          options)
         // block.outlineDepth = outlineDepth
         if (checked) {
           block.checked = checked
@@ -56,7 +65,7 @@ function getOutline ({ astNode, fullText, outlineDepth, depth }) {
         children.push(block)
       } else if (child.type === 'list') {
         const outline = getOutline(
-          { astNode: child, fullText, outlineDepth: outlineDepth + 1 })
+          { astNode: child, fullText, outlineDepth: outlineDepth + 1 }, options)
         children.push(outline)
       } else {
         console.log(`I don't know how to handle`, child.type)
@@ -68,11 +77,11 @@ function getOutline ({ astNode, fullText, outlineDepth, depth }) {
   }
 }
 
-function createBlock ({ astNode, fullText, type }) {
+function createBlock ({ astNode, fullText, type }, options) {
   const value = getText({ astNode, fullText })
 
   const block = {
-    type, value,
+    type, value: options.normalize ? normalizeText(value) : value,
   }
 
   const tags = extractTags(value)
