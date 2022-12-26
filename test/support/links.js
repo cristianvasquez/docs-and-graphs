@@ -14,6 +14,12 @@ export default {
 ![[link 1]]
 
 ![[image.png]]
+
+The website is http://example.com see you!
+
+The website is [here](http://example.com) see you!
   
+The website is [here](protocol) see you!
+
   `,
 }

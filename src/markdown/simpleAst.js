@@ -74,10 +74,12 @@ function createBlock ({ astNode, fullText, type }) {
   const block = {
     type, value,
   }
+
   const tags = extractTags(value)
   if (tags.length) {
     block.tags = tags
   }
+
   const inlineFields = extractInlineFields(value)
   if (inlineFields.length) {
     const fields = {}
@@ -91,6 +93,7 @@ function createBlock ({ astNode, fullText, type }) {
   if (links.length) {
     block.links = links
   }
+
   return block
 }
 

@@ -33,7 +33,7 @@ Object {
     Object {
       "links": Array [
         Object {
-          "alias": "[[link 1]]",
+          "alias": undefined,
           "type": "wikiLink",
           "value": "link 1",
         },
@@ -44,7 +44,7 @@ Object {
     Object {
       "links": Array [
         Object {
-          "alias": "[[/full/path/link 1]]",
+          "alias": undefined,
           "type": "wikiLink",
           "value": "/full/path/link 1",
         },
@@ -55,7 +55,7 @@ Object {
     Object {
       "links": Array [
         Object {
-          "alias": "[[/full/path/link 1.md]]",
+          "alias": undefined,
           "type": "wikiLink",
           "value": "/full/path/link 1.md",
         },
@@ -66,7 +66,7 @@ Object {
     Object {
       "links": Array [
         Object {
-          "alias": "[Alias 2](http://example.com)",
+          "alias": "Alias 2",
           "type": "link",
           "value": "http://example.com",
         },
@@ -77,9 +77,9 @@ Object {
     Object {
       "links": Array [
         Object {
-          "alias": "[[link 1 |Alias 1]]",
+          "alias": "Alias 1",
           "type": "wikiLink",
-          "value": "link 1 |Alias 1",
+          "value": "link 1 ",
         },
       ],
       "type": "text",
@@ -92,6 +92,38 @@ Object {
     Object {
       "type": "text",
       "value": "![[image.png]]",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "link",
+          "value": "http://example.com",
+        },
+      ],
+      "type": "text",
+      "value": "The website is http://example.com see you!",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": "here",
+          "type": "link",
+          "value": "http://example.com",
+        },
+      ],
+      "type": "text",
+      "value": "The website is [here](http://example.com) see you!",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "type": "link",
+          "value": "protocol",
+        },
+      ],
+      "type": "text",
+      "value": "The website is [here](protocol) see you!",
     },
   ],
   "depth": 0,

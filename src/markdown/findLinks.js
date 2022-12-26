@@ -1,9 +1,8 @@
+import { parseWikilink, parseExternalLinks } from '../text/links.js'
 import { getText } from './markdownAst.js'
 
 const ofInterest = (root) => (root.type === 'link' || root.type ===
   'wikiLink' || root.type === 'image')
-
-// @TODO handle embedded [[embedded.png]] -> {embedded:true}
 
 function collectChilds (parent, data = []) {
   if (parent.children) {
@@ -25,14 +24,21 @@ function findLinks ({ astNode, fullText }) {
     const text = getText({ astNode: node, fullText })
 
     if (node.type === 'wikiLink') {
+
       return {
-        type: 'wikiLink', alias: text, // @TODO go from [[hello|world]] -> world
-        value: node.value,
+        type: 'wikiLink', ...parseWikilink(text),
       }
     } else if (node.type === 'link') {
+
+      const link = parseExternalLinks(text)
+      if (!link){
+        return {
+          type: 'link', value: node.url ,
+        }
+      }
+
       return {
-        type: 'link', alias: text, // @TODO go from [alias](url) -> alias
-        value: node.url,
+        type: 'link', ...link,
       }
     }
 
