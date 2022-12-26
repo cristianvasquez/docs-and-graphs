@@ -1,7 +1,7 @@
-import { extractInlineFields } from '../text/inlineFields.js'
-import { getText } from './markdownAst.js'
-import { extractTags } from '../text/tags.js'
-import { findLinks } from './findLinks.js'
+import { extractInlineFields } from './text/inlineFields.js'
+import { getText } from './markdown/markdownAst.js'
+import { extractTags } from './text/tags.js'
+import { findLinks } from './markdown/findLinks.js'
 
 function simpleAst ({ astNode, fullText }) {
 

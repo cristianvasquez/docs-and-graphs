@@ -1,8 +1,8 @@
 import { expect } from 'expect'
-import { simpleAst } from '../../src/markdown/simpleAst.js'
+import { simpleAst } from '../src/simpleAst.js'
 import toMatchSnapshot from 'expect-mocha-snapshot'
-import { createMarkdownParser } from '../../src/markdown/markdownParser.js'
-import tests from '../tests.js'
+import { createMarkdownParser } from '../src/markdown/markdownParser.js'
+import tests from './tests.js'
 
 expect.extend({ toMatchSnapshot })
 

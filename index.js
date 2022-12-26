@@ -1,4 +1,4 @@
-import { simpleAst as sa } from './src/markdown/simpleAst.js'
+import { simpleAst as sa } from './src/simpleAst.js'
 import { createMarkdownParser } from './src/markdown/markdownParser.js'
 
 function simpleAst (fullText) {
