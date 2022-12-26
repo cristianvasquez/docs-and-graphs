@@ -1,8 +1,10 @@
 import { extractInlineFields } from './text/inlineFields.js'
 import { getText } from './markdown/markdownAst.js'
 import { normalizeText } from './text/normalize.js'
+import { isString } from './text/string.js'
 import { extractTags } from './text/tags.js'
 import { findLinks } from './markdown/findLinks.js'
+import yaml from 'js-yaml'
 
 const DEFAULT_OPTIONS = {
   normalize: true,
@@ -18,7 +20,16 @@ function simpleAst ({ astNode, fullText }, options = {}) {
 
   let headersStack = [root]
   astNode.children.reduce((current, astNode) => {
-    if (astNode.type === 'heading') {
+
+    if (astNode.type === 'yaml') {
+      // Prune the children
+      processYAML({ astNode, current }, _options)
+      // astNode.children = []
+
+      return current
+    } else if (astNode.type === 'code') {
+      // @TODO implement something beautiful for turtle-publish
+    } else if (astNode.type === 'heading') {
       const ancesters = headersStack.filter(x => x.depth < astNode.depth)
       if (ancesters.length) {
         headersStack = ancesters
@@ -33,7 +44,6 @@ function simpleAst ({ astNode, fullText }, options = {}) {
       headersStack.push(block)
       return block
     } else if (astNode.type === 'list') {
-
       const outline = getOutline({ astNode, fullText, outlineDepth: 0 },
         _options)
       push(current, outline)
@@ -46,6 +56,23 @@ function simpleAst ({ astNode, fullText }, options = {}) {
     return current
   }, root)
   return root
+}
+
+function processYAML ({ astNode, current }, options) {
+
+  const inlineFields = current.inlineFields ?? {}
+
+  try {
+    const doc = yaml.load(astNode.value)
+    for (const [key, value] of Object.entries(doc)) {
+
+      const shouldNormalize = options.normalize && isString(value)
+      inlineFields[key] = shouldNormalize ? normalizeText(value) : value
+    }
+    current.inlineFields = inlineFields
+  } catch (e) {
+    console.log(e)
+  }
 }
 
 function getOutline ({ astNode, fullText, outlineDepth, depth }, options) {

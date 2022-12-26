@@ -290,6 +290,28 @@ Object {
 }
 `;
 
+exports[`astDag Yaml 1`] = `
+Object {
+  "depth": 0,
+  "inlineFields": Object {
+    "date updated": "2021-08-05T17:10:34+02:00",
+    "one": Array [
+      "Two",
+      Object {
+        "Three": Array [
+          "Other",
+        ],
+      },
+    ],
+    "tags": Array [
+      "cats",
+      "dogs",
+    ],
+  },
+  "type": "root",
+}
+`;
+
 exports[`astDag normalize:false Headings 1`] = `
 Object {
   "children": Array [
@@ -576,6 +598,28 @@ Object {
     },
   ],
   "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`astDag normalize:false Yaml 1`] = `
+Object {
+  "depth": 0,
+  "inlineFields": Object {
+    "date updated": "2021-08-05T17:10:34+02:00",
+    "one": Array [
+      "Two",
+      Object {
+        "Three": Array [
+          "Other",
+        ],
+      },
+    ],
+    "tags": Array [
+      "cats",
+      "dogs",
+    ],
+  },
   "type": "root",
 }
 `;
