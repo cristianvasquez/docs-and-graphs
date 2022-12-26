@@ -1,6 +1,8 @@
 import { parseWikilink, parseExternalLinks } from '../text/links.js'
 import { getText } from './markdownAst.js'
 
+//@TODO do some profiling, if markdown use(wikiLinkPlugin) is too expensive do this externally in one place
+
 const ofInterest = (root) => (root.type === 'link' || root.type ===
   'wikiLink' || root.type === 'image')
 
@@ -31,9 +33,9 @@ function findLinks ({ astNode, fullText }) {
     } else if (node.type === 'link') {
 
       const link = parseExternalLinks(text)
-      if (!link){
+      if (!link) {
         return {
-          type: 'link', value: node.url ,
+          type: 'link', value: node.url,
         }
       }
 

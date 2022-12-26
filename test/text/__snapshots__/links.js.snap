@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parseExternalLinks ![[image.png]] 1`] = `undefined`;
+
+exports[`parseExternalLinks ![[link 1]] 1`] = `undefined`;
+
+exports[`parseExternalLinks [[/full/path/link 1.md]] 1`] = `undefined`;
+
+exports[`parseExternalLinks [[/full/path/link 1]] 1`] = `undefined`;
+
+exports[`parseExternalLinks [[link 1 |Alias 1]] 1`] = `undefined`;
+
+exports[`parseExternalLinks [[link 1]] 1`] = `undefined`;
+
+exports[`parseExternalLinks [Alias 2](http://example.com) 1`] = `
+Object {
+  "alias": "Alias 2",
+  "value": "http://example.com",
+}
+`;
+
+exports[`parseExternalLinks [Alias 3](https://example.com) 1`] = `
+Object {
+  "alias": "Alias 3",
+  "value": "https://example.com",
+}
+`;
+
+exports[`parseExternalLinks [protocol unknown](file://) 1`] = `undefined`;
+
+exports[`parseExternalLinks [protocol unknown](hello) 1`] = `undefined`;
+
+exports[`parseExternalLinks http://example.com 1`] = `
+Object {
+  "alias": undefined,
+  "value": "http://example.com",
+}
+`;
+
+exports[`parseExternalLinks https://example.com 1`] = `
+Object {
+  "alias": undefined,
+  "value": "https://example.com",
+}
+`;
+
+exports[`parseExternalLinks no link 1`] = `undefined`;
+
+exports[`parseExternalLinks some text http://example.com more text 1`] = `undefined`;
+
+exports[`parseExternalLinks some text2 https://example.com more text 1`] = `undefined`;
+
+exports[`parseWikilink ![[image.png]] 1`] = `
+Object {
+  "alias": undefined,
+  "transclude": true,
+  "value": "image.png",
+}
+`;
+
+exports[`parseWikilink ![[link 1]] 1`] = `
+Object {
+  "alias": undefined,
+  "transclude": true,
+  "value": "link 1",
+}
+`;
+
+exports[`parseWikilink [[/full/path/link 1.md]] 1`] = `
+Object {
+  "alias": undefined,
+  "value": "/full/path/link 1.md",
+}
+`;
+
+exports[`parseWikilink [[/full/path/link 1]] 1`] = `
+Object {
+  "alias": undefined,
+  "value": "/full/path/link 1",
+}
+`;
+
+exports[`parseWikilink [[link 1 |Alias 1]] 1`] = `
+Object {
+  "alias": "Alias 1",
+  "value": "link 1 ",
+}
+`;
+
+exports[`parseWikilink [[link 1]] 1`] = `
+Object {
+  "alias": undefined,
+  "value": "link 1",
+}
+`;
+
+exports[`parseWikilink [Alias 2](http://example.com) 1`] = `undefined`;
+
+exports[`parseWikilink [Alias 3](https://example.com) 1`] = `undefined`;
+
+exports[`parseWikilink [protocol unknown](file://) 1`] = `undefined`;
+
+exports[`parseWikilink [protocol unknown](hello) 1`] = `undefined`;
+
+exports[`parseWikilink http://example.com 1`] = `undefined`;
+
+exports[`parseWikilink https://example.com 1`] = `undefined`;
+
+exports[`parseWikilink no link 1`] = `undefined`;
+
+exports[`parseWikilink some text http://example.com more text 1`] = `undefined`;
+
+exports[`parseWikilink some text2 https://example.com more text 1`] = `undefined`;
