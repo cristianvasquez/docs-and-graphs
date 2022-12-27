@@ -27,6 +27,95 @@ Object {
 }
 `;
 
+exports[`astDag Inline fields 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "inlineFields": Object {
+        "inline ": " field",
+      },
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "inlineFields": Object {
+        " inline ": " field ",
+      },
+      "type": "text",
+      "value": "nested",
+    },
+    Object {
+      "inlineFields": Object {
+        "**Thoughts**": " It was decent.",
+      },
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "inlineFields": Object {
+        "**Rating**": " 6'",
+      },
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "inlineFields": Object {
+        "length": " 2 hours",
+        "mood": " okay",
+      },
+      "type": "text",
+      "value": "|",
+    },
+    Object {
+      "inlineFields": Object {
+        " inline ": " field",
+      },
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "inlineFields": Object {
+        " inline ": " field ",
+      },
+      "type": "text",
+      "value": "nested",
+    },
+    Object {
+      "inlineFields": Object {
+        " **Thoughts**": " It was decent.",
+      },
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "inlineFields": Object {
+        " **Rating**": " 6",
+      },
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "inlineFields": Object {
+        " length": " 2 hours",
+        " mood": " okay",
+      },
+      "type": "text",
+      "value": "|",
+    },
+    Object {
+      "type": "text",
+      "value": "No inline fields",
+    },
+    Object {
+      "type": "text",
+      "value": "Too :: many :: inline :: fields",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
 exports[`astDag Links 1`] = `
 Object {
   "children": Array [
@@ -332,6 +421,95 @@ Object {
       "depth": 1,
       "type": "block",
       "value": "# H1",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`astDag normalize:false Inline fields 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "inlineFields": Object {
+        "inline ": " field",
+      },
+      "type": "text",
+      "value": "inline :: field",
+    },
+    Object {
+      "inlineFields": Object {
+        " inline ": " field ",
+      },
+      "type": "text",
+      "value": "nested ( inline :: field )",
+    },
+    Object {
+      "inlineFields": Object {
+        "**Thoughts**": " It was decent.",
+      },
+      "type": "text",
+      "value": "**Thoughts**:: It was decent.",
+    },
+    Object {
+      "inlineFields": Object {
+        "**Rating**": " 6'",
+      },
+      "type": "text",
+      "value": "**Rating**:: 6'",
+    },
+    Object {
+      "inlineFields": Object {
+        "length": " 2 hours",
+        "mood": " okay",
+      },
+      "type": "text",
+      "value": "[mood:: okay] | [length:: 2 hours]",
+    },
+    Object {
+      "inlineFields": Object {
+        " inline ": " field",
+      },
+      "type": "text",
+      "value": "subject :: inline :: field",
+    },
+    Object {
+      "inlineFields": Object {
+        " inline ": " field ",
+      },
+      "type": "text",
+      "value": "nested ( subject :: inline :: field )",
+    },
+    Object {
+      "inlineFields": Object {
+        " **Thoughts**": " It was decent.",
+      },
+      "type": "text",
+      "value": "subject :: **Thoughts**:: It was decent.",
+    },
+    Object {
+      "inlineFields": Object {
+        " **Rating**": " 6",
+      },
+      "type": "text",
+      "value": "subject :: **Rating**:: 6",
+    },
+    Object {
+      "inlineFields": Object {
+        " length": " 2 hours",
+        " mood": " okay",
+      },
+      "type": "text",
+      "value": "[subject :: mood:: okay] | [subject :: length:: 2 hours]",
+    },
+    Object {
+      "type": "text",
+      "value": "No inline fields",
+    },
+    Object {
+      "type": "text",
+      "value": "Too :: many :: inline :: fields",
     },
   ],
   "depth": 0,
