@@ -1,10 +1,11 @@
 import { extractInlineFields } from './text/inlineFields.js'
 import { getText } from './markdown/markdownAst.js'
 import { normalizeText } from './text/normalize.js'
-import { isString } from './text/string.js'
 import { extractTags } from './text/tags.js'
 import { findLinks } from './markdown/findLinks.js'
-import yaml from 'js-yaml'
+import {
+  annotateInlineFields, annotateTags, annotateYAML,
+} from './defaultAnnotator.js'
 
 const DEFAULT_OPTIONS = {
   normalize: true,
@@ -22,11 +23,8 @@ function simpleAst ({ astNode, fullText }, options = {}) {
   astNode.children.reduce((current, astNode) => {
 
     if (astNode.type === 'yaml') {
-      // Prune the children
-      processYAML({ astNode, current }, _options)
-      // astNode.children = []
-
-      return current
+      return annotateYAML({ value: astNode.value, currentNode: current },
+        _options)
     } else if (astNode.type === 'code') {
       // @TODO implement something beautiful for turtle-publish
     } else if (astNode.type === 'heading') {
@@ -56,23 +54,6 @@ function simpleAst ({ astNode, fullText }, options = {}) {
     return current
   }, root)
   return root
-}
-
-function processYAML ({ astNode, current }, options) {
-
-  const inlineFields = current.inlineFields ?? {}
-
-  try {
-    const doc = yaml.load(astNode.value)
-    for (const [key, value] of Object.entries(doc)) {
-
-      const shouldNormalize = options.normalize && isString(value)
-      inlineFields[key] = shouldNormalize ? normalizeText(value) : value
-    }
-    current.inlineFields = inlineFields
-  } catch (e) {
-    console.log(e)
-  }
 }
 
 function getOutline ({ astNode, fullText, outlineDepth, depth }, options) {
@@ -108,7 +89,7 @@ function createBlock ({ astNode, fullText, type }, options) {
   const value = getText({ astNode, fullText })
 
   const block = {
-    type, value: options.normalize ? normalizeText(value) : value,
+    type,
   }
 
   const tags = extractTags(value)
@@ -116,19 +97,15 @@ function createBlock ({ astNode, fullText, type }, options) {
     block.tags = tags
   }
 
-  const inlineFields = extractInlineFields(value)
-  if (inlineFields.length) {
-    const fields = {}
-    for (const { property, value } of inlineFields) {
-      fields[property] = value
-    }
-    block.inlineFields = fields
-  }
+  annotateTags({ value, currentNode: block }, options)
+  annotateInlineFields({ value, currentNode: block }, options)
 
   const links = findLinks({ astNode, fullText })
   if (links.length) {
     block.links = links
   }
+
+  block.value = options.normalize ? normalizeText(value) : value
 
   return block
 }
