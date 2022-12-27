@@ -1,7 +1,6 @@
 # docs-and-graphs
 
-This lib provides a simplified Abstract Syntax tree from markdown.
-
+This lib parses markdown into a simplified Abstract Syntax tree.
 
 ## Why?
 
