@@ -1,11 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`extractInlineFields (a::b::c) (a::f::d) 1`] = `
+Array [
+  Object {
+    "chunks": Array [
+      "a",
+      "b",
+      "c",
+    ],
+    "raw": "(a::b::c)",
+  },
+  Object {
+    "chunks": Array [
+      "a",
+      "f",
+      "d",
+    ],
+    "raw": "(a::f::d)",
+  },
+]
+`;
+
 exports[`extractInlineFields **Rating**:: 6 1`] = `
 Array [
   Object {
-    "property": "**Rating**",
+    "chunks": Array [
+      "**Rating**",
+      " 6",
+    ],
     "raw": "**Rating**:: 6",
-    "value": " 6",
   },
 ]
 `;
@@ -13,9 +36,11 @@ Array [
 exports[`extractInlineFields **Thoughts**:: It was decent. 1`] = `
 Array [
   Object {
-    "property": "**Thoughts**",
+    "chunks": Array [
+      "**Thoughts**",
+      " It was decent.",
+    ],
     "raw": "**Thoughts**:: It was decent.",
-    "value": " It was decent.",
   },
 ]
 `;
@@ -23,14 +48,18 @@ Array [
 exports[`extractInlineFields [mood:: okay] | [length:: 2 hours] 1`] = `
 Array [
   Object {
-    "property": "mood",
+    "chunks": Array [
+      "mood",
+      " okay",
+    ],
     "raw": "[mood:: okay]",
-    "value": " okay",
   },
   Object {
-    "property": "length",
+    "chunks": Array [
+      "length",
+      " 2 hours",
+    ],
     "raw": "[length:: 2 hours]",
-    "value": " 2 hours",
   },
 ]
 `;
@@ -38,30 +67,57 @@ Array [
 exports[`extractInlineFields [subject :: mood:: okay] | [subject :: length:: 2 hours] 1`] = `
 Array [
   Object {
-    "property": " mood",
+    "chunks": Array [
+      "subject ",
+      " mood",
+      " okay",
+    ],
     "raw": "[subject :: mood:: okay]",
-    "subject": "subject ",
-    "value": " okay",
   },
   Object {
-    "property": " length",
+    "chunks": Array [
+      "subject ",
+      " length",
+      " 2 hours",
+    ],
     "raw": "[subject :: length:: 2 hours]",
-    "subject": "subject ",
-    "value": " 2 hours",
   },
 ]
 `;
 
-exports[`extractInlineFields No inline fields 1`] = `Array []`;
+exports[`extractInlineFields No inline fields 1`] = `
+Array [
+  Object {
+    "chunks": Array [
+      "No inline fields",
+    ],
+    "raw": "No inline fields",
+  },
+]
+`;
 
-exports[`extractInlineFields Too :: many :: inline :: fields  1`] = `Array []`;
+exports[`extractInlineFields Too :: many :: inline :: fields  1`] = `
+Array [
+  Object {
+    "chunks": Array [
+      "Too ",
+      " many ",
+      " inline ",
+      " fields ",
+    ],
+    "raw": "Too :: many :: inline :: fields ",
+  },
+]
+`;
 
 exports[`extractInlineFields inline :: field 1`] = `
 Array [
   Object {
-    "property": "inline ",
+    "chunks": Array [
+      "inline ",
+      " field",
+    ],
     "raw": "inline :: field",
-    "value": " field",
   },
 ]
 `;
@@ -69,9 +125,11 @@ Array [
 exports[`extractInlineFields nested ( inline :: field ) 1`] = `
 Array [
   Object {
-    "property": " inline ",
+    "chunks": Array [
+      " inline ",
+      " field ",
+    ],
     "raw": "( inline :: field )",
-    "value": " field ",
   },
 ]
 `;
@@ -79,10 +137,12 @@ Array [
 exports[`extractInlineFields nested ( subject :: inline :: field ) 1`] = `
 Array [
   Object {
-    "property": " inline ",
+    "chunks": Array [
+      " subject ",
+      " inline ",
+      " field ",
+    ],
     "raw": "( subject :: inline :: field )",
-    "subject": " subject ",
-    "value": " field ",
   },
 ]
 `;
@@ -90,10 +150,12 @@ Array [
 exports[`extractInlineFields subject :: **Rating**:: 6 1`] = `
 Array [
   Object {
-    "property": " **Rating**",
+    "chunks": Array [
+      "subject ",
+      " **Rating**",
+      " 6",
+    ],
     "raw": "subject :: **Rating**:: 6",
-    "subject": "subject ",
-    "value": " 6",
   },
 ]
 `;
@@ -101,10 +163,12 @@ Array [
 exports[`extractInlineFields subject :: **Thoughts**:: It was decent. 1`] = `
 Array [
   Object {
-    "property": " **Thoughts**",
+    "chunks": Array [
+      "subject ",
+      " **Thoughts**",
+      " It was decent.",
+    ],
     "raw": "subject :: **Thoughts**:: It was decent.",
-    "subject": "subject ",
-    "value": " It was decent.",
   },
 ]
 `;
@@ -112,13 +176,17 @@ Array [
 exports[`extractInlineFields subject :: inline :: field 1`] = `
 Array [
   Object {
-    "property": " inline ",
+    "chunks": Array [
+      "subject ",
+      " inline ",
+      " field",
+    ],
     "raw": "subject :: inline :: field",
-    "subject": "subject ",
-    "value": " field",
   },
 ]
 `;
+
+exports[`removeInlineFields (a::b::c) (a::f::d) 1`] = `" "`;
 
 exports[`removeInlineFields **Rating**:: 6 1`] = `""`;
 
@@ -130,7 +198,7 @@ exports[`removeInlineFields [subject :: mood:: okay] | [subject :: length:: 2 ho
 
 exports[`removeInlineFields No inline fields 1`] = `"No inline fields"`;
 
-exports[`removeInlineFields Too :: many :: inline :: fields  1`] = `"Too :: many :: inline :: fields "`;
+exports[`removeInlineFields Too :: many :: inline :: fields  1`] = `""`;
 
 exports[`removeInlineFields inline :: field 1`] = `""`;
 

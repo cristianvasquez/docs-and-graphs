@@ -1,12 +1,11 @@
 import yaml from 'js-yaml'
 import { extractInlineFields } from './text/inlineFields.js'
-import { normalizeText } from './text/normalize.js'
-import { isString } from './text/string.js'
+import { normalizeObject } from './text/normalize.js'
 import { extractTags } from './text/tags.js'
 
 function createNormalizer (options) {
   if (options.normalize) {
-    return (value) => isString(value) ? normalizeText(value) : value
+    return (value) => normalizeObject(value)
   }
   return (value) => value
 }
@@ -14,13 +13,9 @@ function createNormalizer (options) {
 function annotateYAML ({ value, currentNode }, options) {
   const maybeNormalize = createNormalizer(options)
 
-  const inlineFields = currentNode.inlineFields ?? {}
   try {
     const doc = yaml.load(value)
-    for (const [key, value] of Object.entries(doc)) {
-      inlineFields[maybeNormalize(key)] = maybeNormalize(value)
-    }
-    currentNode.inlineFields = inlineFields
+    currentNode.data = [maybeNormalize(doc)]
   } catch (e) {
     console.log(e)
   }
@@ -35,17 +30,28 @@ function annotateTags ({ value, currentNode }, options) {
   return currentNode
 }
 
+function arrayToObject (arr) {
+  if (arr.length === 0) return {}
+  if (arr.length === 1) return arr[0]
+
+  let obj = {}
+  obj[arr[0]] = arrayToObject(arr.slice(1))
+  return obj
+}
+
 function annotateInlineFields ({ value, currentNode }, options) {
   const maybeNormalize = createNormalizer(options)
 
-  const inlineFields = extractInlineFields(value)
-  if (inlineFields.length) {
-    const fields = {}
-    for (const { property, value } of inlineFields) {
-      fields[maybeNormalize(property)] = maybeNormalize(value)
-    }
-    currentNode.inlineFields = fields
+  const newData = extractInlineFields(value).
+    map(({ chunks, raw }) => chunks.length > 1 ? arrayToObject(chunks) : []).
+    map(maybeNormalize)
+
+  const data = [...currentNode.inlineFields ?? [], ...newData]
+
+  if (data.flat().length) {
+    currentNode.data = data
   }
+
   return currentNode
 }
 

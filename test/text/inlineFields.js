@@ -18,7 +18,7 @@ const markdown = [
   '[subject :: mood:: okay] | [subject :: length:: 2 hours]',
   'No inline fields',
   'Too :: many :: inline :: fields ',
-]
+  '(a::b::c) (a::f::d)']
 
 expect.extend({ toMatchSnapshot })
 

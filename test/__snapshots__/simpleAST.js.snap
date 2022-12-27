@@ -31,74 +31,110 @@ exports[`astDag Inline fields 1`] = `
 Object {
   "children": Array [
     Object {
-      "inlineFields": Object {
-        "inline": "field",
-      },
+      "data": Array [
+        Object {
+          "inline ": "field",
+        },
+      ],
       "type": "text",
       "value": "",
     },
     Object {
-      "inlineFields": Object {
-        "inline": "field",
-      },
+      "data": Array [
+        Object {
+          " inline ": "field",
+        },
+      ],
       "type": "text",
       "value": "nested",
     },
     Object {
-      "inlineFields": Object {
-        "**Thoughts**": "It was decent.",
-      },
+      "data": Array [
+        Object {
+          "**Thoughts**": "It was decent.",
+        },
+      ],
       "type": "text",
       "value": "",
     },
     Object {
-      "inlineFields": Object {
-        "**Rating**": "6'",
-      },
+      "data": Array [
+        Object {
+          "**Rating**": "6'",
+        },
+      ],
       "type": "text",
       "value": "",
     },
     Object {
-      "inlineFields": Object {
-        "length": "2 hours",
-        "mood": "okay",
-      },
+      "data": Array [
+        Object {
+          "mood": "okay",
+        },
+        Object {
+          "length": "2 hours",
+        },
+      ],
       "type": "text",
       "value": "|",
     },
     Object {
-      "inlineFields": Object {
-        "inline": "field",
-      },
+      "data": Array [
+        Object {
+          "subject ": Object {
+            " inline ": "field",
+          },
+        },
+      ],
       "type": "text",
       "value": "",
     },
     Object {
-      "inlineFields": Object {
-        "inline": "field",
-      },
+      "data": Array [
+        Object {
+          " subject ": Object {
+            " inline ": "field",
+          },
+        },
+      ],
       "type": "text",
       "value": "nested",
     },
     Object {
-      "inlineFields": Object {
-        "**Thoughts**": "It was decent.",
-      },
+      "data": Array [
+        Object {
+          "subject ": Object {
+            " **Thoughts**": "It was decent.",
+          },
+        },
+      ],
       "type": "text",
       "value": "",
     },
     Object {
-      "inlineFields": Object {
-        "**Rating**": "6",
-      },
+      "data": Array [
+        Object {
+          "subject ": Object {
+            " **Rating**": "6",
+          },
+        },
+      ],
       "type": "text",
       "value": "",
     },
     Object {
-      "inlineFields": Object {
-        "length": "2 hours",
-        "mood": "okay",
-      },
+      "data": Array [
+        Object {
+          "subject ": Object {
+            " mood": "okay",
+          },
+        },
+        Object {
+          "subject ": Object {
+            " length": "2 hours",
+          },
+        },
+      ],
       "type": "text",
       "value": "|",
     },
@@ -107,8 +143,17 @@ Object {
       "value": "No inline fields",
     },
     Object {
+      "data": Array [
+        Object {
+          "Too ": Object {
+            " many ": Object {
+              " inline ": "fields",
+            },
+          },
+        },
+      ],
       "type": "text",
-      "value": "Too :: many :: inline :: fields",
+      "value": "",
     },
   ],
   "depth": 0,
@@ -284,9 +329,11 @@ Object {
         Object {
           "children": Array [
             Object {
-              "inlineFields": Object {
-                "number": "42",
-              },
+              "data": Array [
+                Object {
+                  "number ": "42",
+                },
+              ],
               "type": "text",
               "value": "",
             },
@@ -324,10 +371,12 @@ Object {
           "value": "Interests",
         },
       ],
+      "data": Array [
+        Object {
+          "age ": "42",
+        },
+      ],
       "depth": 1,
-      "inlineFields": Object {
-        "age": "42",
-      },
       "type": "block",
       "value": "Bob",
     },
@@ -357,9 +406,11 @@ Object {
         Object {
           "children": Array [
             Object {
-              "inlineFields": Object {
-                "age": "56",
-              },
+              "data": Array [
+                Object {
+                  "age ": "56",
+                },
+              ],
               "type": "text",
               "value": "Charlie is a good guy.",
             },
@@ -381,22 +432,24 @@ Object {
 
 exports[`astDag Yaml 1`] = `
 Object {
+  "data": Array [
+    Object {
+      "date updated": "2021-08-05T17:10:34+02:00",
+      "one": Array [
+        "Two",
+        Object {
+          "Three": Array [
+            "Other",
+          ],
+        },
+      ],
+      "tags": Array [
+        "cats",
+        "dogs",
+      ],
+    },
+  ],
   "depth": 0,
-  "inlineFields": Object {
-    "date updated": "2021-08-05T17:10:34+02:00",
-    "one": Array [
-      "Two",
-      Object {
-        "Three": Array [
-          "Other",
-        ],
-      },
-    ],
-    "tags": Array [
-      "cats",
-      "dogs",
-    ],
-  },
   "type": "root",
 }
 `;
@@ -432,74 +485,110 @@ exports[`astDag normalize:false Inline fields 1`] = `
 Object {
   "children": Array [
     Object {
-      "inlineFields": Object {
-        "inline ": " field",
-      },
+      "data": Array [
+        Object {
+          "inline ": " field",
+        },
+      ],
       "type": "text",
       "value": "inline :: field",
     },
     Object {
-      "inlineFields": Object {
-        " inline ": " field ",
-      },
+      "data": Array [
+        Object {
+          " inline ": " field ",
+        },
+      ],
       "type": "text",
       "value": "nested ( inline :: field )",
     },
     Object {
-      "inlineFields": Object {
-        "**Thoughts**": " It was decent.",
-      },
+      "data": Array [
+        Object {
+          "**Thoughts**": " It was decent.",
+        },
+      ],
       "type": "text",
       "value": "**Thoughts**:: It was decent.",
     },
     Object {
-      "inlineFields": Object {
-        "**Rating**": " 6'",
-      },
+      "data": Array [
+        Object {
+          "**Rating**": " 6'",
+        },
+      ],
       "type": "text",
       "value": "**Rating**:: 6'",
     },
     Object {
-      "inlineFields": Object {
-        "length": " 2 hours",
-        "mood": " okay",
-      },
+      "data": Array [
+        Object {
+          "mood": " okay",
+        },
+        Object {
+          "length": " 2 hours",
+        },
+      ],
       "type": "text",
       "value": "[mood:: okay] | [length:: 2 hours]",
     },
     Object {
-      "inlineFields": Object {
-        " inline ": " field",
-      },
+      "data": Array [
+        Object {
+          "subject ": Object {
+            " inline ": " field",
+          },
+        },
+      ],
       "type": "text",
       "value": "subject :: inline :: field",
     },
     Object {
-      "inlineFields": Object {
-        " inline ": " field ",
-      },
+      "data": Array [
+        Object {
+          " subject ": Object {
+            " inline ": " field ",
+          },
+        },
+      ],
       "type": "text",
       "value": "nested ( subject :: inline :: field )",
     },
     Object {
-      "inlineFields": Object {
-        " **Thoughts**": " It was decent.",
-      },
+      "data": Array [
+        Object {
+          "subject ": Object {
+            " **Thoughts**": " It was decent.",
+          },
+        },
+      ],
       "type": "text",
       "value": "subject :: **Thoughts**:: It was decent.",
     },
     Object {
-      "inlineFields": Object {
-        " **Rating**": " 6",
-      },
+      "data": Array [
+        Object {
+          "subject ": Object {
+            " **Rating**": " 6",
+          },
+        },
+      ],
       "type": "text",
       "value": "subject :: **Rating**:: 6",
     },
     Object {
-      "inlineFields": Object {
-        " length": " 2 hours",
-        " mood": " okay",
-      },
+      "data": Array [
+        Object {
+          "subject ": Object {
+            " mood": " okay",
+          },
+        },
+        Object {
+          "subject ": Object {
+            " length": " 2 hours",
+          },
+        },
+      ],
       "type": "text",
       "value": "[subject :: mood:: okay] | [subject :: length:: 2 hours]",
     },
@@ -508,6 +597,15 @@ Object {
       "value": "No inline fields",
     },
     Object {
+      "data": Array [
+        Object {
+          "Too ": Object {
+            " many ": Object {
+              " inline ": " fields",
+            },
+          },
+        },
+      ],
       "type": "text",
       "value": "Too :: many :: inline :: fields",
     },
@@ -685,9 +783,11 @@ Object {
         Object {
           "children": Array [
             Object {
-              "inlineFields": Object {
-                "number ": " 42",
-              },
+              "data": Array [
+                Object {
+                  "number ": " 42",
+                },
+              ],
               "type": "text",
               "value": "number :: 42",
             },
@@ -725,10 +825,12 @@ Object {
           "value": "## Interests",
         },
       ],
+      "data": Array [
+        Object {
+          "age ": " 42",
+        },
+      ],
       "depth": 1,
-      "inlineFields": Object {
-        "age ": " 42",
-      },
       "type": "block",
       "value": "# Bob (age :: 42)",
     },
@@ -758,9 +860,11 @@ Object {
         Object {
           "children": Array [
             Object {
-              "inlineFields": Object {
-                "age ": " 56",
-              },
+              "data": Array [
+                Object {
+                  "age ": " 56",
+                },
+              ],
               "type": "text",
               "value": "Charlie is a good guy. (age :: 56)",
             },
@@ -782,22 +886,24 @@ Object {
 
 exports[`astDag normalize:false Yaml 1`] = `
 Object {
+  "data": Array [
+    Object {
+      "date updated": "2021-08-05T17:10:34+02:00",
+      "one": Array [
+        "Two",
+        Object {
+          "Three": Array [
+            "Other",
+          ],
+        },
+      ],
+      "tags": Array [
+        "cats",
+        "dogs",
+      ],
+    },
+  ],
   "depth": 0,
-  "inlineFields": Object {
-    "date updated": "2021-08-05T17:10:34+02:00",
-    "one": Array [
-      "Two",
-      Object {
-        "Three": Array [
-          "Other",
-        ],
-      },
-    ],
-    "tags": Array [
-      "cats",
-      "dogs",
-    ],
-  },
   "type": "root",
 }
 `;

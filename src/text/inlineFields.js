@@ -7,22 +7,9 @@ const PARENTHESIS_TYPES = [
 
 function keyValue ({ content, parenthesis }) {
   const chunks = content.split('::')
-  if (chunks.length === 2) {
-    return {
-      property: chunks[0],
-      value: chunks[1],
-      raw: `${parenthesis.left}${content}${parenthesis.right}`,
-    }
+  return {
+    chunks: chunks, raw: `${parenthesis.left}${content}${parenthesis.right}`,
   }
-  if (chunks.length === 3) {
-    return {
-      subject: chunks[0],
-      property: chunks[1],
-      value: chunks[2],
-      raw: `${parenthesis.left}${content}${parenthesis.right}`,
-    }
-  }
-  return undefined
 }
 
 function parseParenthesis (str) {
@@ -61,8 +48,10 @@ function extractInlineFields (str) {
 
 function removeInlineFields (str) {
   let result = str
-  for (const current of extractInlineFields(str)) {
-    result = result.replaceAll(current.raw, '')
+  for (const { chunks, raw } of extractInlineFields(str)) {
+    if (chunks.length > 1) {
+      result = result.replaceAll(raw, '')
+    }
   }
   return result
 }

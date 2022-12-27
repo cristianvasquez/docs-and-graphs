@@ -1,6 +1,6 @@
 import { removeInlineFields } from './inlineFields.js'
 import { removeTags } from './tags.js'
-import { trim } from './string.js'
+import { trim, isString } from './string.js'
 
 function normalizeText (str) {
   const a = removeInlineFields(str)
@@ -15,4 +15,26 @@ function normalizeText (str) {
   return trim(withoutList)
 }
 
-export { normalizeText }
+function apply (obj, fn) {
+  if (isString(obj)) {
+    return fn(obj)
+  }
+
+  if (Array.isArray(obj)) {
+    return obj.map(element => apply(element, fn))
+  }
+  if (typeof obj === 'object') {
+    return Object.keys(obj).reduce((result, key) => {
+      result[key] = apply(obj[key], fn)
+      return result
+    }, {})
+  }
+  return obj
+}
+
+function normalizeObject (obj) {
+  return apply(obj, str => normalizeText(str))
+
+}
+
+export { normalizeText, normalizeObject }
