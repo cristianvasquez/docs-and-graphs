@@ -4,13 +4,21 @@ import { normalizeText } from './text/normalize.js'
 import { isString } from './text/string.js'
 import { extractTags } from './text/tags.js'
 
+function createNormalizer (options) {
+  if (options.normalize) {
+    return (value) => isString(value) ? normalizeText(value) : value
+  }
+  return (value) => value
+}
+
 function annotateYAML ({ value, currentNode }, options) {
+  const maybeNormalize = createNormalizer(options)
+
   const inlineFields = currentNode.inlineFields ?? {}
   try {
     const doc = yaml.load(value)
     for (const [key, value] of Object.entries(doc)) {
-      const shouldNormalize = options.normalize && isString(value)
-      inlineFields[key] = shouldNormalize ? normalizeText(value) : value
+      inlineFields[maybeNormalize(key)] = maybeNormalize(value)
     }
     currentNode.inlineFields = inlineFields
   } catch (e) {
@@ -28,11 +36,13 @@ function annotateTags ({ value, currentNode }, options) {
 }
 
 function annotateInlineFields ({ value, currentNode }, options) {
+  const maybeNormalize = createNormalizer(options)
+
   const inlineFields = extractInlineFields(value)
   if (inlineFields.length) {
     const fields = {}
     for (const { property, value } of inlineFields) {
-      fields[property] = value
+      fields[maybeNormalize(property)] = maybeNormalize(value)
     }
     currentNode.inlineFields = fields
   }

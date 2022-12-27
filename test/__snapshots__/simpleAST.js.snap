@@ -32,72 +32,72 @@ Object {
   "children": Array [
     Object {
       "inlineFields": Object {
-        "inline ": " field",
+        "inline": "field",
       },
       "type": "text",
       "value": "",
     },
     Object {
       "inlineFields": Object {
-        " inline ": " field ",
+        "inline": "field",
       },
       "type": "text",
       "value": "nested",
     },
     Object {
       "inlineFields": Object {
-        "**Thoughts**": " It was decent.",
+        "**Thoughts**": "It was decent.",
       },
       "type": "text",
       "value": "",
     },
     Object {
       "inlineFields": Object {
-        "**Rating**": " 6'",
+        "**Rating**": "6'",
       },
       "type": "text",
       "value": "",
     },
     Object {
       "inlineFields": Object {
-        "length": " 2 hours",
-        "mood": " okay",
+        "length": "2 hours",
+        "mood": "okay",
       },
       "type": "text",
       "value": "|",
     },
     Object {
       "inlineFields": Object {
-        " inline ": " field",
+        "inline": "field",
       },
       "type": "text",
       "value": "",
     },
     Object {
       "inlineFields": Object {
-        " inline ": " field ",
+        "inline": "field",
       },
       "type": "text",
       "value": "nested",
     },
     Object {
       "inlineFields": Object {
-        " **Thoughts**": " It was decent.",
+        "**Thoughts**": "It was decent.",
       },
       "type": "text",
       "value": "",
     },
     Object {
       "inlineFields": Object {
-        " **Rating**": " 6",
+        "**Rating**": "6",
       },
       "type": "text",
       "value": "",
     },
     Object {
       "inlineFields": Object {
-        " length": " 2 hours",
-        " mood": " okay",
+        "length": "2 hours",
+        "mood": "okay",
       },
       "type": "text",
       "value": "|",
@@ -285,7 +285,7 @@ Object {
           "children": Array [
             Object {
               "inlineFields": Object {
-                "number ": " 42",
+                "number": "42",
               },
               "type": "text",
               "value": "",
@@ -326,7 +326,7 @@ Object {
       ],
       "depth": 1,
       "inlineFields": Object {
-        "age ": " 42",
+        "age": "42",
       },
       "type": "block",
       "value": "Bob",
@@ -358,7 +358,7 @@ Object {
           "children": Array [
             Object {
               "inlineFields": Object {
-                "age ": " 56",
+                "age": "56",
               },
               "type": "text",
               "value": "Charlie is a good guy.",
