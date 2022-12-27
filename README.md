@@ -8,7 +8,7 @@ Several Note-Taking apps are 'node-based,' 'markdown based,' etc.
 
 I use Markdown, and I cannot get used to outlines. However, I recognize the benefits of having node-based systems, where you can reference a specific node from any other node.
 
-So my question was:  How can I have these nodes, while using Markdown?
+So my question was:  How can I have these nodes, and still use Markdown?
 
 After considering this, I realized that Markdown has some structure. It has headers that can be inside other headings and lists that can be inside other lists. These can be the nodes that this library generates.
 
