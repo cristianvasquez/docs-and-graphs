@@ -1,9 +1,11 @@
 const PARENTHESIS_TYPES = [
   {
     left: '(', right: ')',
-  }, {
-    left: '[', right: ']',
-  }]
+  }, // Removing support for [] as I haven't seen it in the wild
+  // {
+  //   left: '[', right: ']',
+  // }
+]
 
 function keyValue ({ content, parenthesis }) {
   const chunks = content.split('::')

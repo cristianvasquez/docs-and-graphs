@@ -9,8 +9,6 @@ export default {
 
   **Rating**:: 6'
 
-  [mood:: okay] | [length:: 2 hours]
-
   subject :: inline :: field
 
   nested ( subject :: inline :: field )
@@ -19,11 +17,11 @@ export default {
 
   subject :: **Rating**:: 6
 
-  [subject :: mood:: okay] | [subject :: length:: 2 hours]
-
   No inline fields
 
   Too :: many :: inline :: fields
+
+  [[Bob]] :: foaf:knows :: [[Alice]]
 
 
   `,

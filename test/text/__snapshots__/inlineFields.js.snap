@@ -21,6 +21,46 @@ Array [
 ]
 `;
 
+exports[`extractInlineFields (mood:: okay) && (length:: 2 hours) 1`] = `
+Array [
+  Object {
+    "chunks": Array [
+      "mood",
+      " okay",
+    ],
+    "raw": "(mood:: okay)",
+  },
+  Object {
+    "chunks": Array [
+      "length",
+      " 2 hours",
+    ],
+    "raw": "(length:: 2 hours)",
+  },
+]
+`;
+
+exports[`extractInlineFields (subject :: mood:: okay) && (subject :: length:: 2 hours) 1`] = `
+Array [
+  Object {
+    "chunks": Array [
+      "subject ",
+      " mood",
+      " okay",
+    ],
+    "raw": "(subject :: mood:: okay)",
+  },
+  Object {
+    "chunks": Array [
+      "subject ",
+      " length",
+      " 2 hours",
+    ],
+    "raw": "(subject :: length:: 2 hours)",
+  },
+]
+`;
+
 exports[`extractInlineFields **Rating**:: 6 1`] = `
 Array [
   Object {
@@ -45,42 +85,15 @@ Array [
 ]
 `;
 
-exports[`extractInlineFields [mood:: okay] | [length:: 2 hours] 1`] = `
+exports[`extractInlineFields [[Alice]] :: foaf:knows :: [[Bob]] 1`] = `
 Array [
   Object {
     "chunks": Array [
-      "mood",
-      " okay",
+      "[[Alice]] ",
+      " foaf:knows ",
+      " [[Bob]]",
     ],
-    "raw": "[mood:: okay]",
-  },
-  Object {
-    "chunks": Array [
-      "length",
-      " 2 hours",
-    ],
-    "raw": "[length:: 2 hours]",
-  },
-]
-`;
-
-exports[`extractInlineFields [subject :: mood:: okay] | [subject :: length:: 2 hours] 1`] = `
-Array [
-  Object {
-    "chunks": Array [
-      "subject ",
-      " mood",
-      " okay",
-    ],
-    "raw": "[subject :: mood:: okay]",
-  },
-  Object {
-    "chunks": Array [
-      "subject ",
-      " length",
-      " 2 hours",
-    ],
-    "raw": "[subject :: length:: 2 hours]",
+    "raw": "[[Alice]] :: foaf:knows :: [[Bob]]",
   },
 ]
 `;
@@ -106,6 +119,19 @@ Array [
       " fields ",
     ],
     "raw": "Too :: many :: inline :: fields ",
+  },
+]
+`;
+
+exports[`extractInlineFields http://example.org :: is a :: website 1`] = `
+Array [
+  Object {
+    "chunks": Array [
+      "http://example.org ",
+      " is a ",
+      " website",
+    ],
+    "raw": "http://example.org :: is a :: website",
   },
 ]
 `;
@@ -188,17 +214,21 @@ Array [
 
 exports[`removeInlineFields (a::b::c) (a::f::d) 1`] = `" "`;
 
+exports[`removeInlineFields (mood:: okay) && (length:: 2 hours) 1`] = `" && "`;
+
+exports[`removeInlineFields (subject :: mood:: okay) && (subject :: length:: 2 hours) 1`] = `" && "`;
+
 exports[`removeInlineFields **Rating**:: 6 1`] = `""`;
 
 exports[`removeInlineFields **Thoughts**:: It was decent. 1`] = `""`;
 
-exports[`removeInlineFields [mood:: okay] | [length:: 2 hours] 1`] = `" | "`;
-
-exports[`removeInlineFields [subject :: mood:: okay] | [subject :: length:: 2 hours] 1`] = `" | "`;
+exports[`removeInlineFields [[Alice]] :: foaf:knows :: [[Bob]] 1`] = `""`;
 
 exports[`removeInlineFields No inline fields 1`] = `"No inline fields"`;
 
 exports[`removeInlineFields Too :: many :: inline :: fields  1`] = `""`;
+
+exports[`removeInlineFields http://example.org :: is a :: website 1`] = `""`;
 
 exports[`removeInlineFields inline :: field 1`] = `""`;
 

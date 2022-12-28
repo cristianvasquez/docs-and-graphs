@@ -69,18 +69,6 @@ Object {
     Object {
       "data": Array [
         Object {
-          "mood": "okay",
-        },
-        Object {
-          "length": "2 hours",
-        },
-      ],
-      "type": "text",
-      "value": "|",
-    },
-    Object {
-      "data": Array [
-        Object {
           "subject": Object {
             "inline": "field",
           },
@@ -123,22 +111,6 @@ Object {
       "value": "",
     },
     Object {
-      "data": Array [
-        Object {
-          "subject": Object {
-            "mood": "okay",
-          },
-        },
-        Object {
-          "subject": Object {
-            "length": "2 hours",
-          },
-        },
-      ],
-      "type": "text",
-      "value": "|",
-    },
-    Object {
       "type": "text",
       "value": "No inline fields",
     },
@@ -150,6 +122,29 @@ Object {
               "inline": "fields",
             },
           },
+        },
+      ],
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "[[Bob]]": Object {
+            "foaf:knows": "[[Alice]]",
+          },
+        },
+      ],
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "wikiLink",
+          "value": "Alice",
+        },
+        Object {
+          "alias": undefined,
+          "type": "wikiLink",
+          "value": "Bob",
         },
       ],
       "type": "text",
@@ -523,18 +518,6 @@ Object {
     Object {
       "data": Array [
         Object {
-          "mood": " okay",
-        },
-        Object {
-          "length": " 2 hours",
-        },
-      ],
-      "type": "text",
-      "value": "[mood:: okay] | [length:: 2 hours]",
-    },
-    Object {
-      "data": Array [
-        Object {
           "subject ": Object {
             " inline ": " field",
           },
@@ -577,22 +560,6 @@ Object {
       "value": "subject :: **Rating**:: 6",
     },
     Object {
-      "data": Array [
-        Object {
-          "subject ": Object {
-            " mood": " okay",
-          },
-        },
-        Object {
-          "subject ": Object {
-            " length": " 2 hours",
-          },
-        },
-      ],
-      "type": "text",
-      "value": "[subject :: mood:: okay] | [subject :: length:: 2 hours]",
-    },
-    Object {
       "type": "text",
       "value": "No inline fields",
     },
@@ -608,6 +575,29 @@ Object {
       ],
       "type": "text",
       "value": "Too :: many :: inline :: fields",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "[[Bob]] ": Object {
+            " foaf:knows ": " [[Alice]]",
+          },
+        },
+      ],
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "wikiLink",
+          "value": "Alice",
+        },
+        Object {
+          "alias": undefined,
+          "type": "wikiLink",
+          "value": "Bob",
+        },
+      ],
+      "type": "text",
+      "value": "[[Bob]] :: foaf:knows :: [[Alice]]",
     },
   ],
   "depth": 0,
