@@ -42,10 +42,16 @@ function parseWithParenthesis (str) {
   return parseParenthesis(str).map(keyValue).filter(valid => valid)
 }
 
-// Accepts embedded pairs between brackets, [like:: this] (or like::this)
+// Accepts embedded pairs between parentheses (like::this)
 function extractInlineFields (str) {
-  const content = parseWithParenthesis(str)
-  return content.length ? content : parseWithoutParenthesis(str)
+
+  const extractFromLine = (line) => {
+    const content = parseWithParenthesis(line)
+    return content.length ? content : parseWithoutParenthesis(line)
+  }
+
+  return str.split('\n').map(extractFromLine).flat()
+
 }
 
 function removeInlineFields (str) {

@@ -21,19 +21,17 @@ const markdown = [
   'Too :: many :: inline :: fields ',
   '(a::b::c) (a::f::d)',
   '[[Alice]] :: foaf:knows :: [[Bob]]',
-  'http://example.org :: is a :: website']
+  'http://example.org :: is a :: website',
+  'a::b::c\na::f::d',
+  'Several lines\na::b\na::f'
+]
 
 expect.extend({ toMatchSnapshot })
 
 describe('extractInlineFields', async function () {
   for (const current of markdown) {
     it(current, async function () {
-
       const fields = extractInlineFields(current)
-
-      console.log(current)
-      console.log(fields)
-
       expect(fields).toMatchSnapshot(this)
     })
   }
@@ -42,9 +40,7 @@ describe('extractInlineFields', async function () {
 describe('removeInlineFields', async function () {
   for (const current of markdown) {
     it(current, async function () {
-
       const text = removeInlineFields(current)
-
       expect(text).toMatchSnapshot(this)
     })
   }
