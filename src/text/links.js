@@ -16,15 +16,18 @@ function parseWikilink (str) {
   }
 }
 
+// Matches things like [something](http://example.com) and just http://example.com
+
 const linkRegex = /(?:\[([^\]]+)\]\((https?:\/\/[^\s]+)\))|(https?:\/\/[^\s]+)$/
 
 function parseExternalLinks (text) {
+
+  // @TODO find a lib to do these sort of things.
   const matches = text.match(linkRegex)
   if (matches) {
     return {
-      alias: matches[1], value: matches[2] || matches[3],
+      alias: matches[1], value: (matches[2] || matches[3]).replace(/>$/, ''),
     }
-
   }
 }
 

@@ -275,6 +275,22 @@ Object {
       "type": "text",
       "value": "The website is [here](protocol) see you!",
     },
+    Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "link",
+          "value": "https://example2.com",
+        },
+        Object {
+          "alias": undefined,
+          "type": "link",
+          "value": "http://example.com",
+        },
+      ],
+      "type": "text",
+      "value": "<http://example.com> <https://example2.com>",
+    },
   ],
   "depth": 0,
   "type": "root",
@@ -744,6 +760,22 @@ Object {
       ],
       "type": "text",
       "value": "The website is [here](protocol) see you!",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "link",
+          "value": "https://example2.com",
+        },
+        Object {
+          "alias": undefined,
+          "type": "link",
+          "value": "http://example.com",
+        },
+      ],
+      "type": "text",
+      "value": "<http://example.com> <https://example2.com> ",
     },
   ],
   "depth": 0,

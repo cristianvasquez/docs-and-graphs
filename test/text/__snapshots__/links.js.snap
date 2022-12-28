@@ -4,6 +4,20 @@ exports[`parseExternalLinks ![[image.png]] 1`] = `undefined`;
 
 exports[`parseExternalLinks ![[link 1]] 1`] = `undefined`;
 
+exports[`parseExternalLinks <http://example.org> 1`] = `
+Object {
+  "alias": undefined,
+  "value": "http://example.org",
+}
+`;
+
+exports[`parseExternalLinks <https://example.org> 1`] = `
+Object {
+  "alias": undefined,
+  "value": "https://example.org",
+}
+`;
+
 exports[`parseExternalLinks [[/full/path/link 1.md]] 1`] = `undefined`;
 
 exports[`parseExternalLinks [[/full/path/link 1]] 1`] = `undefined`;
@@ -65,6 +79,10 @@ Object {
   "value": "link 1",
 }
 `;
+
+exports[`parseWikilink <http://example.org> 1`] = `undefined`;
+
+exports[`parseWikilink <https://example.org> 1`] = `undefined`;
 
 exports[`parseWikilink [[/full/path/link 1.md]] 1`] = `
 Object {

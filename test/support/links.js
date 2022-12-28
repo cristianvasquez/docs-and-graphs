@@ -23,5 +23,7 @@ The website is [here](http://example.com) see you!
   
 The website is [here](protocol) see you!
 
+<http://example.com> <https://example2.com> 
+
   `,
 }

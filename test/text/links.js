@@ -20,7 +20,9 @@ const markdown = [
   '![[link 1]]',
   '![[image.png]]',
   '[protocol unknown](hello)',
-  '[protocol unknown](file://)'
+  '[protocol unknown](file://)',
+  '<http://example.org>',
+  '<https://example.org>'
 ]
 
 expect.extend({ toMatchSnapshot })
