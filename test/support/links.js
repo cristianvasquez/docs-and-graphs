@@ -1,6 +1,8 @@
 export default {
   title: 'Links', markdown: `
 
+has image :: ![Lovely image](../houses/img.png)
+
 [[link 1]]
 
 [[/full/path/link 1]]

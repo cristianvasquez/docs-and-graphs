@@ -45,6 +45,7 @@ function annotateBlockIds ({ value, currentNode }, options) {
   return currentNode
 }
 
+
 function arrayToObject (arr) {
   if (arr.length === 0) return {}
   if (arr.length === 1) return arr[0]

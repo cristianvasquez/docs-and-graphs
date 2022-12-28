@@ -91,11 +91,6 @@ function createBlock ({ astNode, fullText, type }, options) {
     type,
   }
 
-  const tags = extractTags(value)
-  if (tags.length) {
-    block.tags = tags
-  }
-
   annotateTags({ value, currentNode: block }, options)
   annotateInlineFields({ value, currentNode: block }, options)
   annotateBlockIds({ value, currentNode: block }, options)

@@ -24,26 +24,21 @@ function findLinks ({ astNode, fullText }) {
   return collectChilds(astNode).map(node => {
 
     const text = getText({ astNode: node, fullText })
-
     if (node.type === 'wikiLink') {
-
       return {
         type: 'wikiLink', ...parseWikilink(text),
       }
-    } else if (node.type === 'link') {
-
+    } else if (node.type === 'link' || node.type === 'image') {
       const link = parseExternalLinks(text)
       if (!link) {
         return {
           type: 'link', value: node.url,
         }
       }
-
       return {
         type: 'link', ...link,
       }
     }
-
     return node
   })
 }

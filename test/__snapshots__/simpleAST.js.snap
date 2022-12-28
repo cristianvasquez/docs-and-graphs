@@ -173,6 +173,16 @@ Object {
     Object {
       "links": Array [
         Object {
+          "type": "link",
+          "value": "../houses/img.png",
+        },
+      ],
+      "type": "text",
+      "value": "has image :: ![Lovely image](../houses/img.png)",
+    },
+    Object {
+      "links": Array [
+        Object {
           "alias": undefined,
           "type": "wikiLink",
           "value": "link 1",
@@ -630,6 +640,16 @@ Object {
 exports[`astDag normalize:false Links 1`] = `
 Object {
   "children": Array [
+    Object {
+      "links": Array [
+        Object {
+          "type": "link",
+          "value": "../houses/img.png",
+        },
+      ],
+      "type": "text",
+      "value": "has image :: ![Lovely image](../houses/img.png)",
+    },
     Object {
       "links": Array [
         Object {
