@@ -33,7 +33,7 @@ Object {
     Object {
       "data": Array [
         Object {
-          "inline ": "field",
+          "inline": "field",
         },
       ],
       "type": "text",
@@ -42,7 +42,7 @@ Object {
     Object {
       "data": Array [
         Object {
-          " inline ": "field",
+          "inline": "field",
         },
       ],
       "type": "text",
@@ -81,8 +81,8 @@ Object {
     Object {
       "data": Array [
         Object {
-          "subject ": Object {
-            " inline ": "field",
+          "subject": Object {
+            "inline": "field",
           },
         },
       ],
@@ -92,8 +92,8 @@ Object {
     Object {
       "data": Array [
         Object {
-          " subject ": Object {
-            " inline ": "field",
+          "subject": Object {
+            "inline": "field",
           },
         },
       ],
@@ -103,8 +103,8 @@ Object {
     Object {
       "data": Array [
         Object {
-          "subject ": Object {
-            " **Thoughts**": "It was decent.",
+          "subject": Object {
+            "**Thoughts**": "It was decent.",
           },
         },
       ],
@@ -114,8 +114,8 @@ Object {
     Object {
       "data": Array [
         Object {
-          "subject ": Object {
-            " **Rating**": "6",
+          "subject": Object {
+            "**Rating**": "6",
           },
         },
       ],
@@ -125,13 +125,13 @@ Object {
     Object {
       "data": Array [
         Object {
-          "subject ": Object {
-            " mood": "okay",
+          "subject": Object {
+            "mood": "okay",
           },
         },
         Object {
-          "subject ": Object {
-            " length": "2 hours",
+          "subject": Object {
+            "length": "2 hours",
           },
         },
       ],
@@ -145,9 +145,9 @@ Object {
     Object {
       "data": Array [
         Object {
-          "Too ": Object {
-            " many ": Object {
-              " inline ": "fields",
+          "Too": Object {
+            "many": Object {
+              "inline": "fields",
             },
           },
         },
@@ -331,7 +331,7 @@ Object {
             Object {
               "data": Array [
                 Object {
-                  "number ": "42",
+                  "number": "42",
                 },
               ],
               "type": "text",
@@ -373,7 +373,7 @@ Object {
       ],
       "data": Array [
         Object {
-          "age ": "42",
+          "age": "42",
         },
       ],
       "depth": 1,
@@ -408,7 +408,7 @@ Object {
             Object {
               "data": Array [
                 Object {
-                  "age ": "56",
+                  "age": "56",
                 },
               ],
               "type": "text",
