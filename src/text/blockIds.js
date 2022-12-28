@@ -1,11 +1,13 @@
-const HASH_REGEXP = /(?!\s)\^[A-Za-z0-9]\w*\b/g
+import { trim } from './string.js'
+
+const BLOCK_ID_REGEXP = /(^|\s)\^[A-Za-z0-9]\w*\b/g
 
 function extractBlockIds (str) {
-  return [...str.matchAll(HASH_REGEXP)].map(x => x[0])
+  return [...str.matchAll(BLOCK_ID_REGEXP)].map(x => x[0]).map(trim)
 }
 
 function removeBlockIds (str) {
-  return str.replace(HASH_REGEXP, '')
+  return str.replace(BLOCK_ID_REGEXP, '')
 }
 
 export { extractBlockIds, removeBlockIds }

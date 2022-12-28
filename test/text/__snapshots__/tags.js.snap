@@ -25,8 +25,12 @@ Array [
 ]
 `;
 
-exports[`removeTags #nowplaying Pointer Sisters - Dare Me | #80s #disco #funk #radio 1`] = `" Pointer Sisters - Dare Me | #80s   "`;
+exports[`extractTags Not#Me. 1`] = `Array []`;
 
-exports[`removeTags An #autumn scene showing a beautiful #horse coming to visit me. 1`] = `"An  scene showing a beautiful  coming to visit me."`;
+exports[`removeTags #nowplaying Pointer Sisters - Dare Me | #80s #disco #funk #radio 1`] = `" Pointer Sisters - Dare Me | #80s"`;
 
-exports[`removeTags My new favourite eatery in #liverpool and I mean superb! #TheBrunchClub #breakfast #food 1`] = `"My new favourite eatery in  and I mean superb!   "`;
+exports[`removeTags An #autumn scene showing a beautiful #horse coming to visit me. 1`] = `"An scene showing a beautiful coming to visit me."`;
+
+exports[`removeTags My new favourite eatery in #liverpool and I mean superb! #TheBrunchClub #breakfast #food 1`] = `"My new favourite eatery in and I mean superb!"`;
+
+exports[`removeTags Not#Me. 1`] = `"Not#Me."`;

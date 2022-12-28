@@ -6,6 +6,11 @@ import {
 } from '../../src/text/blockIds.js'
 
 const strings = [
+  '^bla ',
+  ' ^bla',
+  '^bla',
+  'Me either^bla',
+  '[[NotMe#^bla]]',
   '## Section ^bla',
   '## Section ^1',
   '## A header with some ^id',

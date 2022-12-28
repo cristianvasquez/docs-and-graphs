@@ -14,9 +14,6 @@ Object {
                 },
                 Array [],
               ],
-              "ids": Array [
-                "2",
-              ],
               "links": Array [
                 Object {
                   "alias": undefined,
@@ -25,7 +22,7 @@ Object {
                 },
               ],
               "type": "text",
-              "value": "And some more [[Bob Details#]]",
+              "value": "And some more [[Bob Details#^2]]",
             },
           ],
           "depth": 2,
@@ -44,9 +41,6 @@ Object {
                 },
                 Array [],
               ],
-              "ids": Array [
-                "3",
-              ],
               "links": Array [
                 Object {
                   "alias": " Pointer to section 3",
@@ -55,7 +49,7 @@ Object {
                 },
               ],
               "type": "text",
-              "value": "And some more [[Bob Details# | Pointer to section 3]]",
+              "value": "And some more [[Bob Details#^3 | Pointer to section 3]]",
             },
           ],
           "depth": 2,
@@ -74,9 +68,6 @@ Object {
                 },
                 Array [],
               ],
-              "ids": Array [
-                "1",
-              ],
               "links": Array [
                 Object {
                   "alias": undefined,
@@ -85,7 +76,7 @@ Object {
                 },
               ],
               "type": "text",
-              "value": "And some more [[Unknown#]]",
+              "value": "And some more [[Unknown#^1]]",
             },
           ],
           "depth": 2,
@@ -587,9 +578,6 @@ Object {
                 },
                 Array [],
               ],
-              "ids": Array [
-                "^2",
-              ],
               "links": Array [
                 Object {
                   "alias": undefined,
@@ -618,9 +606,6 @@ And some more [[Bob Details#^2]]",
                 },
                 Array [],
               ],
-              "ids": Array [
-                "^3",
-              ],
               "links": Array [
                 Object {
                   "alias": " Pointer to section 3",
@@ -648,9 +633,6 @@ And some more [[Bob Details#^3 | Pointer to section 3]]",
                   "description": " Section 3",
                 },
                 Array [],
-              ],
-              "ids": Array [
-                "^1",
               ],
               "links": Array [
                 Object {

@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`extractBlockIds  ^bla 1`] = `
+Array [
+  "^bla",
+]
+`;
+
 exports[`extractBlockIds ## A header with some ^id 1`] = `
 Array [
   "^id",
@@ -18,6 +24,20 @@ Array [
 ]
 `;
 
+exports[`extractBlockIds [[NotMe#^bla]] 1`] = `Array []`;
+
+exports[`extractBlockIds ^bla  1`] = `
+Array [
+  "^bla",
+]
+`;
+
+exports[`extractBlockIds ^bla 1`] = `
+Array [
+  "^bla",
+]
+`;
+
 exports[`extractBlockIds ^id1 and ^id2 1`] = `
 Array [
   "^id1",
@@ -25,10 +45,22 @@ Array [
 ]
 `;
 
-exports[`removeBlockIds ## A header with some ^id 1`] = `"## A header with some "`;
+exports[`extractBlockIds Me either^bla 1`] = `Array []`;
 
-exports[`removeBlockIds ## Section ^1 1`] = `"## Section "`;
+exports[`removeBlockIds  ^bla 1`] = `""`;
 
-exports[`removeBlockIds ## Section ^bla 1`] = `"## Section "`;
+exports[`removeBlockIds ## A header with some ^id 1`] = `"## A header with some"`;
 
-exports[`removeBlockIds ^id1 and ^id2 1`] = `" and "`;
+exports[`removeBlockIds ## Section ^1 1`] = `"## Section"`;
+
+exports[`removeBlockIds ## Section ^bla 1`] = `"## Section"`;
+
+exports[`removeBlockIds [[NotMe#^bla]] 1`] = `"[[NotMe#^bla]]"`;
+
+exports[`removeBlockIds ^bla  1`] = `" "`;
+
+exports[`removeBlockIds ^bla 1`] = `""`;
+
+exports[`removeBlockIds ^id1 and ^id2 1`] = `" and"`;
+
+exports[`removeBlockIds Me either^bla 1`] = `"Me either^bla"`;

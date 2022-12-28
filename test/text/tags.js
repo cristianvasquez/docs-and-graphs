@@ -6,6 +6,7 @@ import {
 } from '../../src/text/tags.js'
 
 const tweets = [
+  'Not#Me.',
   'An #autumn scene showing a beautiful #horse coming to visit me.',
   'My new favourite eatery in #liverpool and I mean superb! #TheBrunchClub #breakfast #food',
   '#nowplaying Pointer Sisters - Dare Me | #80s #disco #funk #radio']
