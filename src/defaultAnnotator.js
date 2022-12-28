@@ -1,4 +1,5 @@
 import yaml from 'js-yaml'
+import { extractBlockIds } from './text/blockIds.js'
 import { extractInlineFields } from './text/inlineFields.js'
 import { normalizeObject } from './text/normalize.js'
 import { extractTags } from './text/tags.js'
@@ -36,6 +37,14 @@ function annotateTags ({ value, currentNode }, options) {
   return currentNode
 }
 
+function annotateBlockIds ({ value, currentNode }, options) {
+  const ids = extractBlockIds(value)
+  if (ids.length) {
+    currentNode.ids = ids
+  }
+  return currentNode
+}
+
 function arrayToObject (arr) {
   if (arr.length === 0) return {}
   if (arr.length === 1) return arr[0]
@@ -49,7 +58,8 @@ function annotateInlineFields ({ value, currentNode }, options) {
   const maybeNormalize = createNormalizer(options)
 
   const newData = extractInlineFields(value).
-    map(({ chunks, raw }) => chunks.length > 1 ? arrayToObject(chunks.map(maybeNormalize)) : []).
+    map(({ chunks, raw }) => chunks.length > 1 ? arrayToObject(
+      chunks.map(maybeNormalize)) : []).
     map(maybeNormalize)
 
   const data = [...currentNode.inlineFields ?? [], ...newData]
@@ -61,4 +71,4 @@ function annotateInlineFields ({ value, currentNode }, options) {
   return currentNode
 }
 
-export { annotateYAML, annotateInlineFields, annotateTags }
+export { annotateYAML, annotateInlineFields, annotateBlockIds, annotateTags }

@@ -1,11 +1,14 @@
 import { removeInlineFields } from './inlineFields.js'
 import { removeTags } from './tags.js'
+import { removeBlockIds } from './blockIds.js'
+
 import { trim, isString } from './string.js'
 
 function normalizeText (str) {
   const a = removeInlineFields(str)
   const b = removeTags(a)
-  const withoutTagsNoHeader = b.
+  const c = removeBlockIds(b)
+  const withoutTagsNoHeader = c.
     split(' ').
     filter(x => !x.startsWith('#')).
     join(' ')

@@ -6,6 +6,14 @@ Object {
     Object {
       "children": Array [
         Object {
+          "depth": 2,
+          "ids": Array [
+            "^blockId",
+          ],
+          "type": "block",
+          "value": "H2",
+        },
+        Object {
           "children": Array [
             Object {
               "type": "text",
@@ -13,6 +21,9 @@ Object {
             },
           ],
           "depth": 2,
+          "tags": Array [
+            "#tag",
+          ],
           "type": "block",
           "value": "H2",
         },
@@ -455,6 +466,14 @@ Object {
     Object {
       "children": Array [
         Object {
+          "depth": 2,
+          "ids": Array [
+            "^blockId",
+          ],
+          "type": "block",
+          "value": "## H2 ^blockId",
+        },
+        Object {
           "children": Array [
             Object {
               "type": "text",
@@ -462,8 +481,11 @@ Object {
             },
           ],
           "depth": 2,
+          "tags": Array [
+            "#tag",
+          ],
           "type": "block",
-          "value": "## H2",
+          "value": "## H2 #tag",
         },
       ],
       "depth": 1,

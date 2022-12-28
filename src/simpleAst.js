@@ -1,10 +1,9 @@
-import { extractInlineFields } from './text/inlineFields.js'
 import { getText } from './markdown/markdownAst.js'
 import { normalizeText } from './text/normalize.js'
 import { extractTags } from './text/tags.js'
 import { findLinks } from './markdown/findLinks.js'
 import {
-  annotateInlineFields, annotateTags, annotateYAML,
+  annotateInlineFields, annotateTags, annotateYAML, annotateBlockIds,
 } from './defaultAnnotator.js'
 
 const DEFAULT_OPTIONS = {
@@ -99,6 +98,7 @@ function createBlock ({ astNode, fullText, type }, options) {
 
   annotateTags({ value, currentNode: block }, options)
   annotateInlineFields({ value, currentNode: block }, options)
+  annotateBlockIds({ value, currentNode: block }, options)
 
   const links = findLinks({ astNode, fullText })
   if (links.length) {
