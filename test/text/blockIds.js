@@ -5,7 +5,9 @@ import {
   extractBlockIds, removeBlockIds,
 } from '../../src/text/blockIds.js'
 
-const tweets = [
+const strings = [
+  '## Section ^bla',
+  '## Section ^1',
   '## A header with some ^id',
   '^id1 and ^id2']
 
@@ -13,7 +15,7 @@ const tweets = [
 expect.extend({ toMatchSnapshot })
 
 describe('extractBlockIds', async function () {
-  for (const current of tweets) {
+  for (const current of strings) {
     it(current, async function () {
       const tags = extractBlockIds(current)
       expect(tags).toMatchSnapshot(this)
@@ -22,7 +24,7 @@ describe('extractBlockIds', async function () {
 })
 
 describe('removeBlockIds', async function () {
-  for (const current of tweets) {
+  for (const current of strings) {
     it(current, async function () {
 
       const txt = removeBlockIds(current)

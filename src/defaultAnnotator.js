@@ -44,6 +44,7 @@ function annotateBlockIds ({ value, currentNode }, options) {
   const maybeNormalize = (id) => options.normalize
     ? id.replace(/^\^/, '')
     : id
+
   const ids = extractBlockIds(value).map(maybeNormalize)
   if (ids.length) {
     currentNode.ids = ids

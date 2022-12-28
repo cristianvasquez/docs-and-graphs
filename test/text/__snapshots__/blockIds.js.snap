@@ -6,6 +6,18 @@ Array [
 ]
 `;
 
+exports[`extractBlockIds ## Section ^1 1`] = `
+Array [
+  "^1",
+]
+`;
+
+exports[`extractBlockIds ## Section ^bla 1`] = `
+Array [
+  "^bla",
+]
+`;
+
 exports[`extractBlockIds ^id1 and ^id2 1`] = `
 Array [
   "^id1",
@@ -14,5 +26,9 @@ Array [
 `;
 
 exports[`removeBlockIds ## A header with some ^id 1`] = `"## A header with some "`;
+
+exports[`removeBlockIds ## Section ^1 1`] = `"## Section "`;
+
+exports[`removeBlockIds ## Section ^bla 1`] = `"## Section "`;
 
 exports[`removeBlockIds ^id1 and ^id2 1`] = `" and "`;

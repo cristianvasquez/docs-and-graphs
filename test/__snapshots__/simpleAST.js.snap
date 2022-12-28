@@ -1,36 +1,123 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`astDag Headings 1`] = `
+exports[`astDag BlockIds 1`] = `
 Object {
   "children": Array [
     Object {
       "children": Array [
         Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "description": "Section 1",
+                },
+                Array [],
+              ],
+              "ids": Array [
+                "2",
+              ],
+              "links": Array [
+                Object {
+                  "alias": undefined,
+                  "type": "wikiLink",
+                  "value": "Bob Details#^2",
+                },
+              ],
+              "type": "text",
+              "value": "And some more [[Bob Details#]]",
+            },
+          ],
           "depth": 2,
           "ids": Array [
-            "blockId",
+            "1",
           ],
           "type": "block",
-          "value": "H2",
+          "value": "Section",
         },
         Object {
           "children": Array [
             Object {
+              "data": Array [
+                Object {
+                  "description": "Section 2",
+                },
+                Array [],
+              ],
+              "ids": Array [
+                "3",
+              ],
+              "links": Array [
+                Object {
+                  "alias": " Pointer to section 3",
+                  "type": "wikiLink",
+                  "value": "Bob Details#^3 ",
+                },
+              ],
               "type": "text",
-              "value": "Some text",
+              "value": "And some more [[Bob Details# | Pointer to section 3]]",
+            },
+          ],
+          "depth": 2,
+          "ids": Array [
+            "2",
+          ],
+          "type": "block",
+          "value": "Section",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "description": "Section 3",
+                },
+                Array [],
+              ],
+              "ids": Array [
+                "1",
+              ],
+              "links": Array [
+                Object {
+                  "alias": undefined,
+                  "type": "wikiLink",
+                  "value": "Unknown#^1",
+                },
+              ],
+              "type": "text",
+              "value": "And some more [[Unknown#]]",
+            },
+          ],
+          "depth": 2,
+          "ids": Array [
+            "3",
+          ],
+          "type": "block",
+          "value": "Section",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "description": "Section 4",
+                },
+              ],
+              "type": "text",
+              "value": "",
             },
           ],
           "depth": 2,
           "tags": Array [
-            "tag",
+            "Section",
           ],
           "type": "block",
-          "value": "H2",
+          "value": "Section",
         },
       ],
       "depth": 1,
       "type": "block",
-      "value": "H1",
+      "value": "Details about Bob",
     },
   ],
   "depth": 0,
@@ -486,37 +573,127 @@ Object {
 }
 `;
 
-exports[`astDag normalize:false Headings 1`] = `
+exports[`astDag normalize:false BlockIds 1`] = `
 Object {
   "children": Array [
     Object {
       "children": Array [
         Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "description": " Section 1",
+                },
+                Array [],
+              ],
+              "ids": Array [
+                "^2",
+              ],
+              "links": Array [
+                Object {
+                  "alias": undefined,
+                  "type": "wikiLink",
+                  "value": "Bob Details#^2",
+                },
+              ],
+              "type": "text",
+              "value": "description:: Section 1
+And some more [[Bob Details#^2]]",
+            },
+          ],
           "depth": 2,
           "ids": Array [
-            "^blockId",
+            "^1",
           ],
           "type": "block",
-          "value": "## H2 ^blockId",
+          "value": "## Section ^1",
         },
         Object {
           "children": Array [
             Object {
+              "data": Array [
+                Object {
+                  "description": " Section 2",
+                },
+                Array [],
+              ],
+              "ids": Array [
+                "^3",
+              ],
+              "links": Array [
+                Object {
+                  "alias": " Pointer to section 3",
+                  "type": "wikiLink",
+                  "value": "Bob Details#^3 ",
+                },
+              ],
               "type": "text",
-              "value": "Some text",
+              "value": "description:: Section 2
+And some more [[Bob Details#^3 | Pointer to section 3]]",
+            },
+          ],
+          "depth": 2,
+          "ids": Array [
+            "^2",
+          ],
+          "type": "block",
+          "value": "## Section ^2",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "description": " Section 3",
+                },
+                Array [],
+              ],
+              "ids": Array [
+                "^1",
+              ],
+              "links": Array [
+                Object {
+                  "alias": undefined,
+                  "type": "wikiLink",
+                  "value": "Unknown#^1",
+                },
+              ],
+              "type": "text",
+              "value": "description:: Section 3
+And some more [[Unknown#^1]]",
+            },
+          ],
+          "depth": 2,
+          "ids": Array [
+            "^3",
+          ],
+          "type": "block",
+          "value": "## Section ^3",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "description": " Section 4",
+                },
+              ],
+              "type": "text",
+              "value": "description:: Section 4",
             },
           ],
           "depth": 2,
           "tags": Array [
-            "#tag",
+            "#Section",
           ],
           "type": "block",
-          "value": "## H2 #tag",
+          "value": "## Section #Section",
         },
       ],
       "depth": 1,
       "type": "block",
-      "value": "# H1",
+      "value": "# Details about Bob",
     },
   ],
   "depth": 0,
