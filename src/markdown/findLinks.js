@@ -21,6 +21,7 @@ function collectChilds (parent, data = []) {
 }
 
 function findLinks ({ astNode, fullText }) {
+
   return collectChilds(astNode).map(node => {
 
     const text = getText({ astNode: node, fullText })
