@@ -30,7 +30,10 @@ function annotateYAML ({ value, currentNode }, options) {
 }
 
 function annotateTags ({ value, currentNode }, options) {
-  const tags = extractTags(value)
+  const maybeNormalize = (tag) => options.normalize
+    ? tag.replace(/^#/, '')
+    : tag
+  const tags = extractTags(value).map(maybeNormalize)
   if (tags.length) {
     currentNode.tags = tags
   }
@@ -38,13 +41,15 @@ function annotateTags ({ value, currentNode }, options) {
 }
 
 function annotateBlockIds ({ value, currentNode }, options) {
-  const ids = extractBlockIds(value)
+  const maybeNormalize = (id) => options.normalize
+    ? id.replace(/^\^/, '')
+    : id
+  const ids = extractBlockIds(value).map(maybeNormalize)
   if (ids.length) {
     currentNode.ids = ids
   }
   return currentNode
 }
-
 
 function arrayToObject (arr) {
   if (arr.length === 0) return {}
