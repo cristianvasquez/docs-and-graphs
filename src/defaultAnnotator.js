@@ -15,6 +15,12 @@ function annotateYAML ({ value, currentNode }, options) {
 
   try {
     const doc = yaml.load(value)
+
+    if (doc.tags && doc.tags.length) {
+      currentNode.tags = doc.tags
+      delete doc.tags
+    }
+
     currentNode.data = [maybeNormalize(doc)]
   } catch (e) {
     console.log(e)
