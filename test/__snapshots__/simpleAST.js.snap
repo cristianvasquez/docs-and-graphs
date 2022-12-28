@@ -8,7 +8,7 @@ Object {
         Object {
           "depth": 2,
           "ids": Array [
-            "^blockId",
+            "blockId",
           ],
           "type": "block",
           "value": "H2",
@@ -22,7 +22,7 @@ Object {
           ],
           "depth": 2,
           "tags": Array [
-            "#tag",
+            "tag",
           ],
           "type": "block",
           "value": "H2",
