@@ -1,6 +1,5 @@
 import { getText } from './markdown/markdownAst.js'
 import { normalizeText } from './text/normalize.js'
-import { extractTags } from './text/tags.js'
 import { findLinks } from './markdown/findLinks.js'
 import {
   annotateInlineFields, annotateTags, annotateYAML, annotateBlockIds,
@@ -25,7 +24,12 @@ function simpleAst ({ astNode, fullText }, options = {}) {
       return annotateYAML({ value: astNode.value, currentNode: current },
         _options)
     } else if (astNode.type === 'code') {
-      // @TODO implement something beautiful for turtle-publish
+      const block = createBlock({ astNode, fullText, type: 'code' }, _options)
+      block.lang = astNode.lang
+      if (astNode.meta) {
+        block.meta = astNode.meta
+      }
+      push(current, block)
     } else if (astNode.type === 'heading') {
       const ancesters = headersStack.filter(x => x.depth < astNode.depth)
       if (ancesters.length) {
@@ -48,7 +52,13 @@ function simpleAst ({ astNode, fullText }, options = {}) {
       const block = createBlock({ astNode, fullText, type: 'text' }, _options)
       push(current, block)
     } else {
-      console.log(`I don't know how to handle`, astNode.type)
+      // Things not yet handled
+      //
+      // blockquote
+      // table
+      // thematicBreak
+      // code
+      // html
     }
     return current
   }, root)
@@ -75,7 +85,7 @@ function getOutline ({ astNode, fullText, outlineDepth, depth }, options) {
           { astNode: child, fullText, outlineDepth: outlineDepth + 1 }, options)
         children.push(outline)
       } else {
-        console.log(`I don't know how to handle`, child.type)
+        // console.log(`I don't know how to handle`, child.type)
       }
     }
   }

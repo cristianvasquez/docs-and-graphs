@@ -564,6 +564,29 @@ Object {
 }
 `;
 
+exports[`astDag code fence 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "lang": "js",
+          "type": "code",
+          "value": "\`\`\`js
+Hello world
+\`\`\`",
+        },
+      ],
+      "depth": 1,
+      "type": "block",
+      "value": "Some code",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
 exports[`astDag normalize:false BlockIds 1`] = `
 Object {
   "children": Array [
@@ -1127,6 +1150,29 @@ Object {
     "cats",
     "dogs",
   ],
+  "type": "root",
+}
+`;
+
+exports[`astDag normalize:false code fence 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "lang": "js",
+          "type": "code",
+          "value": "\`\`\`js
+Hello world
+\`\`\`",
+        },
+      ],
+      "depth": 1,
+      "type": "block",
+      "value": "# Some code ",
+    },
+  ],
+  "depth": 0,
   "type": "root",
 }
 `;

@@ -5,5 +5,6 @@ import inlineFields from './support/inlineFields.js'
 import outline from './support/outline.js'
 import people from './support/people.js'
 import yaml from './support/yaml.js'
+import code from './support/code.js'
 
-export default [links, outline, blocks, people, yaml, inlineFields]
+export default [code, links, outline, blocks, people, yaml, inlineFields]
