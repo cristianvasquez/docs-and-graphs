@@ -41,9 +41,7 @@ function annotateTags ({ value, currentNode }, options) {
 }
 
 function annotateBlockIds ({ value, currentNode }, options) {
-  const maybeNormalize = (id) => options.normalize
-    ? id.replace(/^\^/, '')
-    : id
+  const maybeNormalize = (id) => options.normalize ? id.replace(/^\^/, '') : id
 
   const ids = extractBlockIds(value).map(maybeNormalize)
   if (ids.length) {
@@ -63,11 +61,16 @@ function arrayToObject (arr) {
 
 function annotateInlineFields ({ value, currentNode }, options) {
   const maybeNormalize = createNormalizer(options)
+  const { inlineAsArray } = options
+
+  console.log(inlineAsArray)
+
+  const as = inlineAsArray ? (x) => x : arrayToObject
 
   const newData = extractInlineFields(value).
-    map(({ chunks, raw }) => chunks.length > 1 ? arrayToObject(
-      chunks.map(maybeNormalize)) : []).
-    map(maybeNormalize)
+    map(({ chunks, raw }) => chunks.length > 1
+      ? as(chunks.map(maybeNormalize))
+      : [])
 
   const data = [...currentNode.inlineFields ?? [], ...newData]
 

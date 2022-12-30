@@ -1176,3 +1176,264 @@ Hello world
   "type": "root",
 }
 `;
+
+exports[`inLineAsArray inLineAsArray:false 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "data": Array [
+        Object {
+          "inline": "field",
+        },
+      ],
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "inline": "field",
+        },
+      ],
+      "type": "text",
+      "value": "nested",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "**Thoughts**": "It was decent.",
+        },
+      ],
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "**Rating**": "6'",
+        },
+      ],
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "subject": Object {
+            "inline": "field",
+          },
+        },
+      ],
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "subject": Object {
+            "inline": "field",
+          },
+        },
+      ],
+      "type": "text",
+      "value": "nested",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "subject": Object {
+            "**Thoughts**": "It was decent.",
+          },
+        },
+      ],
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "subject": Object {
+            "**Rating**": "6",
+          },
+        },
+      ],
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "type": "text",
+      "value": "No inline fields",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "Too": Object {
+            "many": Object {
+              "inline": "fields",
+            },
+          },
+        },
+      ],
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "[[Bob]]": Object {
+            "foaf:knows": "[[Alice]]",
+          },
+        },
+      ],
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "wikiLink",
+          "value": "Alice",
+        },
+        Object {
+          "alias": undefined,
+          "type": "wikiLink",
+          "value": "Bob",
+        },
+      ],
+      "type": "text",
+      "value": "",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`inLineAsArray inLineAsArray:true 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "data": Array [
+        Array [
+          "inline",
+          "field",
+        ],
+      ],
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "data": Array [
+        Array [
+          "inline",
+          "field",
+        ],
+      ],
+      "type": "text",
+      "value": "nested",
+    },
+    Object {
+      "data": Array [
+        Array [
+          "**Thoughts**",
+          "It was decent.",
+        ],
+      ],
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "data": Array [
+        Array [
+          "**Rating**",
+          "6'",
+        ],
+      ],
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "data": Array [
+        Array [
+          "subject",
+          "inline",
+          "field",
+        ],
+      ],
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "data": Array [
+        Array [
+          "subject",
+          "inline",
+          "field",
+        ],
+      ],
+      "type": "text",
+      "value": "nested",
+    },
+    Object {
+      "data": Array [
+        Array [
+          "subject",
+          "**Thoughts**",
+          "It was decent.",
+        ],
+      ],
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "data": Array [
+        Array [
+          "subject",
+          "**Rating**",
+          "6",
+        ],
+      ],
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "type": "text",
+      "value": "No inline fields",
+    },
+    Object {
+      "data": Array [
+        Array [
+          "Too",
+          "many",
+          "inline",
+          "fields",
+        ],
+      ],
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "data": Array [
+        Array [
+          "[[Bob]]",
+          "foaf:knows",
+          "[[Alice]]",
+        ],
+      ],
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "wikiLink",
+          "value": "Alice",
+        },
+        Object {
+          "alias": undefined,
+          "type": "wikiLink",
+          "value": "Bob",
+        },
+      ],
+      "type": "text",
+      "value": "",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
