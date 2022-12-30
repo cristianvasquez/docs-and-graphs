@@ -125,6 +125,13 @@ Array [
     ],
     "raw": "a::b",
   },
+  Object {
+    "chunks": Array [
+      "c",
+      "d",
+    ],
+    "raw": "c::d",
+  },
 ]
 `;
 
@@ -138,6 +145,13 @@ Array [
       "b",
     ],
     "raw": "a::b",
+  },
+  Object {
+    "chunks": Array [
+      "c",
+      "d",
+    ],
+    "raw": "c::d",
   },
 ]
 `;
@@ -153,6 +167,14 @@ Array [
     ],
     "raw": "a::b::c",
   },
+  Object {
+    "chunks": Array [
+      "a",
+      "f",
+      "d",
+    ],
+    "raw": "a::f::d",
+  },
 ]
 `;
 
@@ -166,6 +188,13 @@ Array [
       "b",
     ],
     "raw": "a::b",
+  },
+  Object {
+    "chunks": Array [
+      "a",
+      "f",
+    ],
+    "raw": "a::f",
   },
 ]
 `;
@@ -292,21 +321,21 @@ between
 c::d 1`] = `
 "
 between
-c::d"
+"
 `;
 
 exports[`removeInlineFields a::b
 c::d
 after 1`] = `
 "
-c::d
+
 after"
 `;
 
 exports[`removeInlineFields a::b::c
 a::f::d 1`] = `
 "
-a::f::d"
+"
 `;
 
 exports[`removeInlineFields before
@@ -314,7 +343,7 @@ a::b
 a::f 1`] = `
 "before
 
-a::f"
+"
 `;
 
 exports[`removeInlineFields http://example.org :: is a :: website 1`] = `""`;

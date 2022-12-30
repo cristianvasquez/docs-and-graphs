@@ -41,8 +41,8 @@ function parseWithParenthesis (str) {
 // Accepts embedded pairs between parentheses (like::this)
 function extractInlineFields (str) {
 
-  const result = []
-  for (const line of str.split('\n')) {
+  function extract (line) {
+    const result = []
     for (const inline of parseWithParenthesis(line)) {
       if (inline.chunks.length > 1) {
         result.push(inline)
@@ -55,8 +55,10 @@ function extractInlineFields (str) {
         }
       }
     }
+    return result
   }
-  return result
+
+  return str.split('\n').map(extract).flat()
 
 }
 

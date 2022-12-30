@@ -26,7 +26,7 @@ const markdown = [
   'before\na::b\na::f',
   'a::b\nbetween\nc::d',
   'a::b\nc::d\nafter',
-  'lives in :: [Test with relative](../houses/BobHouse.md)'
+  'lives in :: [Test with relative](../houses/BobHouse.md)',
 ]
 
 expect.extend({ toMatchSnapshot })
