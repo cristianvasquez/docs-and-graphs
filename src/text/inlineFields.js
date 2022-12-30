@@ -1,11 +1,7 @@
 const PARENTHESIS_TYPES = [
   {
     left: '(', right: ')',
-  }, // Removing support for [] as I haven't seen it in the wild
-  // {
-  //   left: '[', right: ']',
-  // }
-]
+  }]
 
 function keyValue ({ content, parenthesis }) {
   const chunks = content.split('::')
@@ -45,12 +41,22 @@ function parseWithParenthesis (str) {
 // Accepts embedded pairs between parentheses (like::this)
 function extractInlineFields (str) {
 
-  const extractFromLine = (line) => {
-    const content = parseWithParenthesis(line)
-    return content.length ? content : parseWithoutParenthesis(line)
+  const result = []
+  for (const line of str.split('\n')) {
+    for (const inline of parseWithParenthesis(line)) {
+      if (inline.chunks.length > 1) {
+        result.push(inline)
+      }
+    }
+    if (result.length === 0) {
+      for (const inline of parseWithoutParenthesis(line)) {
+        if (inline.chunks.length > 1) {
+          result.push(inline)
+        }
+      }
+    }
   }
-
-  return str.split('\n').map(extractFromLine).flat()
+  return result
 
 }
 

@@ -246,6 +246,11 @@ exports[`astDag Links 1`] = `
 Object {
   "children": Array [
     Object {
+      "data": Array [
+        Object {
+          "has image": "![Lovely image](../houses/img.png)",
+        },
+      ],
       "links": Array [
         Object {
           "type": "link",
@@ -253,7 +258,7 @@ Object {
         },
       ],
       "type": "text",
-      "value": "has image :: ![Lovely image](../houses/img.png)",
+      "value": "",
     },
     Object {
       "links": Array [
@@ -833,6 +838,11 @@ exports[`astDag normalize:false Links 1`] = `
 Object {
   "children": Array [
     Object {
+      "data": Array [
+        Object {
+          "has image ": " ![Lovely image](../houses/img.png)",
+        },
+      ],
       "links": Array [
         Object {
           "type": "link",

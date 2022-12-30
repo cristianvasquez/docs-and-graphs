@@ -98,16 +98,7 @@ Array [
 ]
 `;
 
-exports[`extractInlineFields No inline fields 1`] = `
-Array [
-  Object {
-    "chunks": Array [
-      "No inline fields",
-    ],
-    "raw": "No inline fields",
-  },
-]
-`;
+exports[`extractInlineFields No inline fields 1`] = `Array []`;
 
 exports[`extractInlineFields Too :: many :: inline :: fields  1`] = `
 Array [
@@ -134,19 +125,6 @@ Array [
     ],
     "raw": "a::b",
   },
-  Object {
-    "chunks": Array [
-      "between",
-    ],
-    "raw": "between",
-  },
-  Object {
-    "chunks": Array [
-      "c",
-      "d",
-    ],
-    "raw": "c::d",
-  },
 ]
 `;
 
@@ -160,19 +138,6 @@ Array [
       "b",
     ],
     "raw": "a::b",
-  },
-  Object {
-    "chunks": Array [
-      "c",
-      "d",
-    ],
-    "raw": "c::d",
-  },
-  Object {
-    "chunks": Array [
-      "after",
-    ],
-    "raw": "after",
   },
 ]
 `;
@@ -188,14 +153,6 @@ Array [
     ],
     "raw": "a::b::c",
   },
-  Object {
-    "chunks": Array [
-      "a",
-      "f",
-      "d",
-    ],
-    "raw": "a::f::d",
-  },
 ]
 `;
 
@@ -205,23 +162,10 @@ a::f 1`] = `
 Array [
   Object {
     "chunks": Array [
-      "before",
-    ],
-    "raw": "before",
-  },
-  Object {
-    "chunks": Array [
       "a",
       "b",
     ],
     "raw": "a::b",
-  },
-  Object {
-    "chunks": Array [
-      "a",
-      "f",
-    ],
-    "raw": "a::f",
   },
 ]
 `;
@@ -247,6 +191,18 @@ Array [
       " field",
     ],
     "raw": "inline :: field",
+  },
+]
+`;
+
+exports[`extractInlineFields lives in :: [Test with relative](../houses/BobHouse.md) 1`] = `
+Array [
+  Object {
+    "chunks": Array [
+      "lives in ",
+      " [Test with relative](../houses/BobHouse.md)",
+    ],
+    "raw": "lives in :: [Test with relative](../houses/BobHouse.md)",
   },
 ]
 `;
@@ -336,21 +292,21 @@ between
 c::d 1`] = `
 "
 between
-"
+c::d"
 `;
 
 exports[`removeInlineFields a::b
 c::d
 after 1`] = `
 "
-
+c::d
 after"
 `;
 
 exports[`removeInlineFields a::b::c
 a::f::d 1`] = `
 "
-"
+a::f::d"
 `;
 
 exports[`removeInlineFields before
@@ -358,12 +314,14 @@ a::b
 a::f 1`] = `
 "before
 
-"
+a::f"
 `;
 
 exports[`removeInlineFields http://example.org :: is a :: website 1`] = `""`;
 
 exports[`removeInlineFields inline :: field 1`] = `""`;
+
+exports[`removeInlineFields lives in :: [Test with relative](../houses/BobHouse.md) 1`] = `""`;
 
 exports[`removeInlineFields nested ( inline :: field ) 1`] = `"nested "`;
 
