@@ -62,17 +62,17 @@ function arrayToObject (arr) {
 function annotateInlineFields ({ value, currentNode }, options) {
   const maybeNormalize = createNormalizer(options)
   const { inlineAsArray } = options
-
   const as = inlineAsArray ? (x) => x : arrayToObject
 
-  const newData = extractInlineFields(value).
-    map(({ chunks, raw }) => chunks.length > 1
-      ? as(chunks.map(maybeNormalize))
-      : [])
+  const data = currentNode.data ?? []
 
-  const data = [...currentNode.inlineFields ?? [], ...newData]
+  for (const { chunks, raw } of extractInlineFields(value)) {
+    if (chunks.length > 1) {
+      data.push(as(maybeNormalize(chunks)))
+    }
+  }
 
-  if (data.flat().length) {
+  if (data.length) {
     currentNode.data = data
   }
 

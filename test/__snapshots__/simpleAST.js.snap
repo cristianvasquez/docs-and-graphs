@@ -12,7 +12,6 @@ Object {
                 Object {
                   "description": "Section 1",
                 },
-                Array [],
               ],
               "links": Array [
                 Object {
@@ -39,7 +38,6 @@ Object {
                 Object {
                   "description": "Section 2",
                 },
-                Array [],
               ],
               "links": Array [
                 Object {
@@ -66,7 +64,6 @@ Object {
                 Object {
                   "description": "Section 3",
                 },
-                Array [],
               ],
               "links": Array [
                 Object {
@@ -599,7 +596,6 @@ Object {
                 Object {
                   "description": " Section 1",
                 },
-                Array [],
               ],
               "links": Array [
                 Object {
@@ -627,7 +623,6 @@ And some more [[Bob Details#^2]]",
                 Object {
                   "description": " Section 2",
                 },
-                Array [],
               ],
               "links": Array [
                 Object {
@@ -655,7 +650,6 @@ And some more [[Bob Details#^3 | Pointer to section 3]]",
                 Object {
                   "description": " Section 3",
                 },
-                Array [],
               ],
               "links": Array [
                 Object {

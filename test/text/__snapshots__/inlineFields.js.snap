@@ -109,33 +109,6 @@ Array [
 ]
 `;
 
-exports[`extractInlineFields Several lines
-a::b
-a::f 1`] = `
-Array [
-  Object {
-    "chunks": Array [
-      "Several lines",
-    ],
-    "raw": "Several lines",
-  },
-  Object {
-    "chunks": Array [
-      "a",
-      "b",
-    ],
-    "raw": "a::b",
-  },
-  Object {
-    "chunks": Array [
-      "a",
-      "f",
-    ],
-    "raw": "a::f",
-  },
-]
-`;
-
 exports[`extractInlineFields Too :: many :: inline :: fields  1`] = `
 Array [
   Object {
@@ -146,6 +119,60 @@ Array [
       " fields ",
     ],
     "raw": "Too :: many :: inline :: fields ",
+  },
+]
+`;
+
+exports[`extractInlineFields a::b
+between
+c::d 1`] = `
+Array [
+  Object {
+    "chunks": Array [
+      "a",
+      "b",
+    ],
+    "raw": "a::b",
+  },
+  Object {
+    "chunks": Array [
+      "between",
+    ],
+    "raw": "between",
+  },
+  Object {
+    "chunks": Array [
+      "c",
+      "d",
+    ],
+    "raw": "c::d",
+  },
+]
+`;
+
+exports[`extractInlineFields a::b
+c::d
+after 1`] = `
+Array [
+  Object {
+    "chunks": Array [
+      "a",
+      "b",
+    ],
+    "raw": "a::b",
+  },
+  Object {
+    "chunks": Array [
+      "c",
+      "d",
+    ],
+    "raw": "c::d",
+  },
+  Object {
+    "chunks": Array [
+      "after",
+    ],
+    "raw": "after",
   },
 ]
 `;
@@ -168,6 +195,33 @@ Array [
       "d",
     ],
     "raw": "a::f::d",
+  },
+]
+`;
+
+exports[`extractInlineFields before
+a::b
+a::f 1`] = `
+Array [
+  Object {
+    "chunks": Array [
+      "before",
+    ],
+    "raw": "before",
+  },
+  Object {
+    "chunks": Array [
+      "a",
+      "b",
+    ],
+    "raw": "a::b",
+  },
+  Object {
+    "chunks": Array [
+      "a",
+      "f",
+    ],
+    "raw": "a::f",
   },
 ]
 `;
@@ -275,19 +329,35 @@ exports[`removeInlineFields [[Alice]] :: foaf:knows :: [[Bob]] 1`] = `""`;
 
 exports[`removeInlineFields No inline fields 1`] = `"No inline fields"`;
 
-exports[`removeInlineFields Several lines
-a::b
-a::f 1`] = `
-"Several lines
+exports[`removeInlineFields Too :: many :: inline :: fields  1`] = `""`;
 
+exports[`removeInlineFields a::b
+between
+c::d 1`] = `
+"
+between
 "
 `;
 
-exports[`removeInlineFields Too :: many :: inline :: fields  1`] = `""`;
+exports[`removeInlineFields a::b
+c::d
+after 1`] = `
+"
+
+after"
+`;
 
 exports[`removeInlineFields a::b::c
 a::f::d 1`] = `
 "
+"
+`;
+
+exports[`removeInlineFields before
+a::b
+a::f 1`] = `
+"before
+
 "
 `;
 

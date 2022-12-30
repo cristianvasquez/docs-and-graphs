@@ -23,7 +23,9 @@ const markdown = [
   '[[Alice]] :: foaf:knows :: [[Bob]]',
   'http://example.org :: is a :: website',
   'a::b::c\na::f::d',
-  'Several lines\na::b\na::f'
+  'before\na::b\na::f',
+  'a::b\nbetween\nc::d',
+  'a::b\nc::d\nafter'
 ]
 
 expect.extend({ toMatchSnapshot })
