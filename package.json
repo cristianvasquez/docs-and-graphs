@@ -1,6 +1,6 @@
 {
   "name": "docs-and-graphs",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "type": "module",
   "description": "",
   "main": "index.js",
