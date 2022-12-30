@@ -63,8 +63,6 @@ function annotateInlineFields ({ value, currentNode }, options) {
   const maybeNormalize = createNormalizer(options)
   const { inlineAsArray } = options
 
-  console.log(inlineAsArray)
-
   const as = inlineAsArray ? (x) => x : arrayToObject
 
   const newData = extractInlineFields(value).
