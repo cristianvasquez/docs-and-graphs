@@ -40,6 +40,9 @@ function parseWithParenthesis (str) {
 
 // Accepts embedded pairs between parentheses (like::this)
 function extractInlineFields (str) {
+  if (str === undefined) {
+    return
+  }
 
   function extract (line) {
     const result = []
@@ -63,6 +66,9 @@ function extractInlineFields (str) {
 }
 
 function removeInlineFields (str) {
+  if (str === undefined) {
+    return
+  }
   let result = str
   for (const { chunks, raw } of extractInlineFields(str)) {
     if (chunks.length > 1) {

@@ -23,4 +23,11 @@ describe('normalizeText', async function () {
       expect(result).toMatchSnapshot(this)
     })
   }
+
+  it('normalize of undefined is undefined', async function () {
+    const result = normalizeText(undefined)
+    expect(result).toBe(undefined)
+  })
 })
+
+

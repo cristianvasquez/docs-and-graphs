@@ -4,6 +4,7 @@ import toMatchSnapshot from 'expect-mocha-snapshot'
 import {
   parseWikilink, parseExternalLinks
 } from '../../src/text/links.js'
+import { normalizeText } from '../../src/text/normalize.js'
 
 const markdown = [
   'no link',
@@ -43,4 +44,9 @@ describe('parseExternalLinks', async function () {
       expect(result).toMatchSnapshot(this)
     })
   }
+
+  it('parseExternalLinks of undefined is undefined', async function () {
+    const result = parseExternalLinks(undefined)
+    expect(result).toBe(undefined)
+  })
 })

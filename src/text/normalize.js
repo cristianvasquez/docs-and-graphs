@@ -5,6 +5,9 @@ import { removeBlockIds } from './blockIds.js'
 import { trim, isString } from './string.js'
 
 function normalizeText (str) {
+  if (str === undefined) {
+    return
+  }
   const a = removeInlineFields(str)
   const b = removeTags(a)
   const c = removeBlockIds(b)

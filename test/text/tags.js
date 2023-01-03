@@ -1,6 +1,7 @@
 import { expect } from 'expect'
 
 import toMatchSnapshot from 'expect-mocha-snapshot'
+import { normalizeText } from '../../src/text/normalize.js'
 import {
   extractTags, removeTags,
 } from '../../src/text/tags.js'
@@ -31,4 +32,9 @@ describe('removeTags', async function () {
       expect(txt).toMatchSnapshot(this)
     })
   }
+
+  it('removeTags of undefined is undefined', async function () {
+    const result = removeTags(undefined)
+    expect(result).toBe(undefined)
+  })
 })

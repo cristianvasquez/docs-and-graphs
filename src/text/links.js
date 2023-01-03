@@ -21,7 +21,9 @@ function parseWikilink (str) {
 const linkRegex = /(?:\[([^\]]+)\]\((https?:\/\/[^\s]+)\))|(https?:\/\/[^\s]+)$/
 
 function parseExternalLinks (text) {
-
+  if (text === undefined) {
+    return
+  }
   // @TODO find a lib to do these sort of things.
   const matches = text.match(linkRegex)
   if (matches) {

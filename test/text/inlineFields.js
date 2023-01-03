@@ -5,6 +5,7 @@ import {
   extractInlineFields,
   removeInlineFields,
 } from '../../src/text/inlineFields.js'
+import { parseExternalLinks } from '../../src/text/links.js'
 
 const markdown = [
   'inline :: field',
@@ -38,6 +39,11 @@ describe('extractInlineFields', async function () {
       expect(fields).toMatchSnapshot(this)
     })
   }
+
+  it('extractInlineFields of undefined is undefined', async function () {
+    const result = extractInlineFields(undefined)
+    expect(result).toBe(undefined)
+  })
 })
 
 describe('removeInlineFields', async function () {
@@ -47,4 +53,9 @@ describe('removeInlineFields', async function () {
       expect(text).toMatchSnapshot(this)
     })
   }
+
+  it('removeInlineFields of undefined is undefined', async function () {
+    const result = removeInlineFields(undefined)
+    expect(result).toBe(undefined)
+  })
 })
