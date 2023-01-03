@@ -5,8 +5,8 @@ import { removeBlockIds } from './blockIds.js'
 import { trim, isString } from './string.js'
 
 function normalizeText (str) {
-  if (str === undefined) {
-    return
+  if (str === undefined || str === null) {
+    return str
   }
   const a = removeInlineFields(str)
   const b = removeTags(a)
@@ -25,7 +25,6 @@ function apply (obj, fn) {
   if (isString(obj)) {
     return fn(obj)
   }
-
   if (Array.isArray(obj)) {
     return obj.map(element => apply(element, fn))
   }
@@ -39,6 +38,9 @@ function apply (obj, fn) {
 }
 
 function normalizeObject (obj) {
+  if (obj === undefined || obj === null) {
+    return obj
+  }
   return apply(obj, str => normalizeText(str))
 
 }

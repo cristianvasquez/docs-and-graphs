@@ -2,7 +2,9 @@
 const wikilinkRegex = /(!?)\[\[(.*?)(?:\|(.*?))?]]/
 
 function parseWikilink (str) {
-
+  if (str === undefined || str === null) {
+    return str
+  }
   const match = str.match(wikilinkRegex)
   if (match) {
     const transclude = match[1] === '!'
@@ -20,12 +22,12 @@ function parseWikilink (str) {
 
 const linkRegex = /(?:\[([^\]]+)\]\((https?:\/\/[^\s]+)\))|(https?:\/\/[^\s]+)$/
 
-function parseExternalLinks (text) {
-  if (text === undefined) {
-    return
+function parseExternalLinks (str) {
+  if (str === undefined || str === null) {
+    return str
   }
   // @TODO find a lib to do these sort of things.
-  const matches = text.match(linkRegex)
+  const matches = str.match(linkRegex)
   if (matches) {
     return {
       alias: matches[1], value: (matches[2] || matches[3]).replace(/>$/, ''),

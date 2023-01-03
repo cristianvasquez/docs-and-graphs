@@ -2,9 +2,8 @@ import { expect } from 'expect'
 
 import toMatchSnapshot from 'expect-mocha-snapshot'
 import {
-  parseWikilink, parseExternalLinks
+  parseWikilink, parseExternalLinks,
 } from '../../src/text/links.js'
-import { normalizeText } from '../../src/text/normalize.js'
 
 const markdown = [
   'no link',
@@ -23,8 +22,7 @@ const markdown = [
   '[protocol unknown](hello)',
   '[protocol unknown](file://)',
   '<http://example.org>',
-  '<https://example.org>'
-]
+  '<https://example.org>']
 
 expect.extend({ toMatchSnapshot })
 
@@ -48,5 +46,10 @@ describe('parseExternalLinks', async function () {
   it('parseExternalLinks of undefined is undefined', async function () {
     const result = parseExternalLinks(undefined)
     expect(result).toBe(undefined)
+  })
+
+  it('parseExternalLinks of null is null', async function () {
+    const result = parseExternalLinks(null)
+    expect(result).toBe(null)
   })
 })

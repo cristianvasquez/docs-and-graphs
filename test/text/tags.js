@@ -12,7 +12,6 @@ const tweets = [
   'My new favourite eatery in #liverpool and I mean superb! #TheBrunchClub #breakfast #food',
   '#nowplaying Pointer Sisters - Dare Me | #80s #disco #funk #radio']
 
-
 expect.extend({ toMatchSnapshot })
 
 describe('extractTags', async function () {
@@ -22,6 +21,16 @@ describe('extractTags', async function () {
       expect(tags).toMatchSnapshot(this)
     })
   }
+
+  it('extractTags of undefined is undefined', async function () {
+    const result = extractTags(undefined)
+    expect(result).toBe(undefined)
+  })
+
+  it('extractTags of null is null', async function () {
+    const result = extractTags(null)
+    expect(result).toBe(null)
+  })
 })
 
 describe('removeTags', async function () {
@@ -36,5 +45,10 @@ describe('removeTags', async function () {
   it('removeTags of undefined is undefined', async function () {
     const result = removeTags(undefined)
     expect(result).toBe(undefined)
+  })
+
+  it('removeTags of null is null', async function () {
+    const result = removeTags(null)
+    expect(result).toBe(null)
   })
 })

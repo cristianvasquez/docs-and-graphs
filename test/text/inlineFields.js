@@ -44,6 +44,11 @@ describe('extractInlineFields', async function () {
     const result = extractInlineFields(undefined)
     expect(result).toBe(undefined)
   })
+
+  it('extractInlineFields of null is null', async function () {
+    const result = extractInlineFields(null)
+    expect(result).toBe(null)
+  })
 })
 
 describe('removeInlineFields', async function () {
@@ -57,5 +62,10 @@ describe('removeInlineFields', async function () {
   it('removeInlineFields of undefined is undefined', async function () {
     const result = removeInlineFields(undefined)
     expect(result).toBe(undefined)
+  })
+
+  it('removeInlineFields of null is null', async function () {
+    const result = removeInlineFields(null)
+    expect(result).toBe(null)
   })
 })

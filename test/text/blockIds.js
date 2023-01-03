@@ -30,12 +30,16 @@ describe('extractBlockIds', async function () {
     const result = extractBlockIds(undefined)
     expect(result).toBe(undefined)
   })
+
+  it('extractBlockIds of null is null', async function () {
+    const result = extractBlockIds(null)
+    expect(result).toBe(null)
+  })
 })
 
 describe('removeBlockIds', async function () {
   for (const current of strings) {
     it(current, async function () {
-
       const txt = removeBlockIds(current)
       expect(txt).toMatchSnapshot(this)
     })
@@ -44,5 +48,10 @@ describe('removeBlockIds', async function () {
   it('removeBlockIds of undefined is undefined', async function () {
     const result = removeBlockIds(undefined)
     expect(result).toBe(undefined)
+  })
+
+  it('removeBlockIds of null is null', async function () {
+    const result = removeBlockIds(null)
+    expect(result).toBe(null)
   })
 })

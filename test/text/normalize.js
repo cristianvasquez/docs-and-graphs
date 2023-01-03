@@ -3,6 +3,7 @@ import { expect } from 'expect'
 import toMatchSnapshot from 'expect-mocha-snapshot'
 import {
   normalizeText,
+  normalizeObject
 } from '../../src/text/normalize.js'
 
 const text = [
@@ -24,10 +25,26 @@ describe('normalizeText', async function () {
     })
   }
 
-  it('normalize of undefined is undefined', async function () {
+  it('normalizeText of undefined is undefined', async function () {
     const result = normalizeText(undefined)
     expect(result).toBe(undefined)
   })
+
+  it('normalizeText of null is null', async function () {
+    const result = normalizeText(null)
+    expect(result).toBe(null)
+  })
 })
 
+describe('normalizeObject', async function () {
+
+  it('normalizeObject of undefined is undefined', async function () {
+    const result = normalizeObject(undefined)
+    expect(result).toBe(undefined)
+  })
+  it('normalizeObject of null is null', async function () {
+    const result = normalizeObject(null)
+    expect(result).toBe(null)
+  })
+})
 
