@@ -1,7 +1,6 @@
 import { expect } from 'expect'
-import { simpleAst } from '../src/simpleAst.js'
+import { simpleAst } from '../index.js'
 import toMatchSnapshot from 'expect-mocha-snapshot'
-import { createMarkdownParser } from '../src/markdown/markdownParser.js'
 import tests from './tests.js'
 import inlineFields from './support/inlineFields.js'
 
@@ -11,25 +10,31 @@ describe('astDag', async function () {
   for (const current of tests) {
     it(current.title, async function () {
       const fullText = current.markdown
-      const parser = createMarkdownParser()
-      const astNode = parser.parse(fullText)
 
-      const result = simpleAst({ astNode, fullText })
+      const result = simpleAst(fullText)
 
       expect(result).toMatchSnapshot(this)
     })
   }
 })
 
-describe('astDag normalize:false', async function () {
+describe('astDag normalize:true', async function () {
   for (const current of tests) {
     it(current.title, async function () {
       const fullText = current.markdown
-      const parser = createMarkdownParser()
-      const astNode = parser.parse(fullText)
 
-      const result = simpleAst({ astNode, fullText }, { normalize: false })
+      const result = simpleAst(fullText, { normalize: true })
 
+      expect(result).toMatchSnapshot(this)
+    })
+  }
+})
+
+describe('astDag includePosition:true', async function () {
+  for (const current of tests) {
+    it(current.title, async function () {
+      const fullText = current.markdown
+      const result = simpleAst(fullText, { includePosition: true })
       expect(result).toMatchSnapshot(this)
     })
   }
@@ -38,16 +43,14 @@ describe('astDag normalize:false', async function () {
 describe('inLineAsArray', async function () {
   it('inLineAsArray:true', async function () {
     const fullText = inlineFields.markdown
-    const parser = createMarkdownParser()
-    const astNode = parser.parse(fullText)
-    const result = simpleAst({ astNode, fullText }, { inlineAsArray: true })
+    const result = simpleAst(fullText, { inlineAsArray: true })
+
     expect(result).toMatchSnapshot(this)
   })
   it('inLineAsArray:false', async function () {
     const fullText = inlineFields.markdown
-    const parser = createMarkdownParser()
-    const astNode = parser.parse(fullText)
-    const result = simpleAst({ astNode, fullText }, { inlineAsArray: false })
+    const result = simpleAst(fullText, { inlineAsArray: false })
+
     expect(result).toMatchSnapshot(this)
   })
 })

@@ -5,13 +5,11 @@ import {
   annotateInlineFields, annotateTags, annotateYAML, annotateBlockIds,
 } from './defaultAnnotator.js'
 
-const DEFAULT_OPTIONS = {
-  normalize: true,
-}
+function simpleAst ({ astNode, fullText }, options) {
 
-function simpleAst ({ astNode, fullText }, options = {}) {
-
-  const _options = { ...DEFAULT_OPTIONS, ...options }
+  if (!options) {
+    throw Error('Requires options')
+  }
 
   const root = {
     type: 'root', depth: 0,
@@ -22,9 +20,9 @@ function simpleAst ({ astNode, fullText }, options = {}) {
 
     if (astNode.type === 'yaml') {
       return annotateYAML({ value: astNode.value, currentNode: current },
-        _options)
+        options)
     } else if (astNode.type === 'code') {
-      const block = createBlock({ astNode, fullText, type: 'code' }, _options)
+      const block = createBlock({ astNode, fullText, type: 'code' }, options)
       block.lang = astNode.lang
       if (astNode.meta) {
         block.meta = astNode.meta
@@ -39,17 +37,22 @@ function simpleAst ({ astNode, fullText }, options = {}) {
         ? ancesters[ancesters.length - 1]
         : current
 
-      const block = createBlock({ astNode, fullText, type: 'block' }, _options)
+      const block = createBlock({ astNode, fullText, type: 'block' }, options)
       block.depth = astNode.depth
+
+      if (options.includePosition && astNode.position) {
+        block.position = astNode.position
+      }
+
       push(parent, block)
       headersStack.push(block)
       return block
     } else if (astNode.type === 'list') {
       const outline = getOutline({ astNode, fullText, outlineDepth: 0 },
-        _options)
+        options)
       push(current, outline)
     } else if (astNode.type === 'paragraph') {
-      const block = createBlock({ astNode, fullText, type: 'text' }, _options)
+      const block = createBlock({ astNode, fullText, type: 'text' }, options)
       push(current, block)
     } else {
       // Things not yet handled
@@ -89,9 +92,16 @@ function getOutline ({ astNode, fullText, outlineDepth, depth }, options) {
       }
     }
   }
-  return {
+
+  const block = {
     type: 'outline', ordered: astNode.ordered, children,
   }
+
+  if (options.includePosition && astNode.position) {
+    block.position = astNode.position
+  }
+
+  return block
 }
 
 function createBlock ({ astNode, fullText, type }, options) {

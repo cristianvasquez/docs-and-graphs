@@ -10,595 +10,6 @@ Object {
             Object {
               "data": Array [
                 Object {
-                  "description": "Section 1",
-                },
-              ],
-              "links": Array [
-                Object {
-                  "alias": undefined,
-                  "type": "wikiLink",
-                  "value": "Bob Details#^2",
-                },
-              ],
-              "type": "text",
-              "value": "And some more [[Bob Details#^2]]",
-            },
-          ],
-          "depth": 2,
-          "ids": Array [
-            "1",
-          ],
-          "type": "block",
-          "value": "Section",
-        },
-        Object {
-          "children": Array [
-            Object {
-              "data": Array [
-                Object {
-                  "description": "Section 2",
-                },
-              ],
-              "links": Array [
-                Object {
-                  "alias": " Pointer to section 3",
-                  "type": "wikiLink",
-                  "value": "Bob Details#^3 ",
-                },
-              ],
-              "type": "text",
-              "value": "And some more [[Bob Details#^3 | Pointer to section 3]]",
-            },
-          ],
-          "depth": 2,
-          "ids": Array [
-            "2",
-          ],
-          "type": "block",
-          "value": "Section",
-        },
-        Object {
-          "children": Array [
-            Object {
-              "data": Array [
-                Object {
-                  "description": "Section 3",
-                },
-              ],
-              "links": Array [
-                Object {
-                  "alias": undefined,
-                  "type": "wikiLink",
-                  "value": "Unknown#^1",
-                },
-              ],
-              "type": "text",
-              "value": "And some more [[Unknown#^1]]",
-            },
-          ],
-          "depth": 2,
-          "ids": Array [
-            "3",
-          ],
-          "type": "block",
-          "value": "Section",
-        },
-        Object {
-          "children": Array [
-            Object {
-              "data": Array [
-                Object {
-                  "description": "Section 4",
-                },
-              ],
-              "type": "text",
-              "value": "",
-            },
-          ],
-          "depth": 2,
-          "tags": Array [
-            "Section",
-          ],
-          "type": "block",
-          "value": "Section",
-        },
-      ],
-      "depth": 1,
-      "type": "block",
-      "value": "Details about Bob",
-    },
-  ],
-  "depth": 0,
-  "type": "root",
-}
-`;
-
-exports[`astDag Inline fields 1`] = `
-Object {
-  "children": Array [
-    Object {
-      "data": Array [
-        Object {
-          "inline": "field",
-        },
-      ],
-      "type": "text",
-      "value": "",
-    },
-    Object {
-      "data": Array [
-        Object {
-          "inline": "field",
-        },
-      ],
-      "type": "text",
-      "value": "nested",
-    },
-    Object {
-      "data": Array [
-        Object {
-          "**Thoughts**": "It was decent.",
-        },
-      ],
-      "type": "text",
-      "value": "",
-    },
-    Object {
-      "data": Array [
-        Object {
-          "**Rating**": "6'",
-        },
-      ],
-      "type": "text",
-      "value": "",
-    },
-    Object {
-      "data": Array [
-        Object {
-          "subject": Object {
-            "inline": "field",
-          },
-        },
-      ],
-      "type": "text",
-      "value": "",
-    },
-    Object {
-      "data": Array [
-        Object {
-          "subject": Object {
-            "inline": "field",
-          },
-        },
-      ],
-      "type": "text",
-      "value": "nested",
-    },
-    Object {
-      "data": Array [
-        Object {
-          "subject": Object {
-            "**Thoughts**": "It was decent.",
-          },
-        },
-      ],
-      "type": "text",
-      "value": "",
-    },
-    Object {
-      "data": Array [
-        Object {
-          "subject": Object {
-            "**Rating**": "6",
-          },
-        },
-      ],
-      "type": "text",
-      "value": "",
-    },
-    Object {
-      "type": "text",
-      "value": "No inline fields",
-    },
-    Object {
-      "data": Array [
-        Object {
-          "Too": Object {
-            "many": Object {
-              "inline": "fields",
-            },
-          },
-        },
-      ],
-      "type": "text",
-      "value": "",
-    },
-    Object {
-      "data": Array [
-        Object {
-          "[[Bob]]": Object {
-            "foaf:knows": "[[Alice]]",
-          },
-        },
-      ],
-      "links": Array [
-        Object {
-          "alias": undefined,
-          "type": "wikiLink",
-          "value": "Alice",
-        },
-        Object {
-          "alias": undefined,
-          "type": "wikiLink",
-          "value": "Bob",
-        },
-      ],
-      "type": "text",
-      "value": "",
-    },
-  ],
-  "depth": 0,
-  "type": "root",
-}
-`;
-
-exports[`astDag Links 1`] = `
-Object {
-  "children": Array [
-    Object {
-      "data": Array [
-        Object {
-          "has image": "![Lovely image](../houses/img.png)",
-        },
-      ],
-      "links": Array [
-        Object {
-          "type": "link",
-          "value": "../houses/img.png",
-        },
-      ],
-      "type": "text",
-      "value": "",
-    },
-    Object {
-      "links": Array [
-        Object {
-          "alias": undefined,
-          "type": "wikiLink",
-          "value": "link 1",
-        },
-      ],
-      "type": "text",
-      "value": "[[link 1]]",
-    },
-    Object {
-      "links": Array [
-        Object {
-          "alias": undefined,
-          "type": "wikiLink",
-          "value": "/full/path/link 1",
-        },
-      ],
-      "type": "text",
-      "value": "[[/full/path/link 1]]",
-    },
-    Object {
-      "links": Array [
-        Object {
-          "alias": undefined,
-          "type": "wikiLink",
-          "value": "/full/path/link 1.md",
-        },
-      ],
-      "type": "text",
-      "value": "[[/full/path/link 1.md]]",
-    },
-    Object {
-      "links": Array [
-        Object {
-          "alias": "Alias 2",
-          "type": "link",
-          "value": "http://example.com",
-        },
-      ],
-      "type": "text",
-      "value": "[Alias 2](http://example.com)",
-    },
-    Object {
-      "links": Array [
-        Object {
-          "alias": "Alias 1",
-          "type": "wikiLink",
-          "value": "link 1 ",
-        },
-      ],
-      "type": "text",
-      "value": "[[link 1 |Alias 1]]",
-    },
-    Object {
-      "type": "text",
-      "value": "![[link 1]]",
-    },
-    Object {
-      "type": "text",
-      "value": "![[image.png]]",
-    },
-    Object {
-      "links": Array [
-        Object {
-          "alias": undefined,
-          "type": "link",
-          "value": "http://example.com",
-        },
-      ],
-      "type": "text",
-      "value": "The website is http://example.com see you!",
-    },
-    Object {
-      "links": Array [
-        Object {
-          "alias": "here",
-          "type": "link",
-          "value": "http://example.com",
-        },
-      ],
-      "type": "text",
-      "value": "The website is [here](http://example.com) see you!",
-    },
-    Object {
-      "links": Array [
-        Object {
-          "type": "link",
-          "value": "protocol",
-        },
-      ],
-      "type": "text",
-      "value": "The website is [here](protocol) see you!",
-    },
-    Object {
-      "links": Array [
-        Object {
-          "alias": undefined,
-          "type": "link",
-          "value": "https://example2.com",
-        },
-        Object {
-          "alias": undefined,
-          "type": "link",
-          "value": "http://example.com",
-        },
-      ],
-      "type": "text",
-      "value": "<http://example.com> <https://example2.com>",
-    },
-  ],
-  "depth": 0,
-  "type": "root",
-}
-`;
-
-exports[`astDag Outline 1`] = `
-Object {
-  "children": Array [
-    Object {
-      "children": Array [
-        Object {
-          "type": "outline",
-          "value": "Task",
-        },
-        Object {
-          "checked": true,
-          "type": "outline",
-          "value": "Task",
-        },
-        Object {
-          "type": "outline",
-          "value": "Item 0",
-        },
-        Object {
-          "children": Array [
-            Object {
-              "type": "outline",
-              "value": "Item 1",
-            },
-            Object {
-              "type": "outline",
-              "value": "Item 2",
-            },
-            Object {
-              "children": Array [
-                Object {
-                  "type": "outline",
-                  "value": "Item 3",
-                },
-              ],
-              "ordered": false,
-              "type": "outline",
-            },
-          ],
-          "ordered": false,
-          "type": "outline",
-        },
-        Object {
-          "type": "outline",
-          "value": "Item 4",
-        },
-      ],
-      "ordered": false,
-      "type": "outline",
-    },
-  ],
-  "depth": 0,
-  "type": "root",
-}
-`;
-
-exports[`astDag People 1`] = `
-Object {
-  "children": Array [
-    Object {
-      "children": Array [
-        Object {
-          "children": Array [
-            Object {
-              "data": Array [
-                Object {
-                  "number": "42",
-                },
-              ],
-              "type": "text",
-              "value": "",
-            },
-          ],
-          "depth": 2,
-          "type": "block",
-          "value": "A heading outside",
-        },
-      ],
-      "depth": 1,
-      "type": "block",
-      "value": "Alice",
-    },
-    Object {
-      "children": Array [
-        Object {
-          "children": Array [
-            Object {
-              "children": Array [
-                Object {
-                  "type": "outline",
-                  "value": "Eating",
-                },
-                Object {
-                  "type": "outline",
-                  "value": "Dancing",
-                },
-              ],
-              "ordered": false,
-              "type": "outline",
-            },
-          ],
-          "depth": 2,
-          "type": "block",
-          "value": "Interests",
-        },
-      ],
-      "data": Array [
-        Object {
-          "age": "42",
-        },
-      ],
-      "depth": 1,
-      "type": "block",
-      "value": "Bob",
-    },
-    Object {
-      "children": Array [
-        Object {
-          "children": Array [
-            Object {
-              "children": Array [
-                Object {
-                  "type": "outline",
-                  "value": "Waking up",
-                },
-                Object {
-                  "type": "outline",
-                  "value": "Drinking tea",
-                },
-              ],
-              "ordered": true,
-              "type": "outline",
-            },
-          ],
-          "depth": 2,
-          "type": "block",
-          "value": "Todo list",
-        },
-        Object {
-          "children": Array [
-            Object {
-              "data": Array [
-                Object {
-                  "age": "56",
-                },
-              ],
-              "type": "text",
-              "value": "Charlie is a good guy.",
-            },
-          ],
-          "depth": 2,
-          "type": "block",
-          "value": "Description",
-        },
-      ],
-      "depth": 1,
-      "type": "block",
-      "value": "Charlie",
-    },
-  ],
-  "depth": 0,
-  "type": "root",
-}
-`;
-
-exports[`astDag Yaml 1`] = `
-Object {
-  "data": Array [
-    Object {
-      "date updated": "2021-08-05T17:10:34+02:00",
-      "one": Array [
-        "Two",
-        Object {
-          "Three": Array [
-            "Other",
-          ],
-        },
-      ],
-    },
-  ],
-  "depth": 0,
-  "tags": Array [
-    "cats",
-    "dogs",
-  ],
-  "type": "root",
-}
-`;
-
-exports[`astDag code fence 1`] = `
-Object {
-  "children": Array [
-    Object {
-      "children": Array [
-        Object {
-          "lang": "js",
-          "type": "code",
-          "value": "\`\`\`js
-Hello world
-\`\`\`",
-        },
-      ],
-      "depth": 1,
-      "type": "block",
-      "value": "Some code",
-    },
-  ],
-  "depth": 0,
-  "type": "root",
-}
-`;
-
-exports[`astDag normalize:false BlockIds 1`] = `
-Object {
-  "children": Array [
-    Object {
-      "children": Array [
-        Object {
-          "children": Array [
-            Object {
-              "data": Array [
-                Object {
                   "description": " Section 1",
                 },
               ],
@@ -705,7 +116,7 @@ And some more [[Unknown#^1]]",
 }
 `;
 
-exports[`astDag normalize:false Inline fields 1`] = `
+exports[`astDag Inline fields 1`] = `
 Object {
   "children": Array [
     Object {
@@ -834,7 +245,7 @@ Object {
 }
 `;
 
-exports[`astDag normalize:false Links 1`] = `
+exports[`astDag Links 1`] = `
 Object {
   "children": Array [
     Object {
@@ -969,7 +380,7 @@ Object {
 }
 `;
 
-exports[`astDag normalize:false Outline 1`] = `
+exports[`astDag Outline 1`] = `
 Object {
   "children": Array [
     Object {
@@ -1025,7 +436,7 @@ Object {
 }
 `;
 
-exports[`astDag normalize:false People 1`] = `
+exports[`astDag People 1`] = `
 Object {
   "children": Array [
     Object {
@@ -1134,7 +545,7 @@ Object {
 }
 `;
 
-exports[`astDag normalize:false Yaml 1`] = `
+exports[`astDag Yaml 1`] = `
 Object {
   "data": Array [
     Object {
@@ -1158,7 +569,7 @@ Object {
 }
 `;
 
-exports[`astDag normalize:false code fence 1`] = `
+exports[`astDag code fence 1`] = `
 Object {
   "children": Array [
     Object {
@@ -1181,7 +592,928 @@ Hello world
 }
 `;
 
-exports[`inLineAsArray inLineAsArray:false 1`] = `
+exports[`astDag includePosition:true BlockIds 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "description": " Section 1",
+                },
+              ],
+              "links": Array [
+                Object {
+                  "alias": undefined,
+                  "type": "wikiLink",
+                  "value": "Bob Details#^2",
+                },
+              ],
+              "type": "text",
+              "value": "description:: Section 1
+And some more [[Bob Details#^2]]",
+            },
+          ],
+          "depth": 2,
+          "ids": Array [
+            "^1",
+          ],
+          "position": Object {
+            "end": Object {
+              "column": 14,
+              "line": 4,
+              "offset": 35,
+            },
+            "start": Object {
+              "column": 1,
+              "line": 4,
+              "offset": 22,
+            },
+          },
+          "type": "block",
+          "value": "## Section ^1",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "description": " Section 2",
+                },
+              ],
+              "links": Array [
+                Object {
+                  "alias": " Pointer to section 3",
+                  "type": "wikiLink",
+                  "value": "Bob Details#^3 ",
+                },
+              ],
+              "type": "text",
+              "value": "description:: Section 2
+And some more [[Bob Details#^3 | Pointer to section 3]]",
+            },
+          ],
+          "depth": 2,
+          "ids": Array [
+            "^2",
+          ],
+          "position": Object {
+            "end": Object {
+              "column": 14,
+              "line": 9,
+              "offset": 108,
+            },
+            "start": Object {
+              "column": 1,
+              "line": 9,
+              "offset": 95,
+            },
+          },
+          "type": "block",
+          "value": "## Section ^2",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "description": " Section 3",
+                },
+              ],
+              "links": Array [
+                Object {
+                  "alias": undefined,
+                  "type": "wikiLink",
+                  "value": "Unknown#^1",
+                },
+              ],
+              "type": "text",
+              "value": "description:: Section 3
+And some more [[Unknown#^1]]",
+            },
+          ],
+          "depth": 2,
+          "ids": Array [
+            "^3",
+          ],
+          "position": Object {
+            "end": Object {
+              "column": 14,
+              "line": 14,
+              "offset": 204,
+            },
+            "start": Object {
+              "column": 1,
+              "line": 14,
+              "offset": 191,
+            },
+          },
+          "type": "block",
+          "value": "## Section ^3",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "description": " Section 4",
+                },
+              ],
+              "type": "text",
+              "value": "description:: Section 4",
+            },
+          ],
+          "depth": 2,
+          "position": Object {
+            "end": Object {
+              "column": 20,
+              "line": 19,
+              "offset": 279,
+            },
+            "start": Object {
+              "column": 1,
+              "line": 19,
+              "offset": 260,
+            },
+          },
+          "tags": Array [
+            "#Section",
+          ],
+          "type": "block",
+          "value": "## Section #Section",
+        },
+      ],
+      "depth": 1,
+      "position": Object {
+        "end": Object {
+          "column": 20,
+          "line": 2,
+          "offset": 20,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 2,
+          "offset": 1,
+        },
+      },
+      "type": "block",
+      "value": "# Details about Bob",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`astDag includePosition:true Inline fields 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "data": Array [
+        Object {
+          "inline ": " field",
+        },
+      ],
+      "type": "text",
+      "value": "inline :: field",
+    },
+    Object {
+      "data": Array [
+        Object {
+          " inline ": " field ",
+        },
+      ],
+      "type": "text",
+      "value": "nested ( inline :: field )",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "**Thoughts**": " It was decent.",
+        },
+      ],
+      "type": "text",
+      "value": "**Thoughts**:: It was decent.",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "**Rating**": " 6'",
+        },
+      ],
+      "type": "text",
+      "value": "**Rating**:: 6'",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "subject ": Object {
+            " inline ": " field",
+          },
+        },
+      ],
+      "type": "text",
+      "value": "subject :: inline :: field",
+    },
+    Object {
+      "data": Array [
+        Object {
+          " subject ": Object {
+            " inline ": " field ",
+          },
+        },
+      ],
+      "type": "text",
+      "value": "nested ( subject :: inline :: field )",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "subject ": Object {
+            " **Thoughts**": " It was decent.",
+          },
+        },
+      ],
+      "type": "text",
+      "value": "subject :: **Thoughts**:: It was decent.",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "subject ": Object {
+            " **Rating**": " 6",
+          },
+        },
+      ],
+      "type": "text",
+      "value": "subject :: **Rating**:: 6",
+    },
+    Object {
+      "type": "text",
+      "value": "No inline fields",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "Too ": Object {
+            " many ": Object {
+              " inline ": " fields",
+            },
+          },
+        },
+      ],
+      "type": "text",
+      "value": "Too :: many :: inline :: fields",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "[[Bob]] ": Object {
+            " foaf:knows ": " [[Alice]]",
+          },
+        },
+      ],
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "wikiLink",
+          "value": "Alice",
+        },
+        Object {
+          "alias": undefined,
+          "type": "wikiLink",
+          "value": "Bob",
+        },
+      ],
+      "type": "text",
+      "value": "[[Bob]] :: foaf:knows :: [[Alice]]",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`astDag includePosition:true Links 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "data": Array [
+        Object {
+          "has image ": " ![Lovely image](../houses/img.png)",
+        },
+      ],
+      "links": Array [
+        Object {
+          "type": "link",
+          "value": "../houses/img.png",
+        },
+      ],
+      "type": "text",
+      "value": "has image :: ![Lovely image](../houses/img.png)",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "wikiLink",
+          "value": "link 1",
+        },
+      ],
+      "type": "text",
+      "value": "[[link 1]]",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "wikiLink",
+          "value": "/full/path/link 1",
+        },
+      ],
+      "type": "text",
+      "value": "[[/full/path/link 1]]",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "wikiLink",
+          "value": "/full/path/link 1.md",
+        },
+      ],
+      "type": "text",
+      "value": "[[/full/path/link 1.md]]",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": "Alias 2",
+          "type": "link",
+          "value": "http://example.com",
+        },
+      ],
+      "type": "text",
+      "value": "[Alias 2](http://example.com)",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": "Alias 1",
+          "type": "wikiLink",
+          "value": "link 1 ",
+        },
+      ],
+      "type": "text",
+      "value": "[[link 1 |Alias 1]]",
+    },
+    Object {
+      "type": "text",
+      "value": "![[link 1]]",
+    },
+    Object {
+      "type": "text",
+      "value": "![[image.png]]",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "link",
+          "value": "http://example.com",
+        },
+      ],
+      "type": "text",
+      "value": "The website is http://example.com see you!",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": "here",
+          "type": "link",
+          "value": "http://example.com",
+        },
+      ],
+      "type": "text",
+      "value": "The website is [here](http://example.com) see you!",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "type": "link",
+          "value": "protocol",
+        },
+      ],
+      "type": "text",
+      "value": "The website is [here](protocol) see you!",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "link",
+          "value": "https://example2.com",
+        },
+        Object {
+          "alias": undefined,
+          "type": "link",
+          "value": "http://example.com",
+        },
+      ],
+      "type": "text",
+      "value": "<http://example.com> <https://example2.com> ",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`astDag includePosition:true Outline 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "type": "outline",
+          "value": "Task",
+        },
+        Object {
+          "checked": true,
+          "type": "outline",
+          "value": "Task",
+        },
+        Object {
+          "type": "outline",
+          "value": "Item 0",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "type": "outline",
+              "value": "Item 1",
+            },
+            Object {
+              "type": "outline",
+              "value": "Item 2",
+            },
+            Object {
+              "children": Array [
+                Object {
+                  "type": "outline",
+                  "value": "Item 3",
+                },
+              ],
+              "ordered": false,
+              "position": Object {
+                "end": Object {
+                  "column": 11,
+                  "line": 7,
+                  "offset": 62,
+                },
+                "start": Object {
+                  "column": 3,
+                  "line": 7,
+                  "offset": 54,
+                },
+              },
+              "type": "outline",
+            },
+          ],
+          "ordered": false,
+          "position": Object {
+            "end": Object {
+              "column": 11,
+              "line": 7,
+              "offset": 62,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 5,
+              "offset": 33,
+            },
+          },
+          "type": "outline",
+        },
+        Object {
+          "type": "outline",
+          "value": "Item 4",
+        },
+      ],
+      "ordered": false,
+      "position": Object {
+        "end": Object {
+          "column": 3,
+          "line": 9,
+          "offset": 74,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 2,
+          "offset": 1,
+        },
+      },
+      "type": "outline",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`astDag includePosition:true People 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "number ": " 42",
+                },
+              ],
+              "type": "text",
+              "value": "number :: 42",
+            },
+          ],
+          "depth": 2,
+          "position": Object {
+            "end": Object {
+              "column": 21,
+              "line": 3,
+              "offset": 29,
+            },
+            "start": Object {
+              "column": 1,
+              "line": 3,
+              "offset": 9,
+            },
+          },
+          "type": "block",
+          "value": "## A heading outside",
+        },
+      ],
+      "depth": 1,
+      "position": Object {
+        "end": Object {
+          "column": 8,
+          "line": 1,
+          "offset": 7,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "block",
+      "value": "# Alice",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "children": Array [
+                Object {
+                  "type": "outline",
+                  "value": "Eating",
+                },
+                Object {
+                  "type": "outline",
+                  "value": "Dancing",
+                },
+              ],
+              "ordered": false,
+              "position": Object {
+                "end": Object {
+                  "column": 10,
+                  "line": 12,
+                  "offset": 96,
+                },
+                "start": Object {
+                  "column": 1,
+                  "line": 11,
+                  "offset": 78,
+                },
+              },
+              "type": "outline",
+            },
+          ],
+          "depth": 2,
+          "position": Object {
+            "end": Object {
+              "column": 13,
+              "line": 9,
+              "offset": 76,
+            },
+            "start": Object {
+              "column": 1,
+              "line": 9,
+              "offset": 64,
+            },
+          },
+          "type": "block",
+          "value": "## Interests",
+        },
+      ],
+      "data": Array [
+        Object {
+          "age ": " 42",
+        },
+      ],
+      "depth": 1,
+      "position": Object {
+        "end": Object {
+          "column": 18,
+          "line": 7,
+          "offset": 62,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 7,
+          "offset": 45,
+        },
+      },
+      "type": "block",
+      "value": "# Bob (age :: 42)",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "children": Array [
+                Object {
+                  "type": "outline",
+                  "value": "Waking up",
+                },
+                Object {
+                  "type": "outline",
+                  "value": "Drinking tea",
+                },
+              ],
+              "ordered": true,
+              "position": Object {
+                "end": Object {
+                  "column": 16,
+                  "line": 19,
+                  "offset": 151,
+                },
+                "start": Object {
+                  "column": 1,
+                  "line": 18,
+                  "offset": 123,
+                },
+              },
+              "type": "outline",
+            },
+          ],
+          "depth": 2,
+          "position": Object {
+            "end": Object {
+              "column": 13,
+              "line": 16,
+              "offset": 121,
+            },
+            "start": Object {
+              "column": 1,
+              "line": 16,
+              "offset": 109,
+            },
+          },
+          "type": "block",
+          "value": "## Todo list",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "age ": " 56",
+                },
+              ],
+              "type": "text",
+              "value": "Charlie is a good guy. (age :: 56)",
+            },
+          ],
+          "depth": 2,
+          "position": Object {
+            "end": Object {
+              "column": 15,
+              "line": 21,
+              "offset": 167,
+            },
+            "start": Object {
+              "column": 1,
+              "line": 21,
+              "offset": 153,
+            },
+          },
+          "type": "block",
+          "value": "## Description",
+        },
+      ],
+      "depth": 1,
+      "position": Object {
+        "end": Object {
+          "column": 10,
+          "line": 14,
+          "offset": 107,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 14,
+          "offset": 98,
+        },
+      },
+      "type": "block",
+      "value": "# Charlie",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`astDag includePosition:true Yaml 1`] = `
+Object {
+  "data": Array [
+    Object {
+      "date updated": "2021-08-05T17:10:34+02:00",
+      "one": Array [
+        "Two",
+        Object {
+          "Three": Array [
+            "Other",
+          ],
+        },
+      ],
+    },
+  ],
+  "depth": 0,
+  "tags": Array [
+    "cats",
+    "dogs",
+  ],
+  "type": "root",
+}
+`;
+
+exports[`astDag includePosition:true code fence 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "lang": "js",
+          "type": "code",
+          "value": "\`\`\`js
+Hello world
+\`\`\`",
+        },
+      ],
+      "depth": 1,
+      "position": Object {
+        "end": Object {
+          "column": 13,
+          "line": 3,
+          "offset": 14,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 3,
+          "offset": 2,
+        },
+      },
+      "type": "block",
+      "value": "# Some code ",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`astDag normalize:true BlockIds 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "description": "Section 1",
+                },
+              ],
+              "links": Array [
+                Object {
+                  "alias": undefined,
+                  "type": "wikiLink",
+                  "value": "Bob Details#^2",
+                },
+              ],
+              "type": "text",
+              "value": "And some more [[Bob Details#^2]]",
+            },
+          ],
+          "depth": 2,
+          "ids": Array [
+            "1",
+          ],
+          "type": "block",
+          "value": "Section",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "description": "Section 2",
+                },
+              ],
+              "links": Array [
+                Object {
+                  "alias": " Pointer to section 3",
+                  "type": "wikiLink",
+                  "value": "Bob Details#^3 ",
+                },
+              ],
+              "type": "text",
+              "value": "And some more [[Bob Details#^3 | Pointer to section 3]]",
+            },
+          ],
+          "depth": 2,
+          "ids": Array [
+            "2",
+          ],
+          "type": "block",
+          "value": "Section",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "description": "Section 3",
+                },
+              ],
+              "links": Array [
+                Object {
+                  "alias": undefined,
+                  "type": "wikiLink",
+                  "value": "Unknown#^1",
+                },
+              ],
+              "type": "text",
+              "value": "And some more [[Unknown#^1]]",
+            },
+          ],
+          "depth": 2,
+          "ids": Array [
+            "3",
+          ],
+          "type": "block",
+          "value": "Section",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "description": "Section 4",
+                },
+              ],
+              "type": "text",
+              "value": "",
+            },
+          ],
+          "depth": 2,
+          "tags": Array [
+            "Section",
+          ],
+          "type": "block",
+          "value": "Section",
+        },
+      ],
+      "depth": 1,
+      "type": "block",
+      "value": "Details about Bob",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`astDag normalize:true Inline fields 1`] = `
 Object {
   "children": Array [
     Object {
@@ -1310,92 +1642,568 @@ Object {
 }
 `;
 
+exports[`astDag normalize:true Links 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "data": Array [
+        Object {
+          "has image": "![Lovely image](../houses/img.png)",
+        },
+      ],
+      "links": Array [
+        Object {
+          "type": "link",
+          "value": "../houses/img.png",
+        },
+      ],
+      "type": "text",
+      "value": "",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "wikiLink",
+          "value": "link 1",
+        },
+      ],
+      "type": "text",
+      "value": "[[link 1]]",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "wikiLink",
+          "value": "/full/path/link 1",
+        },
+      ],
+      "type": "text",
+      "value": "[[/full/path/link 1]]",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "wikiLink",
+          "value": "/full/path/link 1.md",
+        },
+      ],
+      "type": "text",
+      "value": "[[/full/path/link 1.md]]",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": "Alias 2",
+          "type": "link",
+          "value": "http://example.com",
+        },
+      ],
+      "type": "text",
+      "value": "[Alias 2](http://example.com)",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": "Alias 1",
+          "type": "wikiLink",
+          "value": "link 1 ",
+        },
+      ],
+      "type": "text",
+      "value": "[[link 1 |Alias 1]]",
+    },
+    Object {
+      "type": "text",
+      "value": "![[link 1]]",
+    },
+    Object {
+      "type": "text",
+      "value": "![[image.png]]",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "link",
+          "value": "http://example.com",
+        },
+      ],
+      "type": "text",
+      "value": "The website is http://example.com see you!",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": "here",
+          "type": "link",
+          "value": "http://example.com",
+        },
+      ],
+      "type": "text",
+      "value": "The website is [here](http://example.com) see you!",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "type": "link",
+          "value": "protocol",
+        },
+      ],
+      "type": "text",
+      "value": "The website is [here](protocol) see you!",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "link",
+          "value": "https://example2.com",
+        },
+        Object {
+          "alias": undefined,
+          "type": "link",
+          "value": "http://example.com",
+        },
+      ],
+      "type": "text",
+      "value": "<http://example.com> <https://example2.com>",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`astDag normalize:true Outline 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "type": "outline",
+          "value": "Task",
+        },
+        Object {
+          "checked": true,
+          "type": "outline",
+          "value": "Task",
+        },
+        Object {
+          "type": "outline",
+          "value": "Item 0",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "type": "outline",
+              "value": "Item 1",
+            },
+            Object {
+              "type": "outline",
+              "value": "Item 2",
+            },
+            Object {
+              "children": Array [
+                Object {
+                  "type": "outline",
+                  "value": "Item 3",
+                },
+              ],
+              "ordered": false,
+              "type": "outline",
+            },
+          ],
+          "ordered": false,
+          "type": "outline",
+        },
+        Object {
+          "type": "outline",
+          "value": "Item 4",
+        },
+      ],
+      "ordered": false,
+      "type": "outline",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`astDag normalize:true People 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "number": "42",
+                },
+              ],
+              "type": "text",
+              "value": "",
+            },
+          ],
+          "depth": 2,
+          "type": "block",
+          "value": "A heading outside",
+        },
+      ],
+      "depth": 1,
+      "type": "block",
+      "value": "Alice",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "children": Array [
+                Object {
+                  "type": "outline",
+                  "value": "Eating",
+                },
+                Object {
+                  "type": "outline",
+                  "value": "Dancing",
+                },
+              ],
+              "ordered": false,
+              "type": "outline",
+            },
+          ],
+          "depth": 2,
+          "type": "block",
+          "value": "Interests",
+        },
+      ],
+      "data": Array [
+        Object {
+          "age": "42",
+        },
+      ],
+      "depth": 1,
+      "type": "block",
+      "value": "Bob",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "children": Array [
+                Object {
+                  "type": "outline",
+                  "value": "Waking up",
+                },
+                Object {
+                  "type": "outline",
+                  "value": "Drinking tea",
+                },
+              ],
+              "ordered": true,
+              "type": "outline",
+            },
+          ],
+          "depth": 2,
+          "type": "block",
+          "value": "Todo list",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "age": "56",
+                },
+              ],
+              "type": "text",
+              "value": "Charlie is a good guy.",
+            },
+          ],
+          "depth": 2,
+          "type": "block",
+          "value": "Description",
+        },
+      ],
+      "depth": 1,
+      "type": "block",
+      "value": "Charlie",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`astDag normalize:true Yaml 1`] = `
+Object {
+  "data": Array [
+    Object {
+      "date updated": "2021-08-05T17:10:34+02:00",
+      "one": Array [
+        "Two",
+        Object {
+          "Three": Array [
+            "Other",
+          ],
+        },
+      ],
+    },
+  ],
+  "depth": 0,
+  "tags": Array [
+    "cats",
+    "dogs",
+  ],
+  "type": "root",
+}
+`;
+
+exports[`astDag normalize:true code fence 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "lang": "js",
+          "type": "code",
+          "value": "\`\`\`js
+Hello world
+\`\`\`",
+        },
+      ],
+      "depth": 1,
+      "type": "block",
+      "value": "Some code",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`inLineAsArray inLineAsArray:false 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "data": Array [
+        Object {
+          "inline ": " field",
+        },
+      ],
+      "type": "text",
+      "value": "inline :: field",
+    },
+    Object {
+      "data": Array [
+        Object {
+          " inline ": " field ",
+        },
+      ],
+      "type": "text",
+      "value": "nested ( inline :: field )",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "**Thoughts**": " It was decent.",
+        },
+      ],
+      "type": "text",
+      "value": "**Thoughts**:: It was decent.",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "**Rating**": " 6'",
+        },
+      ],
+      "type": "text",
+      "value": "**Rating**:: 6'",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "subject ": Object {
+            " inline ": " field",
+          },
+        },
+      ],
+      "type": "text",
+      "value": "subject :: inline :: field",
+    },
+    Object {
+      "data": Array [
+        Object {
+          " subject ": Object {
+            " inline ": " field ",
+          },
+        },
+      ],
+      "type": "text",
+      "value": "nested ( subject :: inline :: field )",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "subject ": Object {
+            " **Thoughts**": " It was decent.",
+          },
+        },
+      ],
+      "type": "text",
+      "value": "subject :: **Thoughts**:: It was decent.",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "subject ": Object {
+            " **Rating**": " 6",
+          },
+        },
+      ],
+      "type": "text",
+      "value": "subject :: **Rating**:: 6",
+    },
+    Object {
+      "type": "text",
+      "value": "No inline fields",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "Too ": Object {
+            " many ": Object {
+              " inline ": " fields",
+            },
+          },
+        },
+      ],
+      "type": "text",
+      "value": "Too :: many :: inline :: fields",
+    },
+    Object {
+      "data": Array [
+        Object {
+          "[[Bob]] ": Object {
+            " foaf:knows ": " [[Alice]]",
+          },
+        },
+      ],
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "type": "wikiLink",
+          "value": "Alice",
+        },
+        Object {
+          "alias": undefined,
+          "type": "wikiLink",
+          "value": "Bob",
+        },
+      ],
+      "type": "text",
+      "value": "[[Bob]] :: foaf:knows :: [[Alice]]",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
 exports[`inLineAsArray inLineAsArray:true 1`] = `
 Object {
   "children": Array [
     Object {
       "data": Array [
         Array [
-          "inline",
-          "field",
+          "inline ",
+          " field",
         ],
       ],
       "type": "text",
-      "value": "",
+      "value": "inline :: field",
     },
     Object {
       "data": Array [
         Array [
-          "inline",
-          "field",
+          " inline ",
+          " field ",
         ],
       ],
       "type": "text",
-      "value": "nested",
+      "value": "nested ( inline :: field )",
     },
     Object {
       "data": Array [
         Array [
           "**Thoughts**",
-          "It was decent.",
+          " It was decent.",
         ],
       ],
       "type": "text",
-      "value": "",
+      "value": "**Thoughts**:: It was decent.",
     },
     Object {
       "data": Array [
         Array [
           "**Rating**",
-          "6'",
+          " 6'",
         ],
       ],
       "type": "text",
-      "value": "",
+      "value": "**Rating**:: 6'",
     },
     Object {
       "data": Array [
         Array [
-          "subject",
-          "inline",
-          "field",
+          "subject ",
+          " inline ",
+          " field",
         ],
       ],
       "type": "text",
-      "value": "",
+      "value": "subject :: inline :: field",
     },
     Object {
       "data": Array [
         Array [
-          "subject",
-          "inline",
-          "field",
+          " subject ",
+          " inline ",
+          " field ",
         ],
       ],
       "type": "text",
-      "value": "nested",
+      "value": "nested ( subject :: inline :: field )",
     },
     Object {
       "data": Array [
         Array [
-          "subject",
-          "**Thoughts**",
-          "It was decent.",
+          "subject ",
+          " **Thoughts**",
+          " It was decent.",
         ],
       ],
       "type": "text",
-      "value": "",
+      "value": "subject :: **Thoughts**:: It was decent.",
     },
     Object {
       "data": Array [
         Array [
-          "subject",
-          "**Rating**",
-          "6",
+          "subject ",
+          " **Rating**",
+          " 6",
         ],
       ],
       "type": "text",
-      "value": "",
+      "value": "subject :: **Rating**:: 6",
     },
     Object {
       "type": "text",
@@ -1404,21 +2212,21 @@ Object {
     Object {
       "data": Array [
         Array [
-          "Too",
-          "many",
-          "inline",
-          "fields",
+          "Too ",
+          " many ",
+          " inline ",
+          " fields",
         ],
       ],
       "type": "text",
-      "value": "",
+      "value": "Too :: many :: inline :: fields",
     },
     Object {
       "data": Array [
         Array [
-          "[[Bob]]",
-          "foaf:knows",
-          "[[Alice]]",
+          "[[Bob]] ",
+          " foaf:knows ",
+          " [[Alice]]",
         ],
       ],
       "links": Array [
@@ -1434,7 +2242,7 @@ Object {
         },
       ],
       "type": "text",
-      "value": "",
+      "value": "[[Bob]] :: foaf:knows :: [[Alice]]",
     },
   ],
   "depth": 0,
