@@ -1,131 +1,175 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`parseExternalLinks ![[image.png]] 1`] = `undefined`;
-
-exports[`parseExternalLinks ![[link 1]] 1`] = `undefined`;
-
-exports[`parseExternalLinks <http://example.org> 1`] = `
-Object {
-  "alias": undefined,
-  "value": "http://example.org",
-}
+exports[`parseLinks ![[image.png]] 1`] = `
+Array [
+  Object {
+    "alias": undefined,
+    "transclude": true,
+    "type": "internal",
+    "value": "image.png",
+  },
+]
 `;
 
-exports[`parseExternalLinks <https://example.org> 1`] = `
-Object {
-  "alias": undefined,
-  "value": "https://example.org",
-}
+exports[`parseLinks ![[link 1]] 1`] = `
+Array [
+  Object {
+    "alias": undefined,
+    "transclude": true,
+    "type": "internal",
+    "value": "link 1",
+  },
+]
 `;
 
-exports[`parseExternalLinks [[/full/path/link 1.md]] 1`] = `undefined`;
-
-exports[`parseExternalLinks [[/full/path/link 1]] 1`] = `undefined`;
-
-exports[`parseExternalLinks [[link 1 |Alias 1]] 1`] = `undefined`;
-
-exports[`parseExternalLinks [[link 1]] 1`] = `undefined`;
-
-exports[`parseExternalLinks [Alias 2](http://example.com) 1`] = `
-Object {
-  "alias": "Alias 2",
-  "value": "http://example.com",
-}
+exports[`parseLinks ![Lovely image](../houses/img.png) 1`] = `
+Array [
+  Object {
+    "alias": "Lovely image",
+    "type": "internal",
+    "value": "../houses/img.png",
+  },
+]
 `;
 
-exports[`parseExternalLinks [Alias 3](https://example.com) 1`] = `
-Object {
-  "alias": "Alias 3",
-  "value": "https://example.com",
-}
+exports[`parseLinks <http://example.org> 1`] = `
+Array [
+  Object {
+    "alias": undefined,
+    "type": "external",
+    "value": "http://example.org",
+  },
+]
 `;
 
-exports[`parseExternalLinks [protocol unknown](file://) 1`] = `undefined`;
-
-exports[`parseExternalLinks [protocol unknown](hello) 1`] = `undefined`;
-
-exports[`parseExternalLinks http://example.com 1`] = `
-Object {
-  "alias": undefined,
-  "value": "http://example.com",
-}
+exports[`parseLinks <https://example.org> 1`] = `
+Array [
+  Object {
+    "alias": undefined,
+    "type": "external",
+    "value": "https://example.org",
+  },
+]
 `;
 
-exports[`parseExternalLinks https://example.com 1`] = `
-Object {
-  "alias": undefined,
-  "value": "https://example.com",
-}
+exports[`parseLinks [[/full/path/link 1.md]] 1`] = `
+Array [
+  Object {
+    "alias": undefined,
+    "type": "internal",
+    "value": "/full/path/link 1.md",
+  },
+]
 `;
 
-exports[`parseExternalLinks no link 1`] = `undefined`;
-
-exports[`parseExternalLinks some text http://example.com more text 1`] = `undefined`;
-
-exports[`parseExternalLinks some text2 https://example.com more text 1`] = `undefined`;
-
-exports[`parseWikilink ![[image.png]] 1`] = `
-Object {
-  "alias": undefined,
-  "transclude": true,
-  "value": "image.png",
-}
+exports[`parseLinks [[/full/path/link 1]] 1`] = `
+Array [
+  Object {
+    "alias": undefined,
+    "type": "internal",
+    "value": "/full/path/link 1",
+  },
+]
 `;
 
-exports[`parseWikilink ![[link 1]] 1`] = `
-Object {
-  "alias": undefined,
-  "transclude": true,
-  "value": "link 1",
-}
+exports[`parseLinks [[link 1 |Alias 1]] 1`] = `
+Array [
+  Object {
+    "alias": "Alias 1",
+    "type": "internal",
+    "value": "link 1 ",
+  },
+]
 `;
 
-exports[`parseWikilink <http://example.org> 1`] = `undefined`;
-
-exports[`parseWikilink <https://example.org> 1`] = `undefined`;
-
-exports[`parseWikilink [[/full/path/link 1.md]] 1`] = `
-Object {
-  "alias": undefined,
-  "value": "/full/path/link 1.md",
-}
+exports[`parseLinks [[link 1]] 1`] = `
+Array [
+  Object {
+    "alias": undefined,
+    "type": "internal",
+    "value": "link 1",
+  },
+]
 `;
 
-exports[`parseWikilink [[/full/path/link 1]] 1`] = `
-Object {
-  "alias": undefined,
-  "value": "/full/path/link 1",
-}
+exports[`parseLinks [Alias 2](http://example.com) 1`] = `
+Array [
+  Object {
+    "alias": "Alias 2",
+    "type": "external",
+    "value": "http://example.com",
+  },
+]
 `;
 
-exports[`parseWikilink [[link 1 |Alias 1]] 1`] = `
-Object {
-  "alias": "Alias 1",
-  "value": "link 1 ",
-}
+exports[`parseLinks [Alias 3](https://example.com) 1`] = `
+Array [
+  Object {
+    "alias": "Alias 3",
+    "type": "external",
+    "value": "https://example.com",
+  },
+]
 `;
 
-exports[`parseWikilink [[link 1]] 1`] = `
-Object {
-  "alias": undefined,
-  "value": "link 1",
-}
+exports[`parseLinks [protocol unknown](file://) 1`] = `
+Array [
+  Object {
+    "alias": "protocol unknown",
+    "type": "internal",
+    "value": "file://",
+  },
+]
 `;
 
-exports[`parseWikilink [Alias 2](http://example.com) 1`] = `undefined`;
+exports[`parseLinks [protocol unknown](hello) 1`] = `
+Array [
+  Object {
+    "alias": "protocol unknown",
+    "type": "internal",
+    "value": "hello",
+  },
+]
+`;
 
-exports[`parseWikilink [Alias 3](https://example.com) 1`] = `undefined`;
+exports[`parseLinks http://example.com 1`] = `
+Array [
+  Object {
+    "alias": undefined,
+    "type": "external",
+    "value": "http://example.com",
+  },
+]
+`;
 
-exports[`parseWikilink [protocol unknown](file://) 1`] = `undefined`;
+exports[`parseLinks https://example.com 1`] = `
+Array [
+  Object {
+    "alias": undefined,
+    "type": "external",
+    "value": "https://example.com",
+  },
+]
+`;
 
-exports[`parseWikilink [protocol unknown](hello) 1`] = `undefined`;
+exports[`parseLinks no link 1`] = `Array []`;
 
-exports[`parseWikilink http://example.com 1`] = `undefined`;
+exports[`parseLinks some text http://example.com more text 1`] = `
+Array [
+  Object {
+    "alias": undefined,
+    "type": "external",
+    "value": "http://example.com",
+  },
+]
+`;
 
-exports[`parseWikilink https://example.com 1`] = `undefined`;
-
-exports[`parseWikilink no link 1`] = `undefined`;
-
-exports[`parseWikilink some text http://example.com more text 1`] = `undefined`;
-
-exports[`parseWikilink some text2 https://example.com more text 1`] = `undefined`;
+exports[`parseLinks some text2 https://example.com more text 1`] = `
+Array [
+  Object {
+    "alias": undefined,
+    "type": "external",
+    "value": "https://example.com",
+  },
+]
+`;

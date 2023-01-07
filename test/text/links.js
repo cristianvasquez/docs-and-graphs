@@ -1,9 +1,7 @@
 import { expect } from 'expect'
 
 import toMatchSnapshot from 'expect-mocha-snapshot'
-import {
-  parseWikilink, parseExternalLinks,
-} from '../../src/text/links.js'
+import { parseLinks } from '../../src/text/links.js'
 
 const markdown = [
   'no link',
@@ -21,35 +19,28 @@ const markdown = [
   '![[image.png]]',
   '[protocol unknown](hello)',
   '[protocol unknown](file://)',
+  '![Lovely image](../houses/img.png)',
   '<http://example.org>',
   '<https://example.org>']
 
 expect.extend({ toMatchSnapshot })
 
-describe('parseWikilink', async function () {
+describe('parseLinks', async function () {
   for (const current of markdown) {
     it(current, async function () {
-      const result = parseWikilink(current)
-      expect(result).toMatchSnapshot(this)
-    })
-  }
-})
-
-describe('parseExternalLinks', async function () {
-  for (const current of markdown) {
-    it(current, async function () {
-      const result = parseExternalLinks(current)
+      const result = parseLinks(current)
       expect(result).toMatchSnapshot(this)
     })
   }
 
-  it('parseExternalLinks of undefined is undefined', async function () {
-    const result = parseExternalLinks(undefined)
-    expect(result).toBe(undefined)
+  it('parseLinks of undefined is []', async function () {
+    const result = parseLinks(undefined)
+    expect(result).toStrictEqual([])
   })
 
-  it('parseExternalLinks of null is null', async function () {
-    const result = parseExternalLinks(null)
-    expect(result).toBe(null)
+  it('parseLinks of null is []', async function () {
+    const result = parseLinks(null)
+    expect(result).toStrictEqual([])
   })
+
 })

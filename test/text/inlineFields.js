@@ -5,7 +5,6 @@ import {
   extractInlineFields,
   removeInlineFields,
 } from '../../src/text/inlineFields.js'
-import { parseExternalLinks } from '../../src/text/links.js'
 
 const markdown = [
   'inline :: field',

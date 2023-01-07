@@ -16,7 +16,7 @@ Object {
               "links": Array [
                 Object {
                   "alias": undefined,
-                  "type": "wikiLink",
+                  "type": "internal",
                   "value": "Bob Details#^2",
                 },
               ],
@@ -43,7 +43,7 @@ And some more [[Bob Details#^2]]",
               "links": Array [
                 Object {
                   "alias": " Pointer to section 3",
-                  "type": "wikiLink",
+                  "type": "internal",
                   "value": "Bob Details#^3 ",
                 },
               ],
@@ -70,7 +70,7 @@ And some more [[Bob Details#^3 | Pointer to section 3]]",
               "links": Array [
                 Object {
                   "alias": undefined,
-                  "type": "wikiLink",
+                  "type": "internal",
                   "value": "Unknown#^1",
                 },
               ],
@@ -227,13 +227,13 @@ Object {
       "links": Array [
         Object {
           "alias": undefined,
-          "type": "wikiLink",
-          "value": "Alice",
+          "type": "internal",
+          "value": "Bob",
         },
         Object {
           "alias": undefined,
-          "type": "wikiLink",
-          "value": "Bob",
+          "type": "internal",
+          "value": "Alice",
         },
       ],
       "type": "text",
@@ -256,7 +256,8 @@ Object {
       ],
       "links": Array [
         Object {
-          "type": "link",
+          "alias": "Lovely image",
+          "type": "internal",
           "value": "../houses/img.png",
         },
       ],
@@ -267,7 +268,7 @@ Object {
       "links": Array [
         Object {
           "alias": undefined,
-          "type": "wikiLink",
+          "type": "internal",
           "value": "link 1",
         },
       ],
@@ -278,7 +279,7 @@ Object {
       "links": Array [
         Object {
           "alias": undefined,
-          "type": "wikiLink",
+          "type": "internal",
           "value": "/full/path/link 1",
         },
       ],
@@ -289,7 +290,7 @@ Object {
       "links": Array [
         Object {
           "alias": undefined,
-          "type": "wikiLink",
+          "type": "internal",
           "value": "/full/path/link 1.md",
         },
       ],
@@ -300,7 +301,7 @@ Object {
       "links": Array [
         Object {
           "alias": "Alias 2",
-          "type": "link",
+          "type": "external",
           "value": "http://example.com",
         },
       ],
@@ -311,7 +312,7 @@ Object {
       "links": Array [
         Object {
           "alias": "Alias 1",
-          "type": "wikiLink",
+          "type": "internal",
           "value": "link 1 ",
         },
       ],
@@ -319,10 +320,26 @@ Object {
       "value": "[[link 1 |Alias 1]]",
     },
     Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "transclude": true,
+          "type": "internal",
+          "value": "link 1",
+        },
+      ],
       "type": "text",
       "value": "![[link 1]]",
     },
     Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "transclude": true,
+          "type": "internal",
+          "value": "image.png",
+        },
+      ],
       "type": "text",
       "value": "![[image.png]]",
     },
@@ -330,7 +347,7 @@ Object {
       "links": Array [
         Object {
           "alias": undefined,
-          "type": "link",
+          "type": "external",
           "value": "http://example.com",
         },
       ],
@@ -341,7 +358,7 @@ Object {
       "links": Array [
         Object {
           "alias": "here",
-          "type": "link",
+          "type": "external",
           "value": "http://example.com",
         },
       ],
@@ -351,7 +368,8 @@ Object {
     Object {
       "links": Array [
         Object {
-          "type": "link",
+          "alias": "here",
+          "type": "internal",
           "value": "protocol",
         },
       ],
@@ -362,13 +380,13 @@ Object {
       "links": Array [
         Object {
           "alias": undefined,
-          "type": "link",
-          "value": "https://example2.com",
+          "type": "external",
+          "value": "http://example.com",
         },
         Object {
           "alias": undefined,
-          "type": "link",
-          "value": "http://example.com",
+          "type": "external",
+          "value": "https://example2.com",
         },
       ],
       "type": "text",
@@ -608,7 +626,7 @@ Object {
               "links": Array [
                 Object {
                   "alias": undefined,
-                  "type": "wikiLink",
+                  "type": "internal",
                   "value": "Bob Details#^2",
                 },
               ],
@@ -647,7 +665,7 @@ And some more [[Bob Details#^2]]",
               "links": Array [
                 Object {
                   "alias": " Pointer to section 3",
-                  "type": "wikiLink",
+                  "type": "internal",
                   "value": "Bob Details#^3 ",
                 },
               ],
@@ -686,7 +704,7 @@ And some more [[Bob Details#^3 | Pointer to section 3]]",
               "links": Array [
                 Object {
                   "alias": undefined,
-                  "type": "wikiLink",
+                  "type": "internal",
                   "value": "Unknown#^1",
                 },
               ],
@@ -879,13 +897,13 @@ Object {
       "links": Array [
         Object {
           "alias": undefined,
-          "type": "wikiLink",
-          "value": "Alice",
+          "type": "internal",
+          "value": "Bob",
         },
         Object {
           "alias": undefined,
-          "type": "wikiLink",
-          "value": "Bob",
+          "type": "internal",
+          "value": "Alice",
         },
       ],
       "type": "text",
@@ -908,7 +926,8 @@ Object {
       ],
       "links": Array [
         Object {
-          "type": "link",
+          "alias": "Lovely image",
+          "type": "internal",
           "value": "../houses/img.png",
         },
       ],
@@ -919,7 +938,7 @@ Object {
       "links": Array [
         Object {
           "alias": undefined,
-          "type": "wikiLink",
+          "type": "internal",
           "value": "link 1",
         },
       ],
@@ -930,7 +949,7 @@ Object {
       "links": Array [
         Object {
           "alias": undefined,
-          "type": "wikiLink",
+          "type": "internal",
           "value": "/full/path/link 1",
         },
       ],
@@ -941,7 +960,7 @@ Object {
       "links": Array [
         Object {
           "alias": undefined,
-          "type": "wikiLink",
+          "type": "internal",
           "value": "/full/path/link 1.md",
         },
       ],
@@ -952,7 +971,7 @@ Object {
       "links": Array [
         Object {
           "alias": "Alias 2",
-          "type": "link",
+          "type": "external",
           "value": "http://example.com",
         },
       ],
@@ -963,7 +982,7 @@ Object {
       "links": Array [
         Object {
           "alias": "Alias 1",
-          "type": "wikiLink",
+          "type": "internal",
           "value": "link 1 ",
         },
       ],
@@ -971,10 +990,26 @@ Object {
       "value": "[[link 1 |Alias 1]]",
     },
     Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "transclude": true,
+          "type": "internal",
+          "value": "link 1",
+        },
+      ],
       "type": "text",
       "value": "![[link 1]]",
     },
     Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "transclude": true,
+          "type": "internal",
+          "value": "image.png",
+        },
+      ],
       "type": "text",
       "value": "![[image.png]]",
     },
@@ -982,7 +1017,7 @@ Object {
       "links": Array [
         Object {
           "alias": undefined,
-          "type": "link",
+          "type": "external",
           "value": "http://example.com",
         },
       ],
@@ -993,7 +1028,7 @@ Object {
       "links": Array [
         Object {
           "alias": "here",
-          "type": "link",
+          "type": "external",
           "value": "http://example.com",
         },
       ],
@@ -1003,7 +1038,8 @@ Object {
     Object {
       "links": Array [
         Object {
-          "type": "link",
+          "alias": "here",
+          "type": "internal",
           "value": "protocol",
         },
       ],
@@ -1014,13 +1050,13 @@ Object {
       "links": Array [
         Object {
           "alias": undefined,
-          "type": "link",
-          "value": "https://example2.com",
+          "type": "external",
+          "value": "http://example.com",
         },
         Object {
           "alias": undefined,
-          "type": "link",
-          "value": "http://example.com",
+          "type": "external",
+          "value": "https://example2.com",
         },
       ],
       "type": "text",
@@ -1416,7 +1452,7 @@ Object {
               "links": Array [
                 Object {
                   "alias": undefined,
-                  "type": "wikiLink",
+                  "type": "internal",
                   "value": "Bob Details#^2",
                 },
               ],
@@ -1442,7 +1478,7 @@ Object {
               "links": Array [
                 Object {
                   "alias": " Pointer to section 3",
-                  "type": "wikiLink",
+                  "type": "internal",
                   "value": "Bob Details#^3 ",
                 },
               ],
@@ -1468,7 +1504,7 @@ Object {
               "links": Array [
                 Object {
                   "alias": undefined,
-                  "type": "wikiLink",
+                  "type": "internal",
                   "value": "Unknown#^1",
                 },
               ],
@@ -1624,13 +1660,13 @@ Object {
       "links": Array [
         Object {
           "alias": undefined,
-          "type": "wikiLink",
-          "value": "Alice",
+          "type": "internal",
+          "value": "Bob",
         },
         Object {
           "alias": undefined,
-          "type": "wikiLink",
-          "value": "Bob",
+          "type": "internal",
+          "value": "Alice",
         },
       ],
       "type": "text",
@@ -1653,7 +1689,8 @@ Object {
       ],
       "links": Array [
         Object {
-          "type": "link",
+          "alias": "Lovely image",
+          "type": "internal",
           "value": "../houses/img.png",
         },
       ],
@@ -1664,7 +1701,7 @@ Object {
       "links": Array [
         Object {
           "alias": undefined,
-          "type": "wikiLink",
+          "type": "internal",
           "value": "link 1",
         },
       ],
@@ -1675,7 +1712,7 @@ Object {
       "links": Array [
         Object {
           "alias": undefined,
-          "type": "wikiLink",
+          "type": "internal",
           "value": "/full/path/link 1",
         },
       ],
@@ -1686,7 +1723,7 @@ Object {
       "links": Array [
         Object {
           "alias": undefined,
-          "type": "wikiLink",
+          "type": "internal",
           "value": "/full/path/link 1.md",
         },
       ],
@@ -1697,7 +1734,7 @@ Object {
       "links": Array [
         Object {
           "alias": "Alias 2",
-          "type": "link",
+          "type": "external",
           "value": "http://example.com",
         },
       ],
@@ -1708,7 +1745,7 @@ Object {
       "links": Array [
         Object {
           "alias": "Alias 1",
-          "type": "wikiLink",
+          "type": "internal",
           "value": "link 1 ",
         },
       ],
@@ -1716,10 +1753,26 @@ Object {
       "value": "[[link 1 |Alias 1]]",
     },
     Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "transclude": true,
+          "type": "internal",
+          "value": "link 1",
+        },
+      ],
       "type": "text",
       "value": "![[link 1]]",
     },
     Object {
+      "links": Array [
+        Object {
+          "alias": undefined,
+          "transclude": true,
+          "type": "internal",
+          "value": "image.png",
+        },
+      ],
       "type": "text",
       "value": "![[image.png]]",
     },
@@ -1727,7 +1780,7 @@ Object {
       "links": Array [
         Object {
           "alias": undefined,
-          "type": "link",
+          "type": "external",
           "value": "http://example.com",
         },
       ],
@@ -1738,7 +1791,7 @@ Object {
       "links": Array [
         Object {
           "alias": "here",
-          "type": "link",
+          "type": "external",
           "value": "http://example.com",
         },
       ],
@@ -1748,7 +1801,8 @@ Object {
     Object {
       "links": Array [
         Object {
-          "type": "link",
+          "alias": "here",
+          "type": "internal",
           "value": "protocol",
         },
       ],
@@ -1759,13 +1813,13 @@ Object {
       "links": Array [
         Object {
           "alias": undefined,
-          "type": "link",
-          "value": "https://example2.com",
+          "type": "external",
+          "value": "http://example.com",
         },
         Object {
           "alias": undefined,
-          "type": "link",
-          "value": "http://example.com",
+          "type": "external",
+          "value": "https://example2.com",
         },
       ],
       "type": "text",
@@ -2100,13 +2154,13 @@ Object {
       "links": Array [
         Object {
           "alias": undefined,
-          "type": "wikiLink",
-          "value": "Alice",
+          "type": "internal",
+          "value": "Bob",
         },
         Object {
           "alias": undefined,
-          "type": "wikiLink",
-          "value": "Bob",
+          "type": "internal",
+          "value": "Alice",
         },
       ],
       "type": "text",
@@ -2232,13 +2286,13 @@ Object {
       "links": Array [
         Object {
           "alias": undefined,
-          "type": "wikiLink",
-          "value": "Alice",
+          "type": "internal",
+          "value": "Bob",
         },
         Object {
           "alias": undefined,
-          "type": "wikiLink",
-          "value": "Bob",
+          "type": "internal",
+          "value": "Alice",
         },
       ],
       "type": "text",
