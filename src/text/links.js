@@ -59,7 +59,7 @@ function parseNormalLinks (str) {
       })
     } else {
       links.push({
-        type: 'internal', alias, value,
+        type: 'internal', alias, value: decodeURIComponent(value),
       })
     }
   }
