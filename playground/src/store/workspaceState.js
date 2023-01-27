@@ -8,7 +8,8 @@ export const useWorkspaceState = defineStore('workspace-store', () => {
   const currentJson = ref({})
 
   async function triplifyContents () {
-    currentJson.value = simpleAst(currentMarkdown.value)
+    currentJson.value = simpleAst(currentMarkdown.value,
+      { includePosition: true })
   }
 
   async function setExample ({ markdown }) {

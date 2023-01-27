@@ -4,7 +4,7 @@ import { storeToRefs } from 'pinia'
 import { Glayout, useLayoutStore } from 'playground-template'
 import { onMounted, ref, watch } from 'vue'
 import examples from '../../test/tests.js'
-import { MARKDOWN, TURTLE } from './config.js'
+import { MARKDOWN } from './config.js'
 import { contentLayout } from './layouts.js'
 import { useWorkspaceState } from './store/workspaceState.js'
 
@@ -14,7 +14,7 @@ const { addInstance, loadLayoutConfig } = store
 
 const workspace = useWorkspaceState()
 
-const components = [MARKDOWN, TURTLE]
+const components = [MARKDOWN]
 
 onMounted(async () => {
   loadLayoutConfig(contentLayout)

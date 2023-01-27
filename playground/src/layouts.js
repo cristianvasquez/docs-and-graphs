@@ -1,5 +1,5 @@
 import { ItemType } from 'golden-layout'
-import { MARKDOWN, TURTLE, JSON } from './config.js'
+import { MARKDOWN, JSON } from './config.js'
 
 const contentLayout = {
   root: {
