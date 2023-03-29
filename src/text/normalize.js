@@ -30,7 +30,9 @@ function apply (obj, fn) {
   }
   if (typeof obj === 'object') {
     return Object.keys(obj).reduce((result, key) => {
-      result[key] = apply(obj[key], fn)
+      if (obj[key]){
+        result[key] = apply(obj[key], fn)
+      }
       return result
     }, {})
   }

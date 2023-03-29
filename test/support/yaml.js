@@ -8,6 +8,7 @@ one:
   - Two
   - Three:
     - Other
+without-value:
 ---
 `,
 }
