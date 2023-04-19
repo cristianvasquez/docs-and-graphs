@@ -1,5 +1,4 @@
 <script setup>
-import '@rdfjs-elements/rdf-editor'
 import { darkTheme, NConfigProvider, NInput } from 'naive-ui'
 import { storeToRefs } from 'pinia'
 import { useWorkspaceState } from '../store/workspaceState.js'
