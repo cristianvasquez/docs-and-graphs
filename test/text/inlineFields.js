@@ -27,6 +27,7 @@ const markdown = [
   'a::b\nbetween\nc::d',
   'a::b\nc::d\nafter',
   'lives in :: [Test with relative](../houses/BobHouse.md)',
+  'things like `Family Members::John Smith` that is interpreted as',
 ]
 
 expect.extend({ toMatchSnapshot })

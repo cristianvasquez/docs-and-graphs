@@ -1,6 +1,9 @@
 const PARENTHESIS_TYPES = [
   {
     left: '(', right: ')',
+  },
+  {
+    left: '`', right: '`',
   }]
 
 function keyValue ({ content, parenthesis }) {

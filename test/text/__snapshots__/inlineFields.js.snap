@@ -300,6 +300,18 @@ Array [
 ]
 `;
 
+exports[`extractInlineFields things like \`Family Members::John Smith\` that is interpreted as 1`] = `
+Array [
+  Object {
+    "chunks": Array [
+      "Family Members",
+      "John Smith",
+    ],
+    "raw": "\`Family Members::John Smith\`",
+  },
+]
+`;
+
 exports[`removeInlineFields (a::b::c) (a::f::d) 1`] = `" "`;
 
 exports[`removeInlineFields (mood:: okay) && (length:: 2 hours) 1`] = `" && "`;
@@ -361,3 +373,5 @@ exports[`removeInlineFields subject :: **Rating**:: 6 1`] = `""`;
 exports[`removeInlineFields subject :: **Thoughts**:: It was decent. 1`] = `""`;
 
 exports[`removeInlineFields subject :: inline :: field 1`] = `""`;
+
+exports[`removeInlineFields things like \`Family Members::John Smith\` that is interpreted as 1`] = `"things like  that is interpreted as"`;
