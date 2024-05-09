@@ -9,11 +9,11 @@
   },
   "dependencies": {
     "js-yaml": "^4.1.0",
-    "linkify-it": "^4.0.1",
-    "remark-frontmatter": "^4.0.1",
-    "remark-gfm": "^3.0.1",
-    "remark-parse": "^10.0.1",
-    "unified": "^10.1.2"
+    "linkify-it": "^5.0.0",
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.0",
+    "remark-parse": "^11.0.0",
+    "unified": "^11.0.4"
   },
   "devDependencies": {
     "expect": "^29.3.1",
