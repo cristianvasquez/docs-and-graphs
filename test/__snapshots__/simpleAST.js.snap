@@ -1143,9 +1143,9 @@ Object {
       "ordered": false,
       "position": Object {
         "end": Object {
-          "column": 3,
-          "line": 9,
-          "offset": 74,
+          "column": 9,
+          "line": 8,
+          "offset": 71,
         },
         "start": Object {
           "column": 1,
