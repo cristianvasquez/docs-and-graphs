@@ -3,12 +3,37 @@ import { extractBlockIds } from './text/blockIds.js'
 import { extractInlineFields } from './text/inlineFields.js'
 import { normalizeObject } from './text/normalize.js'
 import { extractTags } from './text/tags.js'
+import { parseLinks } from './text/links.js'
 
 function createNormalizer (options) {
   if (options.normalize) {
     return (value) => normalizeObject(value)
   }
   return (value) => value
+}
+
+function extractLinksFromValue(value) {
+  if (typeof value === 'string') {
+    return parseLinks(value)
+  }
+  return []
+}
+
+function extractLinksFromObject(obj) {
+  const links = []
+  
+  function traverse(value) {
+    if (typeof value === 'string') {
+      links.push(...parseLinks(value))
+    } else if (Array.isArray(value)) {
+      value.forEach(traverse)
+    } else if (value && typeof value === 'object') {
+      Object.values(value).forEach(traverse)
+    }
+  }
+  
+  traverse(obj)
+  return links
 }
 
 function annotateYAML ({ value, currentNode }, options) {
@@ -20,6 +45,11 @@ function annotateYAML ({ value, currentNode }, options) {
     if (doc.tags && doc.tags.length) {
       currentNode.tags = doc.tags
       delete doc.tags
+    }
+
+    const links = extractLinksFromObject(doc)
+    if (links.length) {
+      currentNode.links = links
     }
 
     currentNode.data = [maybeNormalize(doc)]

@@ -588,6 +588,23 @@ Object {
 }
 `;
 
+exports[`astDag Yaml-wikilink 1`] = `
+Object {
+  "data": Array [
+    Object {
+      "agent": "[[osg-knowledge-agent]]",
+      "stakeholders": Array [
+        "[[cvasquez]]",
+        "[[osg-hypermedia-agent]]",
+      ],
+      "uuid": "184b475b-89f4-4fe3-a7e8-c8fb1ba58ec7",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
 exports[`astDag code fence 1`] = `
 Object {
   "children": Array [
@@ -1403,6 +1420,23 @@ Object {
 }
 `;
 
+exports[`astDag includePosition:true Yaml-wikilink 1`] = `
+Object {
+  "data": Array [
+    Object {
+      "agent": "[[osg-knowledge-agent]]",
+      "stakeholders": Array [
+        "[[cvasquez]]",
+        "[[osg-hypermedia-agent]]",
+      ],
+      "uuid": "184b475b-89f4-4fe3-a7e8-c8fb1ba58ec7",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
 exports[`astDag includePosition:true code fence 1`] = `
 Object {
   "children": Array [
@@ -2018,6 +2052,23 @@ Object {
     "cats",
     "dogs",
   ],
+  "type": "root",
+}
+`;
+
+exports[`astDag normalize:true Yaml-wikilink 1`] = `
+Object {
+  "data": Array [
+    Object {
+      "agent": "[[osg-knowledge-agent]]",
+      "stakeholders": Array [
+        "[[cvasquez]]",
+        "[[osg-hypermedia-agent]]",
+      ],
+      "uuid": "184b475b-89f4-4fe3-a7e8-c8fb1ba58ec7",
+    },
+  ],
+  "depth": 0,
   "type": "root",
 }
 `;
