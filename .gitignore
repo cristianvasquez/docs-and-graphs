@@ -17,3 +17,5 @@ pids
 
 .idea
 node_modules
+docs/
+.claude

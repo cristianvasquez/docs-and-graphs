@@ -5,7 +5,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive"
+    "test": "mocha --recursive",
+    "dev": "vite",
+    "build": "vite build"
   },
   "dependencies": {
     "js-yaml": "^4.1.0",
@@ -19,7 +21,8 @@
     "expect": "^30.0.3",
     "expect-mocha-snapshot": "^2.1.5",
     "get-stream": "^9.0.1",
-    "mocha": "^11.7.1"
+    "mocha": "^11.7.1",
+    "vite": "^7.0.0"
   },
   "repository": {
     "type": "git",
