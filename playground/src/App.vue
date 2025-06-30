@@ -1,77 +1,27 @@
 <script setup>
-import { NSelect } from 'naive-ui'
-import { storeToRefs } from 'pinia'
-import { Glayout, useLayoutStore } from 'playground-template'
-import { onMounted, ref, watch } from 'vue'
-import examples from '../../test/tests.js'
-import { MARKDOWN } from './config.js'
-import { contentLayout } from './layouts.js'
-import { useWorkspaceState } from './store/workspaceState.js'
+import { ref, watch } from 'vue'
+import { NInput } from 'naive-ui'
+import { simpleAst } from '../../index.js'
 
-const store = useLayoutStore()
-const { rootLayoutRef } = storeToRefs(store)
-const { addInstance, loadLayoutConfig } = store
+const markdown = ref('')
+const json = ref({})
 
-const workspace = useWorkspaceState()
-
-const components = [MARKDOWN]
-
-onMounted(async () => {
-  loadLayoutConfig(contentLayout)
-  workspace.setExample(examples[0])
-
+watch(markdown, (newValue) => {
+  json.value = simpleAst(newValue, { includePosition: true })
 })
-const value = ref()
-
-watch(value, () => {
-  workspace.setExample(examples[value.value])
-})
-
 </script>
 
 <template>
-
-  <div class="full-height">
-    <div id="nav">
-      <h1>AST Playground</h1>
-      <template v-for="component of components">
-        <button @click="addInstance(component)">
-          {{ component.title }}
-        </button>
-      </template>
-
-      <n-select v-model:value="value" :options="examples.map((example, index)=>{
-        return {label:example.title,value:index}
-      })"/>
-
-    </div>
-    <glayout
-        ref="rootLayoutRef"
-        componentPathPrefix="../../../../src/"
-        style="width: 100%; height: calc(100% - 90px)"
-    ></glayout>
+  <n-input
+      type="textarea"
+      v-model:value="markdown"
+      :autosize="{ minRows: 3 }"
+  />
+  <div>
+    <textarea
+        cols="200"
+        rows="80"
+        readonly
+    >{{ JSON.stringify(json, null, 2) }}</textarea>
   </div>
 </template>
-
-<style>
-@import "golden-layout/dist/css/goldenlayout-base.css";
-@import "golden-layout/dist/css/themes/goldenlayout-dark-theme.css";
-
-html {
-  height: 100%;
-}
-
-body {
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-
-}
-
-.full-height, #app {
-  height: 100%;
-}
-</style>
-
-
-
