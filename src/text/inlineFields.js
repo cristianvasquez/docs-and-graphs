@@ -4,7 +4,8 @@ const PARENTHESIS_TYPES = [
   },
   {
     left: '`', right: '`',
-  }]
+  }
+]
 
 function keyValue ({ content, parenthesis }) {
   const chunks = content.split('::')

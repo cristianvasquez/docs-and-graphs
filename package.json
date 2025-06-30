@@ -5,21 +5,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive"
+    "test": "mocha --recursive",
+    "dev": "vite",
+    "build": "vite build"
   },
   "dependencies": {
     "js-yaml": "^4.1.0",
     "linkify-it": "^5.0.0",
     "remark-frontmatter": "^5.0.0",
-    "remark-gfm": "^4.0.0",
+    "remark-gfm": "^4.0.1",
     "remark-parse": "^11.0.0",
-    "unified": "^11.0.4"
+    "unified": "^11.0.5"
   },
   "devDependencies": {
-    "expect": "^29.3.1",
+    "expect": "^30.0.3",
     "expect-mocha-snapshot": "^2.1.5",
-    "get-stream": "^6.0.1",
-    "mocha": "^10.1.0"
+    "get-stream": "^9.0.1",
+    "mocha": "^11.7.1",
+    "vite": "^7.0.0"
   },
   "repository": {
     "type": "git",
