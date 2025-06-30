@@ -6,6 +6,7 @@ import people from './support/people.js'
 import yamlWikilink from './support/yaml-wikilink.js'
 import yaml from './support/yaml.js'
 import code from './support/code.js'
+import maxDepth from './support/maxDepth.js'
 
 export default [
   code,
@@ -15,4 +16,5 @@ export default [
   people,
   yaml,
   inlineFields,
-  yamlWikilink]
+  yamlWikilink,
+  maxDepth]

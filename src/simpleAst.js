@@ -29,7 +29,12 @@ function simpleAst ({ astNode, fullText }, options) {
       }
       push(current, block)
     } else if (astNode.type === 'heading') {
-      const ancesters = headersStack.filter(x => x.depth < astNode.depth)
+      // Apply maxDepth flattening if specified
+      const effectiveDepth = options.maxDepth && astNode.depth > options.maxDepth 
+        ? options.maxDepth 
+        : astNode.depth
+
+      const ancesters = headersStack.filter(x => x.depth < effectiveDepth)
       if (ancesters.length) {
         headersStack = ancesters
       }
@@ -38,7 +43,7 @@ function simpleAst ({ astNode, fullText }, options) {
         : current
 
       const block = createBlock({ astNode, fullText, type: 'block' }, options)
-      block.depth = astNode.depth
+      block.depth = effectiveDepth
 
       if (options.includePosition && astNode.position) {
         block.position = astNode.position
@@ -84,8 +89,13 @@ function getOutline ({ astNode, fullText, outlineDepth, depth }, options) {
         }
         children.push(block)
       } else if (child.type === 'list') {
+        // Apply maxDepth to nested lists if specified
+        const effectiveOutlineDepth = options.maxDepth && (outlineDepth + 1) > options.maxDepth
+          ? options.maxDepth - 1
+          : outlineDepth + 1
+          
         const outline = getOutline(
-          { astNode: child, fullText, outlineDepth: outlineDepth + 1 }, options)
+          { astNode: child, fullText, outlineDepth: effectiveOutlineDepth }, options)
         children.push(outline)
       } else {
         // console.log(`I don't know how to handle`, child.type)

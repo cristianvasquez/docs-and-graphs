@@ -2,7 +2,7 @@ import { simpleAst as sa } from './src/simpleAst.js'
 import { createMarkdownParser } from './src/markdown/markdownParser.js'
 
 const defaultOptions = {
-  normalize: false, inlineAsArray: false, includePosition: false,
+  normalize: false, inlineAsArray: false, includePosition: false, maxDepth: null,
 }
 
 function simpleAst (fullText, options = {}) {

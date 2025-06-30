@@ -41,6 +41,14 @@ The lib
 import { simpleAst } from 'docs-and-graphs'
 
 const json = simpleAst(yourMarkdownString)
+
+// With options
+const json = simpleAst(yourMarkdownString, {
+  normalize: false,        // Remove prefixes like # from tags, ^ from block IDs
+  inlineAsArray: false,    // Return inline fields as arrays vs nested objects
+  includePosition: false,  // Include source position metadata
+  maxDepth: null          // Flatten headers deeper than this level
+})
 ```
 
 will produce the following Json
@@ -105,6 +113,36 @@ will produce the following Json
   ]
 }
 
+```
+
+## Options
+
+### `normalize` (default: `false`)
+When `true`, removes prefixes from parsed elements:
+- Tags: `#tag` becomes `tag`
+- Block IDs: `^block-id` becomes `block-id`
+- Also applies text normalization (trimming, etc.)
+
+### `inlineAsArray` (default: `false`)
+Controls how inline fields like `subject :: inline :: field` are parsed:
+- `false`: Creates nested objects `{subject: {inline: "field"}}`
+- `true`: Returns arrays `["subject", "inline", "field"]`
+
+### `includePosition` (default: `false`)
+When `true`, includes source position metadata (line/column numbers) from the markdown parser. Useful for debugging or source mapping.
+
+### `maxDepth` (default: `null`)
+Limits header nesting depth by flattening deeper headers:
+- `null`: No limit (default behavior)
+- `2`: Headers deeper than level 2 become level 2 siblings
+- Content and inline fields stay with their original headers when flattened
+
+Example with `maxDepth: 2`:
+```markdown
+# Level 1
+## Level 2
+### Level 3  ← becomes level 2
+#### Level 4 ← becomes level 2
 ```
 
 ## Based on

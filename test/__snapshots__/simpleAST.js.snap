@@ -398,6 +398,98 @@ Object {
 }
 `;
 
+exports[`astDag MaxDepth 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "data": Array [
+            Object {
+              "author": " John Doe",
+            },
+          ],
+          "type": "text",
+          "value": "author:: John Doe
+Content under level 1",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "category": " documentation",
+                },
+              ],
+              "type": "text",
+              "value": "category:: documentation
+Content under level 2",
+            },
+            Object {
+              "children": Array [
+                Object {
+                  "data": Array [
+                    Object {
+                      "status": " draft",
+                    },
+                    Object {
+                      "priority": " high",
+                    },
+                  ],
+                  "type": "text",
+                  "value": "status:: draft
+priority:: high
+Content under level 3",
+                },
+                Object {
+                  "children": Array [
+                    Object {
+                      "data": Array [
+                        Object {
+                          "rating": " 5",
+                        },
+                      ],
+                      "type": "text",
+                      "value": "rating:: 5
+Content under level 4",
+                    },
+                    Object {
+                      "children": Array [
+                        Object {
+                          "type": "text",
+                          "value": "Content under level 5",
+                        },
+                      ],
+                      "depth": 5,
+                      "type": "block",
+                      "value": "##### Level 5 Header",
+                    },
+                  ],
+                  "depth": 4,
+                  "type": "block",
+                  "value": "#### Level 4 Header",
+                },
+              ],
+              "depth": 3,
+              "type": "block",
+              "value": "### Level 3 Header",
+            },
+          ],
+          "depth": 2,
+          "type": "block",
+          "value": "## Level 2 Header",
+        },
+      ],
+      "depth": 1,
+      "type": "block",
+      "value": "# Level 1 Header",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
 exports[`astDag Outline 1`] = `
 Object {
   "children": Array [
@@ -1079,6 +1171,158 @@ Object {
       ],
       "type": "text",
       "value": "<http://example.com> <https://example2.com> ",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`astDag includePosition:true MaxDepth 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "data": Array [
+            Object {
+              "author": " John Doe",
+            },
+          ],
+          "type": "text",
+          "value": "author:: John Doe
+Content under level 1",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "category": " documentation",
+                },
+              ],
+              "type": "text",
+              "value": "category:: documentation
+Content under level 2",
+            },
+            Object {
+              "children": Array [
+                Object {
+                  "data": Array [
+                    Object {
+                      "status": " draft",
+                    },
+                    Object {
+                      "priority": " high",
+                    },
+                  ],
+                  "type": "text",
+                  "value": "status:: draft
+priority:: high
+Content under level 3",
+                },
+                Object {
+                  "children": Array [
+                    Object {
+                      "data": Array [
+                        Object {
+                          "rating": " 5",
+                        },
+                      ],
+                      "type": "text",
+                      "value": "rating:: 5
+Content under level 4",
+                    },
+                    Object {
+                      "children": Array [
+                        Object {
+                          "type": "text",
+                          "value": "Content under level 5",
+                        },
+                      ],
+                      "depth": 5,
+                      "position": Object {
+                        "end": Object {
+                          "column": 21,
+                          "line": 18,
+                          "offset": 271,
+                        },
+                        "start": Object {
+                          "column": 1,
+                          "line": 18,
+                          "offset": 251,
+                        },
+                      },
+                      "type": "block",
+                      "value": "##### Level 5 Header",
+                    },
+                  ],
+                  "depth": 4,
+                  "position": Object {
+                    "end": Object {
+                      "column": 20,
+                      "line": 14,
+                      "offset": 216,
+                    },
+                    "start": Object {
+                      "column": 1,
+                      "line": 14,
+                      "offset": 197,
+                    },
+                  },
+                  "type": "block",
+                  "value": "#### Level 4 Header",
+                },
+              ],
+              "depth": 3,
+              "position": Object {
+                "end": Object {
+                  "column": 19,
+                  "line": 9,
+                  "offset": 142,
+                },
+                "start": Object {
+                  "column": 1,
+                  "line": 9,
+                  "offset": 124,
+                },
+              },
+              "type": "block",
+              "value": "### Level 3 Header",
+            },
+          ],
+          "depth": 2,
+          "position": Object {
+            "end": Object {
+              "column": 18,
+              "line": 5,
+              "offset": 75,
+            },
+            "start": Object {
+              "column": 1,
+              "line": 5,
+              "offset": 58,
+            },
+          },
+          "type": "block",
+          "value": "## Level 2 Header",
+        },
+      ],
+      "depth": 1,
+      "position": Object {
+        "end": Object {
+          "column": 17,
+          "line": 1,
+          "offset": 16,
+        },
+        "start": Object {
+          "column": 1,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+      "type": "block",
+      "value": "# Level 1 Header",
     },
   ],
   "depth": 0,
@@ -1867,6 +2111,93 @@ Object {
 }
 `;
 
+exports[`astDag normalize:true MaxDepth 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "data": Array [
+            Object {
+              "author": "John Doe",
+            },
+          ],
+          "type": "text",
+          "value": "Content under level 1",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "category": "documentation",
+                },
+              ],
+              "type": "text",
+              "value": "Content under level 2",
+            },
+            Object {
+              "children": Array [
+                Object {
+                  "data": Array [
+                    Object {
+                      "status": "draft",
+                    },
+                    Object {
+                      "priority": "high",
+                    },
+                  ],
+                  "type": "text",
+                  "value": "Content under level 3",
+                },
+                Object {
+                  "children": Array [
+                    Object {
+                      "data": Array [
+                        Object {
+                          "rating": "5",
+                        },
+                      ],
+                      "type": "text",
+                      "value": "Content under level 4",
+                    },
+                    Object {
+                      "children": Array [
+                        Object {
+                          "type": "text",
+                          "value": "Content under level 5",
+                        },
+                      ],
+                      "depth": 5,
+                      "type": "block",
+                      "value": "Level 5 Header",
+                    },
+                  ],
+                  "depth": 4,
+                  "type": "block",
+                  "value": "Level 4 Header",
+                },
+              ],
+              "depth": 3,
+              "type": "block",
+              "value": "Level 3 Header",
+            },
+          ],
+          "depth": 2,
+          "type": "block",
+          "value": "Level 2 Header",
+        },
+      ],
+      "depth": 1,
+      "type": "block",
+      "value": "Level 1 Header",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
 exports[`astDag normalize:true Outline 1`] = `
 Object {
   "children": Array [
@@ -2350,6 +2681,282 @@ Object {
       ],
       "type": "text",
       "value": "[[Bob]] :: foaf:knows :: [[Alice]]",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`maxDepth maxDepth:2 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "data": Array [
+            Object {
+              "author": " John Doe",
+            },
+          ],
+          "type": "text",
+          "value": "author:: John Doe
+Content under level 1",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "category": " documentation",
+                },
+              ],
+              "type": "text",
+              "value": "category:: documentation
+Content under level 2",
+            },
+          ],
+          "depth": 2,
+          "type": "block",
+          "value": "## Level 2 Header",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "status": " draft",
+                },
+                Object {
+                  "priority": " high",
+                },
+              ],
+              "type": "text",
+              "value": "status:: draft
+priority:: high
+Content under level 3",
+            },
+          ],
+          "depth": 2,
+          "type": "block",
+          "value": "### Level 3 Header",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "rating": " 5",
+                },
+              ],
+              "type": "text",
+              "value": "rating:: 5
+Content under level 4",
+            },
+          ],
+          "depth": 2,
+          "type": "block",
+          "value": "#### Level 4 Header",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "type": "text",
+              "value": "Content under level 5",
+            },
+          ],
+          "depth": 2,
+          "type": "block",
+          "value": "##### Level 5 Header",
+        },
+      ],
+      "depth": 1,
+      "type": "block",
+      "value": "# Level 1 Header",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`maxDepth maxDepth:3 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "data": Array [
+            Object {
+              "author": " John Doe",
+            },
+          ],
+          "type": "text",
+          "value": "author:: John Doe
+Content under level 1",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "category": " documentation",
+                },
+              ],
+              "type": "text",
+              "value": "category:: documentation
+Content under level 2",
+            },
+            Object {
+              "children": Array [
+                Object {
+                  "data": Array [
+                    Object {
+                      "status": " draft",
+                    },
+                    Object {
+                      "priority": " high",
+                    },
+                  ],
+                  "type": "text",
+                  "value": "status:: draft
+priority:: high
+Content under level 3",
+                },
+              ],
+              "depth": 3,
+              "type": "block",
+              "value": "### Level 3 Header",
+            },
+            Object {
+              "children": Array [
+                Object {
+                  "data": Array [
+                    Object {
+                      "rating": " 5",
+                    },
+                  ],
+                  "type": "text",
+                  "value": "rating:: 5
+Content under level 4",
+                },
+              ],
+              "depth": 3,
+              "type": "block",
+              "value": "#### Level 4 Header",
+            },
+            Object {
+              "children": Array [
+                Object {
+                  "type": "text",
+                  "value": "Content under level 5",
+                },
+              ],
+              "depth": 3,
+              "type": "block",
+              "value": "##### Level 5 Header",
+            },
+          ],
+          "depth": 2,
+          "type": "block",
+          "value": "## Level 2 Header",
+        },
+      ],
+      "depth": 1,
+      "type": "block",
+      "value": "# Level 1 Header",
+    },
+  ],
+  "depth": 0,
+  "type": "root",
+}
+`;
+
+exports[`maxDepth no maxDepth (default) 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "data": Array [
+            Object {
+              "author": " John Doe",
+            },
+          ],
+          "type": "text",
+          "value": "author:: John Doe
+Content under level 1",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "data": Array [
+                Object {
+                  "category": " documentation",
+                },
+              ],
+              "type": "text",
+              "value": "category:: documentation
+Content under level 2",
+            },
+            Object {
+              "children": Array [
+                Object {
+                  "data": Array [
+                    Object {
+                      "status": " draft",
+                    },
+                    Object {
+                      "priority": " high",
+                    },
+                  ],
+                  "type": "text",
+                  "value": "status:: draft
+priority:: high
+Content under level 3",
+                },
+                Object {
+                  "children": Array [
+                    Object {
+                      "data": Array [
+                        Object {
+                          "rating": " 5",
+                        },
+                      ],
+                      "type": "text",
+                      "value": "rating:: 5
+Content under level 4",
+                    },
+                    Object {
+                      "children": Array [
+                        Object {
+                          "type": "text",
+                          "value": "Content under level 5",
+                        },
+                      ],
+                      "depth": 5,
+                      "type": "block",
+                      "value": "##### Level 5 Header",
+                    },
+                  ],
+                  "depth": 4,
+                  "type": "block",
+                  "value": "#### Level 4 Header",
+                },
+              ],
+              "depth": 3,
+              "type": "block",
+              "value": "### Level 3 Header",
+            },
+          ],
+          "depth": 2,
+          "type": "block",
+          "value": "## Level 2 Header",
+        },
+      ],
+      "depth": 1,
+      "type": "block",
+      "value": "# Level 1 Header",
     },
   ],
   "depth": 0,

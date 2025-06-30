@@ -39,22 +39,62 @@
             background-color: #f5f5f5;
             color: #333;
         }
+
+        .controls {
+            margin: 10px 0;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .controls label {
+            font-size: 14px;
+        }
+
+        .controls input[type="number"], .controls select {
+            padding: 4px 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
 <div class="input-panel">
     <h2>Markdown Input</h2>
+    <div class="controls">
+        <label>
+            <input type="checkbox" id="normalize"> normalize
+        </label>
+        <label>
+            <input type="checkbox" id="includePosition"> includePosition
+        </label>
+        <label>
+            <input type="checkbox" id="inlineAsArray"> inlineAsArray
+        </label>
+        <label>
+            maxDepth: <input type="number" id="maxDepth" min="1" max="10" placeholder="null">
+        </label>
+    </div>
     <textarea id="markdown-input" placeholder="Enter your markdown here...">---
 hello: world
+agent: "[[osg-knowledge-agent]]"
 ---
 
 # Heading 1
-
+author:: John Doe
 Some text under Heading 1
 
 Text that has (inline::variables)
 
-## Inline elements
+## Level 2 Header
+
+### Level 3 Header
+status:: draft
+Content under level 3
+
+#### Level 4 Header
+rating:: 5
+Content under level 4
 
 - Tana and logseq likes
   - embedded nodes</textarea>
@@ -79,12 +119,23 @@ Text that has (inline::variables)
 
   const markdownInput = document.getElementById('markdown-input')
   const jsonOutput = document.getElementById('json-output')
+  const normalizeInput = document.getElementById('normalize')
+  const includePositionInput = document.getElementById('includePosition')
+  const inlineAsArrayInput = document.getElementById('inlineAsArray')
+  const maxDepthInput = document.getElementById('maxDepth')
 
   function updateOutput () {
     if (!simpleAst) return
 
     try {
-      const ast = simpleAst(markdownInput.value, { includePosition: true })
+      const options = {
+        normalize: normalizeInput.checked,
+        includePosition: includePositionInput.checked,
+        inlineAsArray: inlineAsArrayInput.checked,
+        maxDepth: maxDepthInput.value ? parseInt(maxDepthInput.value) : null
+      }
+      
+      const ast = simpleAst(markdownInput.value, options)
       jsonOutput.value = JSON.stringify(ast, null, 2)
     } catch (error) {
       jsonOutput.value = `Error: ${error.message}`
@@ -92,6 +143,10 @@ Text that has (inline::variables)
   }
 
   markdownInput.addEventListener('input', updateOutput)
+  normalizeInput.addEventListener('change', updateOutput)
+  includePositionInput.addEventListener('change', updateOutput)
+  inlineAsArrayInput.addEventListener('change', updateOutput)
+  maxDepthInput.addEventListener('input', updateOutput)
 
   // Initial render
   if (simpleAst) {
