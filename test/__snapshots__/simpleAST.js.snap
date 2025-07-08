@@ -392,6 +392,21 @@ Object {
       "type": "text",
       "value": "<http://example.com> <https://example2.com> ",
     },
+    Object {
+      "type": "text",
+      "value": "Wrong url",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": "/",
+          "type": "internal",
+          "value": "https://github.com/DataViva/dataviva-site/",
+        },
+      ],
+      "type": "text",
+      "value": "<https://github.com/DataViva/dataviva-site[[https://github.com/DataViva/dataviva-site/|/]]>",
+    },
   ],
   "depth": 0,
   "type": "root",
@@ -688,11 +703,40 @@ Object {
       "stakeholders": Array [
         "[[cvasquez]]",
         "[[osg-hypermedia-agent]]",
+        "[[system-agent|sysadmin]]",
       ],
       "uuid": "184b475b-89f4-4fe3-a7e8-c8fb1ba58ec7",
+      "with_alias": "[[osg-knowledge-agent]]",
     },
   ],
   "depth": 0,
+  "links": Array [
+    Object {
+      "alias": undefined,
+      "type": "internal",
+      "value": "osg-knowledge-agent",
+    },
+    Object {
+      "alias": undefined,
+      "type": "internal",
+      "value": "osg-knowledge-agent",
+    },
+    Object {
+      "alias": undefined,
+      "type": "internal",
+      "value": "cvasquez",
+    },
+    Object {
+      "alias": undefined,
+      "type": "internal",
+      "value": "osg-hypermedia-agent",
+    },
+    Object {
+      "alias": "sysadmin",
+      "type": "internal",
+      "value": "system-agent",
+    },
+  ],
   "type": "root",
 }
 `;
@@ -1171,6 +1215,21 @@ Object {
       ],
       "type": "text",
       "value": "<http://example.com> <https://example2.com> ",
+    },
+    Object {
+      "type": "text",
+      "value": "Wrong url",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": "/",
+          "type": "internal",
+          "value": "https://github.com/DataViva/dataviva-site/",
+        },
+      ],
+      "type": "text",
+      "value": "<https://github.com/DataViva/dataviva-site[[https://github.com/DataViva/dataviva-site/|/]]>",
     },
   ],
   "depth": 0,
@@ -1672,11 +1731,40 @@ Object {
       "stakeholders": Array [
         "[[cvasquez]]",
         "[[osg-hypermedia-agent]]",
+        "[[system-agent|sysadmin]]",
       ],
       "uuid": "184b475b-89f4-4fe3-a7e8-c8fb1ba58ec7",
+      "with_alias": "[[osg-knowledge-agent]]",
     },
   ],
   "depth": 0,
+  "links": Array [
+    Object {
+      "alias": undefined,
+      "type": "internal",
+      "value": "osg-knowledge-agent",
+    },
+    Object {
+      "alias": undefined,
+      "type": "internal",
+      "value": "osg-knowledge-agent",
+    },
+    Object {
+      "alias": undefined,
+      "type": "internal",
+      "value": "cvasquez",
+    },
+    Object {
+      "alias": undefined,
+      "type": "internal",
+      "value": "osg-hypermedia-agent",
+    },
+    Object {
+      "alias": "sysadmin",
+      "type": "internal",
+      "value": "system-agent",
+    },
+  ],
   "type": "root",
 }
 `;
@@ -2105,6 +2193,21 @@ Object {
       "type": "text",
       "value": "<http://example.com> <https://example2.com>",
     },
+    Object {
+      "type": "text",
+      "value": "Wrong url",
+    },
+    Object {
+      "links": Array [
+        Object {
+          "alias": "/",
+          "type": "internal",
+          "value": "https://github.com/DataViva/dataviva-site/",
+        },
+      ],
+      "type": "text",
+      "value": "<https://github.com/DataViva/dataviva-site[[https://github.com/DataViva/dataviva-site/|/]]>",
+    },
   ],
   "depth": 0,
   "type": "root",
@@ -2395,11 +2498,40 @@ Object {
       "stakeholders": Array [
         "[[cvasquez]]",
         "[[osg-hypermedia-agent]]",
+        "[[system-agent|sysadmin]]",
       ],
       "uuid": "184b475b-89f4-4fe3-a7e8-c8fb1ba58ec7",
+      "with_alias": "[[osg-knowledge-agent]]",
     },
   ],
   "depth": 0,
+  "links": Array [
+    Object {
+      "alias": undefined,
+      "type": "internal",
+      "value": "osg-knowledge-agent",
+    },
+    Object {
+      "alias": undefined,
+      "type": "internal",
+      "value": "osg-knowledge-agent",
+    },
+    Object {
+      "alias": undefined,
+      "type": "internal",
+      "value": "cvasquez",
+    },
+    Object {
+      "alias": undefined,
+      "type": "internal",
+      "value": "osg-hypermedia-agent",
+    },
+    Object {
+      "alias": "sysadmin",
+      "type": "internal",
+      "value": "system-agent",
+    },
+  ],
   "type": "root",
 }
 `;

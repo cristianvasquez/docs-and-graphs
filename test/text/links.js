@@ -43,4 +43,12 @@ describe('parseLinks', async function () {
     expect(result).toStrictEqual([])
   })
 
+
+  it('no invalid external link', async function () {
+    const result = parseLinks('<https://github.com/DataViva/dataviva-site[[https://github.com/DataViva/dataviva-site/|/]]>')
+    for (const link of result){
+      expect(link.type === 'external').toBeFalsy()
+    }
+  })
+
 })

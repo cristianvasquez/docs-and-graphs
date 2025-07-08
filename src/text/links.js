@@ -46,6 +46,13 @@ linkifier.tlds('onion', true)            // Add unofficial `.onion` domain
   .set({ fuzzyIP: true, fuzzyLink: false })        // Enable IPs in fuzzy links (without schema)
 
 // @TODO find a lib to do these sort of things.
+// Check if a URL is RFC-compliant by looking for invalid characters
+function isValidURI (urlObj) {
+  const invalidChars = /[\[\]]/
+  return !invalidChars.test(urlObj.value)
+}
+
+// @TODO find a lib to do these sort of things.
 function parseNormalLinks (str) {
 
   const links = []
@@ -74,7 +81,7 @@ function parseNormalLinks (str) {
     }
   }
 
-  return links
+  return links.filter(isValidURI)
 }
 
 function parseLinks (str) {
