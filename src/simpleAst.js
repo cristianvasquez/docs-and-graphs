@@ -115,7 +115,7 @@ function getOutline ({ astNode, fullText, outlineDepth, depth }, options) {
 }
 
 function createBlock ({ astNode, fullText, type }, options) {
-  const value = getText({ astNode, fullText })
+  const value = type === 'code' ? astNode.value : getText({ astNode, fullText })
 
   const block = {
     type,
@@ -130,7 +130,7 @@ function createBlock ({ astNode, fullText, type }, options) {
     block.links = links
   }
 
-  block.value = options.normalize ? normalizeText(value) : value
+  block.value = (options.normalize && type !== 'code') ? normalizeText(value) : value
 
   return block
 }

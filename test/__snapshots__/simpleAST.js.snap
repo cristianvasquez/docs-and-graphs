@@ -749,9 +749,7 @@ Object {
         Object {
           "lang": "js",
           "type": "code",
-          "value": "\`\`\`js
-Hello world
-\`\`\`",
+          "value": "Hello world",
         },
       ],
       "depth": 1,
@@ -1777,9 +1775,7 @@ Object {
         Object {
           "lang": "js",
           "type": "code",
-          "value": "\`\`\`js
-Hello world
-\`\`\`",
+          "value": "Hello world",
         },
       ],
       "depth": 1,
@@ -2544,9 +2540,7 @@ Object {
         Object {
           "lang": "js",
           "type": "code",
-          "value": "\`\`\`js
-Hello world
-\`\`\`",
+          "value": "Hello world",
         },
       ],
       "depth": 1,
